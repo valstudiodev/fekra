@@ -1,0 +1,240 @@
+@use '../settings/settings' as *;
+@use '../settings/mixins' as *;
+
+.page {
+   position: relative;
+
+   // .page__hero
+   &__hero {
+      // display: none;
+      @include adaptiveValue('padding-top', 375, 200);
+      @include adaptiveValue('padding-bottom', 387, 100);
+   }
+
+   // .page__history
+   &__history {
+      // display: none;
+      @include adaptiveValue('padding-block', 105, 50);
+   }
+
+   // .page__banner
+   &__banner {
+      // display: none;
+      @include adaptiveValue('padding-block', 135, 50);
+   }
+
+   // .page__team
+   &__team {
+      // display: none;
+      @include adaptiveValue('padding-block', 118, 50);
+   }
+}
+// ===========================================================================================
+// -----------------------------
+// hero
+// -----------------------------
+.hero {
+   @include img-bg-cover("/src/assets/img/images/hero-img.webp");
+   height: 100svh;
+   // width: 100dvw;
+
+   @media (max-width: toEm($mobile)) {
+      @include overlay-gradient($opacity-start: 0.5, $opacity-end: 0.3);
+   }
+   // .hero__container
+   &__container {}
+
+   // .hero__content
+   &__content {
+      position: relative;
+      @include flex-column;
+      z-index: 5;
+
+      > * {
+         @include adaptiveValue('margin-bottom', 38, 20);
+         &:last-child {
+            margin-bottom: toRem(0);
+         }
+      }
+   }
+
+   // .hero__title
+   &__title {
+      font-family: "Sansation",sans-serif;
+      @include adaptiveValue('font-size', 60, 40);
+      text-align: center;
+      line-height: 120%; /* 72/60 */
+      color: $white;
+   }
+
+   // .hero__text
+   &__text {
+      font-family: "Sansation", sans-serif;
+      @include adaptiveValue('font-size', 24, 18);
+      letter-spacing: ls(15%);
+      color: $white;
+      @include adaptiveValue('margin-bottom', 58, 25);
+      text-align: center;
+   }
+
+   // .hero__buttons
+   &__buttons {
+      display: flex;
+      align-items: center;
+      @include adaptiveValue('gap',32,15);
+      flex-wrap: wrap;
+
+      @media (max-width: toEm(340)) {
+         .button {
+            width: 100%;
+         }
+      }
+   }
+}
+
+// ===========================================================================================
+// -----------------------------
+// history
+// -----------------------------
+.history {
+
+   // .history__container
+   &__container {
+      max-width: toRem(1218) !important;
+   }
+
+   // .history__header
+   &__header {
+      @include adaptiveValue('margin-bottom', 54, 25);
+   }
+
+   // .history__gallery
+   &__gallery {}
+
+   // .history__advantages
+   &__advantages {
+      @include grid-adaptive( $size: toRem(280), $gap: toRem(61));
+
+      @media (max-width: toEm(650)) {
+        justify-items: center;
+      }
+   }
+}
+
+.gallery-history {
+   display: grid;
+   grid-template-columns: 24.242424% 47.979798% 24.242424%; /* 570/1188 */
+   align-items: end;
+   gap: toRem(21);
+   @include adaptiveValue('margin-bottom', 80, 30);
+
+   @media (max-width: toEm(650)) {
+     grid-template-columns: auto;
+   }
+
+   // .gallery-history__wrap
+   &__wrap {}
+
+   &__image {
+
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      &--small {
+         aspect-ratio: 288 / 233;
+      }
+
+      &--big {
+         aspect-ratio: 570 / 347;
+      }
+   }
+}
+
+.item-history-advant {
+
+   // .item-history-advant__inner
+   &__inner {}
+
+   // .item-history-advant__icon
+   &__icon {
+
+      // .item-history-advant__icon--icon-heart
+      &--icon-heart {}
+
+      // .item-history-advant__icon--icon-monitor
+      &--icon-monitor {}
+
+      // .item-history-advant__icon--icon-power
+      &--icon-power {}
+   }
+
+   // .item-history-advant__content
+   &__content {}
+}
+
+.content-adv-history {
+
+   // .content-adv-history__title
+   &__title {}
+
+   // .content-adv-history__text
+   &__text {}
+}
+
+// ===========================================================================================
+// -----------------------------
+// banner
+// -----------------------------
+.banner {
+   @include img-bg-cover("/src/assets/img/banners/banner.webp",$position:top);
+   @include overlay;
+   // .banner__container
+   &__container {
+      @include flex-column;
+      @include adaptiveValue('gap', 40, 20);
+   }
+
+   // .banner__title
+   &__title {
+      font-family: "Sansation",sans-serif;
+      color: $white;
+      font-weight: 700;
+      line-height: 168.75%; /* 54/32 */
+      max-width: toRem(668);
+      text-align: center;
+      @include adaptiveValue('font-size', 32, 26);
+   }
+
+   // .banner__button
+   &__button {}
+}
+
+// ===========================================================================================
+// -----------------------------
+// team
+// -----------------------------
+.team {
+
+   // .team__container
+   &__container {}
+
+   // .team__header
+   &__header {
+      @include adaptiveValue('margin-bottom', 69, 30);
+   }
+
+   // .team__items
+   &__items {
+      @include grid-adaptive($size: toRem(230), $gap: toRem(28));
+
+      @include hover {
+         &:has(.item-team__wrap:hover) .item-team__wrap:not(:hover) {
+            opacity: 0.5;
+         }
+      }
+   }
+}
+
+
+
+

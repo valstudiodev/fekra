@@ -1,0 +1,660 @@
+@use "sass:math";
+@use './settings/settings' as *;
+@use './settings/_mixins.scss' as *;
+
+.components {
+   background-color: lightgray;
+   // .components__container
+   &__container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: toRem(50);
+      padding-top: toRem(50);
+   }
+}
+
+// ===========================================================================================
+// -----------------------------
+// Buttons-active
+// -----------------------------
+.icon-menu {
+   position: relative;
+   width: toRem(30);
+   height: toRem(20);
+   z-index: 10;
+   flex-shrink: 0;
+
+   &::before,
+   &::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      width: 100%;
+      height: toRem(3);
+      border-radius: toRem(10);
+      background-color: $white;
+      transition: all 0.3s;
+   }
+
+   &::before {
+      top: 0;
+   }
+
+   &::after {
+      bottom: 0;
+   }
+
+   span {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      translate: 0 -50%;
+      background-color: $white;
+      width: 70%;
+      height: toRem(3);
+      border-radius: toRem(10);
+      transition: all 0.3s;
+   }
+
+   @media (min-width: toEm(655.98)) {
+      display: none;
+   }
+}
+
+.menu-open {
+   .icon-menu {
+      &::before {
+         top: 50%;
+         rotate: 45deg;
+         translate: 0 -50%;
+      }
+
+      &::after {
+         top: 50%;
+         rotate: -45deg;
+         translate: 0 -50%;
+      }
+
+      span {
+         width: 0;
+      }
+   }
+}
+
+.icon-more {
+   position: relative;
+   width: toRem(15);
+   height: toRem(15);
+   z-index: 10;
+   flex-shrink: 0;
+
+   &::before,
+   &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      // background-color: $purpleLight;
+      height: toRem(2);
+      border-radius: toRem(6);
+   }
+
+   &::before {
+      left: 0;
+      top: 50%;
+      translate: 0 -50%;
+   }
+
+   &::after {
+      rotate: 90deg;
+      top: 50%;
+      translate: 0 -50%;
+   }
+}
+
+// ===========================================================================================
+// -----------------------------
+// accordion-menu
+// -----------------------------
+.accordion-menu {
+   align-self: start;
+   /* Важливо для Grid! */
+   background-color: grey;
+   border: toRem(1.5) solid $black;
+   max-width: toRem(650);
+   display: flex;
+   flex-direction: column;
+
+   &__inner {
+      padding: toRem(21) toRem(20) toRem(15) toRem(28);
+   }
+
+   // .accordion-menu__top
+   &__top {}
+
+   // .accordion-menu__header
+   &__header {}
+
+   // .accordion-menu__content
+   &__content {}
+
+   // .accordion-menu__text
+   &__text {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: toRem(13);
+      transition: height 0.35s ease;
+      will-change: height;
+
+      &.active-btn {
+         height: auto;
+      }
+   }
+}
+
+.header-accordion {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   gap: toRem(10);
+
+   // .header-accordion__title
+   &__title {
+      @include adaptiveValue('font-size', 24, 18);
+      color: $black;
+      margin-bottom: toRem(10);
+      transition: color 0.3s;
+   }
+}
+
+.button-more {
+   @include buttonMore($width:toRem(25),$line-height:toRem(4));
+}
+
+.button {
+   text-transform: uppercase;
+   font-size: toRem(12);
+   line-height: 116.666667%; /* 14/12 */
+   letter-spacing: ls(15%);
+   color: $white;
+   padding-block: toRem(14);
+   @include transition;
+   text-align: center;
+
+   &--white {
+      padding-inline: toRem(25);
+      background-color: transparent;
+      @include default-border($color: $white);
+      @include transition;
+
+      @include hover {
+         background-color: $white;
+         color: $black;
+      }
+   }
+
+   &--orange {
+      padding-inline: toRem(32);
+      background-color: $accentOrange;
+      @include default-border($color: $accentOrange);
+
+      @include hover {
+        background-color: transparent;
+        color: $accentOrange;
+      }
+   }
+
+   &--start {
+      font-weight: 700;
+      padding-inline: toRem(34);
+      @include default-border($color: $white);
+      letter-spacing: ls(0%);
+      font-family: "Sansation",sans-serif;
+      padding-block: toRem(12);
+
+      @include hover {
+         background-color: $white;
+         color: $black;
+      }
+   }
+
+   &--dark {
+      padding-block: toRem(18);
+      padding-inline: toRem(20);
+      color: $black;
+      @include default-border($color: $black);
+      line-height: 125%; /* 15/12 */
+      letter-spacing: ls(4%);
+      background-color: rgba(217, 217, 217, 0);
+
+      @include hover {
+        background-color: $black;
+        color: $white;
+      }
+   }
+
+   &--purchase {
+      padding: toRem(10);
+      background-color: $bgSecondaryDark;
+      color: $white;
+      letter-spacing: ls(8.8%);
+      line-height: 1.1;
+      @include default-border($color: $black);
+
+      @include hover {
+         background-color: transparent;
+         color: $black;
+      }
+   }
+}
+
+// ===========================================================================================
+// -----------------------------
+// rating
+// -----------------------------
+// ============== option #1 =================
+.rating {
+   display: inline-flex;
+   flex-direction: row-reverse;
+   justify-content: flex-end;
+   border: none;
+   padding: 0;
+   margin: 0;
+
+   &__item {
+      // Ховаємо інпут, залишаючи його доступним
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      clip: rect(0 0 0 0);
+      overflow: hidden;
+
+
+      // Коли обрано — фарбуємо всі попередні (візуально зліва)
+      &:checked~.rating__label {
+         .rating__icon {
+            fill: gold;
+            stroke: gold;
+         }
+      }
+
+      // Фокус при роботі з Tab
+      &:focus-visible+.rating__label {
+         outline: 2px solid gold;
+         outline-offset: 3px;
+         border-radius: 4px;
+      }
+   }
+
+   &__label {
+      cursor: pointer;
+      padding: 0 4px;
+      transition: transform 0.2s ease;
+
+      // ГОЛОВНЕ: клік проходить крізь SVG на label
+      .rating__icon {
+         pointer-events: none;
+         width: toRem(20);
+         aspect-ratio: 1;
+         fill: #ccc;
+         transition: fill 0.2s ease, transform 0.2s ease;
+      }
+
+      // Hover ефект
+      &:hover,
+      &:hover~.rating__label {
+         .rating__icon {
+            // fill: lighten(gold, 10%);
+            stroke: gold;
+            transform: scale(1.1);
+         }
+      }
+
+      &:active {
+         transform: scale(0.9);
+      }
+   }
+}
+
+// ============== option #2 =================
+.rating {
+   display: inline-flex;
+   flex-direction: row-reverse;
+   justify-content: flex-end;
+   border: none;
+   padding: 0;
+   margin: 0;
+
+   &__item {
+      // Повністю ховаємо радіокнопку візуально, але залишаємо для Tab
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      margin: -1px;
+      clip: rect(0 0 0 0);
+      overflow: hidden;
+
+      // Стан фокусу (коли людина перемикається клавіатурою)
+      &:focus-visible+.rating__label {
+         outline: 2px solid gold;
+         outline-offset: 4px;
+         border-radius: 2px;
+      }
+
+      // Головна логіка: фарбуємо зірку та всі наступні лейбли (через row-reverse)
+      &:checked~.rating__label {
+         color: gold;
+      }
+   }
+
+   &__label {
+      cursor: pointer;
+      color: #ccc;
+      transition: color 0.2s ease-in-out, scale 0.3s ease;
+      padding: 0 2px;
+      will-change: scale;
+
+      // Встановлюємо іконку через псевдоелемент
+      &::before {
+         font-size: toRem(18);
+      }
+
+      // Ефект при наведенні мишкою
+      &:hover,
+      &:hover~.rating__label {
+         color: gold;
+      }
+
+      &:active {
+         scale: 0.9;
+      }
+   }
+
+   &__icon {
+      width: toRem(20);
+      aspect-ratio: 1;
+      fill: #ccc;
+   }
+}
+
+
+// ===========================================================================================
+// -----------------------------
+// block-header
+// -----------------------------
+.block-header {
+   @include flex-column;
+   @include adaptiveValue('gap',45,20);
+
+   // .block-header__title
+   &__title {
+      position: relative;
+      font-family: "Sansation",sans-serif;
+      @include adaptiveValue('font-size', 36, 24);
+      color: $bgMainDark;
+      font-weight: 700;
+      padding-bottom: toRem(15);
+
+      &::after {
+       @include pseudo;
+       background-color: $accentOrange;
+       height: toRem(2);
+       width: toRem(90);
+       bottom: 0;
+       left: 50%;
+       translate: -50% 0;
+      }
+   }
+
+   // .block-header__text
+   &__text {
+      text-align: center;
+      max-width: toRem(874);
+      color: $mainText;
+      @include adaptiveValue('font-size', 16, 13);
+   }
+}
+
+.item-pricing {
+
+   &--default {
+      .top-pricing {
+         background-color: $accentOrange;
+      }
+   }
+}
+
+.top-pricing {
+   background-color: $bgSecondaryDark;
+   padding-block: toRem(20);
+   padding-inline: toRem(80);
+   // .top-pricing__title
+   &__title {
+      @include adaptiveValue('font-size', 18, 16);
+      color: $white;
+      font-weight: 700;
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 122.222222%; /* 22/18 */
+   }
+}
+
+.body-pricing {
+   @include flex-column;
+   @include adaptiveValue('gap',29,15);
+   background-color: $white;
+   padding-inline: toRem(52);
+   padding-top: toRem(11);
+   padding-bottom: toRem(26);
+
+   // .body-pricing__button
+   &__button {}
+}
+
+.price {
+   @include flex-column;
+   // gap: toRem(7);
+   // .price__amount
+   &__amount {
+      display: flex;
+      @include adaptiveValue('font-size', 60, 30);
+      line-height: 120%;
+      /* 72/60 */
+      color: $black;
+      text-align: center;
+
+      small {
+         @include adaptiveValue('font-size', 40, 20);
+         color: $bgSecondaryDark;
+         line-height: 112.5%; /* 45/40 */
+      }
+   }
+
+   // .price__label
+   &__label {
+      font-size: toRem(12);
+      color: $textGrey;
+      text-align: center;
+   }
+}
+
+.tarrifs {
+   @include flex-column;
+   @include adaptiveValue('gap',20,10);
+
+   // .tarrifs__item
+   &__item {
+      font-size: toRem(13);
+      line-height: 184.615385%; /* 24/13 */
+      color: $textGrey;
+   }
+}
+
+.item-history-advant {
+
+   &__inner {
+      display: flex;
+      @include adaptiveValue('gap', 41, 20);
+
+      @include hover {
+         .item-history-advant__icon {
+            &::before {
+               background-color: $accentOrange;
+               color: $white;
+            }
+         }
+      }
+   }
+
+   // .item-history-advant__icon
+   &__icon {
+      width: toRem(60);
+      aspect-ratio: 1;
+      &::before {
+         font-size: toRem(25);
+         @include square-icon($width:toRem(60));
+         @include default-border($color: $accentOrange);
+         color: $accentOrange;
+         @include transition;
+      }
+
+      // @include hover {
+      //    &::before {
+      //       background-color: $accentOrange;
+      //       color: $white;
+      //    }
+      // }
+   }
+
+   // .item-history-advant__content
+   &__content {}
+}
+
+.content-adv-history {
+   @include flex-column($align-items:flex-start);
+   gap: toRem(12);
+   // .content-adv-history__title
+   &__title {
+      font-size: toRem(14);
+      font-weight: 700;
+      color: $bgSecondaryDark;
+      line-height: 121.428571%; /* 17/14 */
+   }
+
+   // .content-adv-history__text
+   &__text {
+      font-size: toRem(14);
+      color: $textGrey;
+      line-height: 171.428571%; /* 24/14 */
+      max-width: toRem(260);
+   }
+}
+
+.item-team {
+
+   &__wrap {
+      position: relative;
+      overflow: hidden;
+      @include adaptiveValue('margin-bottom', 31, 15);
+      transition: opacity 0.4s ease-in-out;
+
+      @include hover {
+         .item-team__image {
+            &::after {
+               opacity: 1;
+               translate: 0 0;
+            }
+         }
+         .social-media {
+            opacity: 1;
+            visibility: visible;
+         }
+      }
+   }
+
+   // .item-team__image
+   &__image {
+      position: relative;
+      aspect-ratio: 1;
+
+      &::after {
+         content: "";
+         position: absolute;
+         top: 0;
+         left: 0;
+         width: 100%;
+         height: 100%;
+         background-color: rgba(231, 76, 60, 0.6);
+         opacity: 0;
+         translate: 0 100%;
+         transition: opacity 0.4s ease-in-out, translate 0.4s ease-in-out;
+      }
+
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+}
+
+.bottom-team {
+   @include flex-column;
+   gap: toRem(10);
+
+   // .bottom-team__name
+   &__name {
+      font-size: toRem(14);
+      font-weight: 700;
+      line-height: 121.428571%; /* 17/14 */
+      text-align: center;
+      color: $bgSecondaryDark;
+   }
+
+   &__link {
+      @include link-hover-underline($height: toRem(2), $color: $accentOrange);
+      @include transition;
+
+      @include hover {
+         color: $accentOrange;
+      }
+   }
+
+   // .bottom-team__label
+   &__label {
+      font-size: toRem(11);
+      font-weight: 700;
+      line-height: 118.181818%; /* 13/11 */
+   }
+}
+
+.social-media {
+   @include abs-center;
+   z-index: 5;
+   display: flex;
+   align-items: center;
+   flex-wrap: wrap;
+   gap: toRem(17);
+   opacity: 0;
+   transition: opacity 0.4s ease-in-out;
+
+   // .social-media__link
+   &__link {
+      width: toRem(20);
+      height: toRem(20);
+      scale: 1;
+      transition: scale 0.4s ease;
+      will-change: scale;
+
+      @include hover {
+        scale: 1.2;
+      }
+      &::before {
+         color: $white;
+         // font-size: toRem(20);
+      }
+   }
+}

@@ -1,0 +1,9 @@
+<svg viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="12.000000" height="12.000000" fill="none" customFrame="#000000">
+	<defs>
+		<image id="image_21" width="24.000000" height="24.000000" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABHNCSVQICAgIfAhkiAAAAV1JREFUSIntlT1OAlEUhb/7ZnBcgInsQaXSxsQd2CkWNBIKjB1Dwxq04E1FYSGxtmYVFkrAuAYTCwsjBl7mWghmJBEGHRrjV73k3XvuOcn7gX/mIM1mc1tELoENwGSkGwN9Y0zFF5E2sJmR8AQDFOI4bhsgn7F4krxRVbvEAVYAoigqqmoLWMtI+BlohGF4IdbaNhA651Y8z2uJyMEvxTu+71edc6+ANUBZRB5839+t1+uHInIEPP3Q9UkYhvuj0agA9ICyWGs1UXSdy+VOB4OBt2CajqqeDIfDlyAIzoHqZGP63Bedc/0F0ny6BraCIOgnxQGmEySZl+Zb10lm3dwvaYAScCcit0Bpluu0CZJciUijVqs9AkRRtK6qZ8DxvMa0AxCRN1W9Ga93VHU1TZ+fpghgLLg3Xqdty+z1nDkgvZ3FUQPcL3FAzxhjykCXj08iK2Kga4ypZKj5V3kH6TWMMEbUdM8AAAAASUVORK5CYII=" />
+		<pattern id="pattern_21" width="1.000000" height="1.000000" image-fill-type="fill" patternContentUnits="objectBoundingBox">
+			<use transform="matrix(0.0416667,0,0,0.0416667,0,0)" xlink:href="#image_21" />
+		</pattern>
+	</defs>
+	<path id="Rectangle 37" d="M0 0L12 0L12 12L0 12L0 0Z" fill="url(#pattern_21)" fill-rule="evenodd" />
+</svg>

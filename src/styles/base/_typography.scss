@@ -1,0 +1,104 @@
+@font-face {
+   font-family: 'iconfont';
+   src:
+      url('/src/assets/fonts/icomoon.woff2') format('woff2');
+   font-weight: normal;
+   font-style: normal;
+   font-display: block;
+}
+
+[class*="--icon-"]::before {
+   font-family: 'iconfont';
+   line-height: 1 !important;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+}
+
+[class*="--icon-edit"]::before {
+   content: "\e901";
+}
+
+[class*="--icon-pencil"]::before {
+   content: "\e902";
+}
+
+[class*="--icon-fb"]::before {
+   content: "\e904";
+}
+
+[class*="--icon-linked"]::before {
+   content: "\e909";
+}
+
+[class*="--icon-location"]::before {
+   content: "\e90a9";
+}
+
+[class*="--icon-phone"]::before {
+   content: "\e90f";
+}
+
+[class*="--icon-twitter"]::before {
+   content: "\e913";
+}
+
+[class*="--icon-design"]::before {
+   content: "\e900";
+}
+
+[class*="--icon-edit2"]::before {
+   content: "\e910";
+}
+
+[class*="--icon-monitor"]::before {
+   content: "\e911";
+}
+
+[class*="--icon-minus"]::before {
+   content: "\e91b";
+}
+
+[class*="--icon-plus"]::before {
+   content: "\e91d";
+}
+
+[class*="--icon-telegram"]::before {
+   content: "\e92c";
+}
+
+[class*="--icon-mail1"]::before {
+   content: "\e907";
+}
+
+[class*="--icon-phone1"]::before {
+   content: "\e90b";
+}
+
+[class*="--icon-image"]::before {
+   content: "\e90d";
+}
+
+[class*="--icon-cog"]::before {
+   content: "\e994";
+}
+
+[class*="--icon-stats-dots"]::before {
+   content: "\e99b";
+}
+
+[class*="--icon-briefcase"]::before {
+   content: "\e9ae";
+}
+
+[class*="--icon-power"]::before {
+   content: "\e9b5";
+}
+
+[class*="--icon-heart"]::before {
+   content: "\e9da";
+}
+
+[class*="--icon-google-plus"]::before {
+   content: "\ea8b";
+}
+

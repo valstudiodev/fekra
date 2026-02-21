@@ -1,0 +1,9 @@
+<svg viewBox="0 0 45 51.3037" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="45.000000" height="51.303711" fill="none" customFrame="#000000">
+	<defs>
+		<image id="image_13" width="32.000000" height="32.000000" xlink:href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABHNCSVQICAgIfAhkiAAAAsdJREFUWIW9lz9ME2EYxp/nuxaxAdworUFjBNE4EUhMpaCJSFQKxoHByYRFlMHBTQ1BY5zQyVFjdLQLyp8OLgUKRJTFSRZjNJRC1BgBS7X3vQ4EQvBKez3aZ7zv/d7f73Jf7r0jcsjXUGC/AVcvoc8BPEygRIA4gKiCfuIdnprOpY9VmK1gob35GigDADw7lL1I7zV7qsPTyV0VWOho7oPI3VwaKcr4r3RFW20kkrIjoDItJDqCIYj059pIC1vKjOWHduAZBaQfioIB5PCItu3siXcEjjoWWHp/8oQG6uzBAYAGtbrsWMCECtiHbzhIk2MBEpV5C0B5HQuIYCV/AS47FqBgLm++aFt7LQXW3K43BNby4pOvHQscGoz+FOFj23SND77G2CvHAgCQ9qT7AL7LtREFSSG62Q+9KwLV4emkoY1OADPZ4fwuxAX/SGzWDnxHAQCoHI0m1lZcpwi5Rci3/8CQFMjnpov1vuFY1C58vce2/Ght3fdnT+q8UOoEsrhqVjyrjURS0tVlLK4uNGolNaRyC8y4q7RkqjIcXQHWR7ZLVDeJv6Ax4y31jjEcNm0JJELBGwLcA1CxpeCjkD2+oYkxqwbS0OBerPL0COQBiLKN6wqYg6hu78j4VE4CifbgfSFuZywUTArxFJQZMWVFGfRp8IwycVUUqq2bS0oLzvpHJid2FIiHmoIEx2F7+mUPgS+ayWP+odnfVutqvYh3CgEHAAEOUHuuZFpXS52BGgBthYBvhtKbUcAUow0FuvstOT5/scXynCgR2Jrf+cZIW38nKCU4UgwBga61FBDiYHEEaMlRBMqLIZCJowRwFUWAcFsKwGLIFCiWHKXAWDHomrB8HSvRGAAk69RymE+r6fKXlgJVo7G3IrwOIF0geFwpXsr0z7j5BpzvbKk3tNwE5LQAXjg4nBQkQXzW4CBoPPIPRTOes3+j5Pgc932ykgAAAABJRU5ErkJggg==" />
+		<pattern id="pattern_13" width="1.000000" height="1.000000" image-fill-type="fill" patternContentUnits="objectBoundingBox">
+			<use transform="matrix(0.0356274,0,0,0.03125,-0.0700389,0)" xlink:href="#image_13" />
+		</pattern>
+	</defs>
+	<path id="Rectangle 34" d="M0 -0.000976562L45 -0.000976562L45 51.3025L0 51.3025L0 -0.000976562Z" fill="url(#pattern_13)" fill-rule="evenodd" />
+</svg>

@@ -1,0 +1,298 @@
+<!doctype html>
+<html lang="en" init-page-loader>
+
+<head>
+   <meta charset="UTF-8" />
+   <style>
+      /* Миттєвий фон для всього вікна */
+      html {
+         background-color: #fff;
+      }
+
+      /* Ховаємо контент, поки немає статусу "ready" */
+      html[init-page-loader] body {
+         opacity: 0 !important;
+         visibility: hidden !important;
+         overflow: hidden;
+         /* Блокуємо скрол під час завантаження */
+      }
+
+      /* Повертаємо видимість та скрол */
+      html[init-page-loader="ready"] body {
+         opacity: 1 !important;
+         visibility: visible !important;
+         overflow: visible;
+         transition: opacity 0.6s ease-in-out !important;
+      }
+
+      /* Стиль прогрес-бару (щоб не чекати завантаження файлу CSS) */
+      #loader-progress-bar {
+         position: fixed;
+         top: 0;
+         left: 0;
+         height: 2px;
+         background-color: #00ADB5;
+         z-index: 100000;
+         width: 0%;
+         transition: width 0.4s ease, opacity 0.3s ease;
+         box-shadow: 0 0 10px #0C73B8;
+      }
+   </style>
+   <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <title>Fekra</title>
+</head>
+
+<body>
+
+   <div class="wrapper">
+      <header class="header">
+         <div class="header__container">
+            <div class="header__inner">
+               <figure class="header__logo">
+                  <img src="/src/assets/icons/logo.svg" alt="logo icon Fekra">
+               </figure>
+               <nav class="header__menu menu-header">
+                  <ul class="menu-header__list">
+                     <li class="menu-header__item">
+                        <a href="#" class="menu-header__link">HOME</a>
+                     </li>
+                     <li class="menu-header__item">
+                        <a href="#" class="menu-header__link">PAGES</a>
+                     </li>
+                     <li class="menu-header__item">
+                        <a href="#" class="menu-header__link">ABOUT US</a>
+                     </li>
+                     <li class="menu-header__item">
+                        <a href="#" class="menu-header__link">OUR TEAM</a>
+                     </li>
+                     <li class="menu-header__item">
+                        <a href="#" class="menu-header__link">PORTFOLIO</a>
+                     </li>
+                     <li class="menu-header__item">
+                        <a href="#" class="menu-header__link">BLOG</a>
+                     </li>
+                     <li class="menu-header__item">
+                        <a href="#" class="menu-header__link">CONTACT</a>
+                     </li>
+                  </ul>
+               </nav>
+               <button class="icon-menu">
+                  <span></span>
+               </button>
+            </div>
+         </div>
+      </header>
+
+      <main class="page">
+         <section class="page__hero hero">
+            <div class="hero__container">
+               <div class="hero__content">
+                  <h1 class="hero__title">EXPERIENCES & EXCELLENCE</h1>
+                  <div class="hero__text">
+                     <p>We love clean design and advanced digital solutions</p>
+                  </div>
+                  <div class="hero__buttons">
+                     <a href="#" target="_blank" class="button button--white">LEARN MORE</a>
+                     <button type="button" class="button button--orange">BUY THEME</button>
+                  </div>
+               </div>
+            </div>
+         </section>
+
+         <section class="page__history history">
+            <div class="history__container">
+               <div class="history__header block-header">
+                  <h2 class="block-header__title">Our History</h2>
+                  <div class="block-header__text">
+                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                        laudantium,
+                        totam rem aperiam,
+                        eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                        explicabo.
+                        Nemo enim ipsam
+                        voluptatem quia voluptas sit aspernatur. Lorem Ipsum is simply dummy text of the printing and
+                        typesetting industry.
+                        Lorem Ipsum has been the industry's standard.
+                     </p>
+                  </div>
+               </div>
+               <div class="history__gallery gallery-history">
+                  <div class="gallery-history__wrap">
+                     <img class="gallery-history__image gallery-history__image--small"
+                        src="/src/assets/img/history/history-img-01.webp" alt="image of history">
+                  </div>
+                  <div class="gallery-history__wrap">
+                     <img class="gallery-history__image gallery-history__image--big"
+                        src="/src/assets/img/history/history-img-02.webp" alt="image of history">
+                  </div>
+                  <div class="gallery-history__wrap">
+                     <img class="gallery-history__image gallery-history__image--small"
+                        src="/src/assets/img/history/history-img-03.webp" alt="image of history">
+                  </div>
+               </div>
+               <div class="history__advantages">
+                  <article class="item-history-advant">
+                     <a href="#" class="item-history-advant__inner">
+                        <div class="item-history-advant__icon item-history-advant__icon--icon-heart"></div>
+                        <div class="item-history-advant__content content-adv-history">
+                           <h4 class="content-adv-history__title">TRENDY DESIGN</h4>
+                           <div class="content-adv-history__text">
+                              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                 has
+                                 been
+                                 the industry.
+                              </p>
+                           </div>
+                        </div>
+                     </a>
+                  </article>
+                  <article class="item-history-advant">
+                     <a href="#" class="item-history-advant__inner">
+                        <div class="item-history-advant__icon item-history-advant__icon--icon-monitor"></div>
+                        <div class="item-history-advant__content content-adv-history">
+                           <h4 class="content-adv-history__title">HOT FEATURES</h4>
+                           <div class="content-adv-history__text">
+                              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                 has
+                                 been
+                                 the industry.
+                              </p>
+                           </div>
+                        </div>
+                     </a>
+                  </article>
+                  <article class="item-history-advant">
+                     <a href="#" class="item-history-advant__inner">
+                        <div class="item-history-advant__icon item-history-advant__icon--icon-power"></div>
+                        <div class="item-history-advant__content content-adv-history">
+                           <h4 class="content-adv-history__title">CUSTOM SHORTCODES</h4>
+                           <div class="content-adv-history__text">
+                              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                                 has
+                                 been
+                                 the industry.
+                              </p>
+                           </div>
+                        </div>
+                     </a>
+                  </article>
+               </div>
+            </div>
+         </section>
+
+         <section class="page__banner banner">
+            <div class="banner__container">
+               <h2 class="banner__title">We grow brands by making decisions that are
+                  rooted in business strategy.
+               </h2>
+               <a href="#" target="_blank" class="banner__button button button--start">GET STARTED NOW</a>
+            </div>
+         </section>
+
+         <section class="page__team team">
+            <div class="team__container">
+               <div class="team__header block-header">
+                  <h2 class="block-header__title">Awesome Team</h2>
+                  <div class="block-header__text">
+                     <p>Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+                        laoreet dolore magna
+                        aliquam erat volutpat. Ut wisi enim ad minim veniam
+                     </p>
+                  </div>
+               </div>
+               <div class="team__items">
+                  <figure class="item-team">
+                     <div class="item-team__wrap">
+                        <a href="#" class="item-team__image">
+                           <img src="/src/assets/img/employees/employee-01.webp" alt="image of employee">
+                        </a>
+                        <div class="social-media">
+                           <a href="#" class="social-media__link social-media__link--icon-fb"></a>
+                           <a href="#" class="social-media__link social-media__link--icon-twitter"></a>
+                           <a href="#" class="social-media__link social-media__link--icon-linked"></a>
+                           <a href="#" class="social-media__link social-media__link--icon-google-plus"></a>
+                        </div>
+                     </div>
+                     <figcaption class="item-team__bottom bottom-team">
+                        <h4 class="bottom-team__name">
+                           <a href="#" class="bottom-team__link">JOLIA ROBERTES</a>
+                        </h4>
+                        <span class="bottom-team__label">FOUNDER</span>
+                     </figcaption>
+                  </figure>
+                  <figure class="item-team">
+                     <div class="item-team__wrap">
+                        <a href="#" class="item-team__image">
+                           <img src="/src/assets/img/employees/employee-02.webp" alt="image of employee">
+                        </a>
+                        <div class="social-media">
+                           <a href="#" class="social-media__link social-media__link--icon-fb"></a>
+                           <a href="#" class="social-media__link social-media__link--icon-twitter"></a>
+                           <a href="#" class="social-media__link social-media__link--icon-linked"></a>
+                           <a href="#" class="social-media__link social-media__link--icon-google-plus"></a>
+                        </div>
+                     </div>
+                     <figcaption class="item-team__bottom bottom-team">
+                        <h4 class="bottom-team__name">
+                           <a href="#" class="bottom-team__link">JULIAN LECHER</a>
+                        </h4>
+                        <span class="bottom-team__label">PROJECT MANAGER</span>
+                     </figcaption>
+                  </figure>
+                  <figure class="item-team">
+                     <div class="item-team__wrap">
+                        <a href="#" class="item-team__image">
+                           <img src="/src/assets/img/employees/employee-03.webp" alt="image of employee">
+                        </a>
+                        <div class="social-media">
+                           <a href="#" class="social-media__link social-media__link--icon-fb"></a>
+                           <a href="#" class="social-media__link social-media__link--icon-twitter"></a>
+                           <a href="#" class="social-media__link social-media__link--icon-linked"></a>
+                           <a href="#" class="social-media__link social-media__link--icon-google-plus"></a>
+                        </div>
+                     </div>
+                     <figcaption class="item-team__bottom bottom-team">
+                        <h4 class="bottom-team__name">
+                           <a href="#" class="bottom-team__link">LORA BUTHCER</a>
+                        </h4>
+                        <span class="bottom-team__label">LORA BUTHCER</span>
+                     </figcaption>
+                  </figure>
+                  <figure class="item-team">
+                     <div class="item-team__wrap">
+                        <a href="#" class="item-team__image">
+                           <img src="/src/assets/img/employees/employee-04.webp" alt="image of employee">
+                        </a>
+                        <div class="social-media">
+                           <a href="#" class="social-media__link social-media__link--icon-fb"></a>
+                           <a href="#" class="social-media__link social-media__link--icon-twitter"></a>
+                           <a href="#" class="social-media__link social-media__link--icon-linked"></a>
+                           <a href="#" class="social-media__link social-media__link--icon-google-plus"></a>
+                        </div>
+                     </div>
+                     <figcaption class="item-team__bottom bottom-team">
+                        <h4 class="bottom-team__name">
+                           <a href="#" class="bottom-team__link">HENRY FRANK</a>
+                        </h4>
+                        <span class="bottom-team__label">CREATIVE DESIGNER</span>
+                     </figcaption>
+                  </figure>
+               </div>
+            </div>
+         </section>
+      </main>
+
+      <footer class="footer">
+         <div class="footer__container">
+            <p>Footer</p>
+         </div>
+      </footer>
+   </div>
+
+
+   <div id="app"></div>
+   <script type="module" src="src/main.js"></script>
+</body>
+
+</html>
