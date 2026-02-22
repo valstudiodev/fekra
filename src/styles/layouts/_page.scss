@@ -28,6 +28,24 @@
       // display: none;
       @include adaptiveValue('padding-block', 118, 50);
    }
+
+   // .page__work
+   &__work {
+      // display: none;
+      @include adaptiveValue('padding-top', 140, 50);
+      @include adaptiveValue('padding-bottom', 120, 50);
+   }
+
+   // .page__features
+   &__features {
+      // display: none;
+   }
+
+   // .page__pricing
+   &__pricing {
+      @include adaptiveValue('padding-top', 113, 50);
+      @include adaptiveValue('padding-bottom', 158, 50);
+   }
 }
 // ===========================================================================================
 // -----------------------------
@@ -234,6 +252,196 @@
       }
    }
 }
+
+// ===========================================================================================
+// -----------------------------
+// work
+// -----------------------------
+.work {
+
+   // .work__container
+   &__container {
+      // display: grid;
+      display: flex;
+      flex-direction: column;
+   }
+
+   // .work__header
+   &__header {
+      @include adaptiveValue('margin-bottom', 74, 40);
+   }
+
+   // .work__filter
+   &__filter {}
+
+   // .work__button
+   &__button {
+      align-self: center;
+      @media (max-width: toEm(529)) {
+        width: 100%;
+      }
+   }
+}
+
+.filter-work {
+   @include adaptiveValue('margin-bottom', 83, 40);
+   // .filter-work__menu
+   &__menu {}
+
+   // .filter-work__items
+   &__items {
+      @include grid-adaptive($size: toRem(250));
+      // @include flexbox($wrap:wrap);
+
+      @media (max-width: toEm(629)) {
+        flex-wrap: nowrap;
+        overflow: auto;
+        margin-inline: toRem(-20);
+      }
+
+      @include hover {
+      //   &:has(.item-work:hover) .item-work:not(:hover) {
+      //       opacity: 0.5;
+      //   }
+      }
+   }
+}
+
+.menu-filter {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   flex-wrap: wrap;
+   @include adaptiveValue('gap', 67, 30);
+   @include adaptiveValue('margin-bottom', 64, 30);
+
+   // .menu-filter__item
+   &__item {}
+
+   // .menu-filter__btn
+   &__btn {
+      font-size: toRem(12);
+      color: $black;
+      line-height: 116.666667%; /* 14/12 */
+      text-transform: uppercase;
+      padding-block: toRem(10);
+      padding-inline: toRem(20);
+      transition: all 0.3s;
+
+      @include hover {
+         background-color: rgb(163, 48, 36);
+         color: $white;
+      }
+
+      &.is-active {
+         background-color: $accentOrange;
+         color: $white;
+         padding-block: toRem(10);
+         padding-inline: toRem(20);
+      }
+   }
+}
+
+// ===========================================================================================
+// -----------------------------
+// features
+// -----------------------------
+.features {
+
+   // .features__container
+   &__container {
+      display: flex;
+      gap: toRem(20);
+      align-items: center;
+
+      @media (max-width: toEm(860)) {
+        flex-direction: column;
+      }
+   }
+
+   &__content {
+      @include flex-column($align-items: flex-start);
+      @include adaptiveValue('gap', 64, 30);
+      flex: 1 1 50%;
+   }
+
+   // .features__image
+   &__image {
+      flex: 1 1 50%;
+      aspect-ratio: 622 / 1100;
+
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+}
+
+.top-features {
+   @include flex-column($align-items:flex-start);
+   @include adaptiveValue('gap', 22, 10);
+
+   @media (max-width: toEm(370)) {
+     align-items: center;
+   }
+
+   // .top-features__title
+   &__title {
+      @include adaptiveValue('font-size', 36, 28);
+      font-weight: 700;
+      line-height: 119.444444%; /* 43/36 */
+      color: $black;
+
+      @media (max-width: toEm(370)) {
+        text-align: center;
+      }
+   }
+
+   // .top-features__text
+   &__text {
+      font-size: toRem(14);
+      color: $black;
+      max-width: toRem(579);
+      line-height: 142.857143%; /* 20/14 */
+
+      @media (max-width: toEm(370)) {
+        text-align: center;
+      }
+   }
+}
+
+.item-features {
+   @include flex-column($align-items: flex-start);
+   gap: toRem(22);
+
+   // .item-features__item
+   &__item {}
+}
+
+// ===========================================================================================
+// -----------------------------
+// pricing
+// -----------------------------
+.pricing {
+   @include img-bg-cover("/src/assets/img/images/bg-pricing-img.webp");
+   @include overlay($opacity:0.4);
+   // .pricing__container
+   &__container {}
+
+   // .pricing__header
+   &__header {
+      @include adaptiveValue('margin-bottom', 99, 35);
+   }
+
+   // .pricing__items
+   &__items {
+      @include grid-adaptive($size: toRem(250));
+      @include adaptiveValue('gap', 48, 20);
+   }
+}
+
+
 
 
 
