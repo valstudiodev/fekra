@@ -3,7 +3,7 @@
 
 
 .header {
-   // display: none;
+   display: none;
    @include adaptiveValue('padding-block', 25, 15);
    position: fixed;
    top: 0;

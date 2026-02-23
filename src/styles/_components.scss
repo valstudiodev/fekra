@@ -443,7 +443,8 @@
 .top-pricing {
    background-color: $bgSecondaryDark;
    padding-block: toRem(20);
-   padding-inline: toRem(80);
+   // padding-inline: toRem(80);
+   @include adaptiveValue('padding-inline', 80, 20);
    // .top-pricing__title
    &__title {
       @include adaptiveValue('font-size', 18, 16);
@@ -459,12 +460,18 @@
    @include flex-column;
    @include adaptiveValue('gap',29,15);
    background-color: $white;
-   padding-inline: toRem(52);
+   // padding-inline: toRem(52);
+   @include adaptiveValue('padding-inline', 52, 20);
    padding-top: toRem(11);
    padding-bottom: toRem(26);
 
    // .body-pricing__button
-   &__button {}
+   &__button {
+
+      @media (max-width: toEm(440)) {
+        width: 100%;
+      }
+   }
 }
 
 .price {
@@ -507,7 +514,8 @@
 }
 
 .item-history-advant {
-
+   will-change: box-shadow;
+   transition: box-shadow 0.4s ease;
    &__inner {
       display: flex;
       @include adaptiveValue('gap', 41, 20);
@@ -548,6 +556,10 @@
       }
    }
 
+
+   @include hover {
+      box-shadow: 2px 3px 4px $accentOrange;
+   }
 }
 
 .content-adv-history {
@@ -777,5 +789,125 @@
       color: $textGrey;
       text-transform: uppercase;
       text-align: center;
+   }
+}
+
+.item-fact {
+   display: flex;
+   align-items: flex-start;
+   gap: toRem(34);
+
+   &__icon {
+      padding-top: toRem(27);
+      width: toRem(45);
+      height: toRem(50);
+      flex-shrink: 0;
+   }
+
+   // .item-fact__content
+   &__content {
+      @include flex-column($align-items:flex-start);
+      flex-grow: 1;
+   }
+
+   // .item-fact__title
+   &__title {
+      position: relative;
+      // @include adaptiveValue('font-size', 70, 50);
+      font-size: toRem(70);
+      color: $bgSecondaryDark;
+      line-height: 120%; /* 84/70 */
+      padding-bottom: toRem(11);
+      margin-bottom: toRem(16);
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 60%;
+        height: toRem(3);
+        background-color: $accentOrange;
+      }
+   }
+
+   // .item-fact__label
+   &__label {
+      font-size: toRem(14);
+      color: $bgSecondaryDark;
+      line-height: 121.428571%; /* 17/14 */
+      text-transform: uppercase;
+   }
+}
+
+.item-testimonials {
+   @include flex-column;
+   @include adaptiveValue('gap', 33, 15);
+
+   // .item-testimonials__avatar
+   &__avatar {}
+
+   &__content {
+      @include flex-column;
+      @include adaptiveValue('gap', 18, 12);
+   }
+
+   // .item-testimonials__text
+   &__text {
+      font-size: toRem(14);
+      line-height: 121.428571%; /* 17/14 */
+      color: $white;
+      max-width: toRem(594);
+      text-align: center;
+   }
+
+   // .item-testimonials__name
+   &__name {
+      font-size: toRem(16);
+      color: $white;
+      text-transform: uppercase;
+      line-height: 118.75%; /* 19/16 */
+      text-align: center;
+   }
+
+   // .item-testimonials__label
+   &__label {
+      font-size: toRem(11);
+      color: $white;
+      text-align: center;
+      text-transform: uppercase;
+      line-height: 118.181818%; /* 13/11 */
+   }
+
+   &__footer {
+      @include flex-column;
+      gap: toRem(10);
+   }
+}
+
+.item-img-date {
+   // position: relative;
+   // display: flex;
+   // flex-direction: column;
+   // align-items: center;
+   // border: toRem(4) solid $white;
+
+   // .item-img-date__icon
+   &__icon {
+
+   }
+
+   // .item-img-date__date
+   &__date {
+      @include flex-column;
+      font-size: toRem(22);
+      font-weight: 700;
+      color: $white;
+      gap: toRem(4);
+      line-height: 136.363636%; /* 30/22 */
+      text-align: center;
+      background-color: $bgSecondaryDark;
+      padding-block: toRem(7);
+      padding-inline: toRem(17);
    }
 }
