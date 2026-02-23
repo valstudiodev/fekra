@@ -40,9 +40,10 @@
    </style>
    <link rel="icon" type="image/svg+xml" href="/fekra/favicon.ico" />
    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
    <title>Fekra</title>
-  <script type="module" crossorigin src="/fekra/assets/main.ed439f17.js"></script>
-  <link rel="stylesheet" href="/fekra/assets/index.51fed6da.css">
+  <script type="module" crossorigin src="/fekra/assets/main.7640fb63.js"></script>
+  <link rel="stylesheet" href="/fekra/assets/index.80e6113f.css">
 </head>
 
 <body>
@@ -284,7 +285,81 @@
             </div>
          </section>
 
-         <!-- estimonials -->
+         <section class="page__testimonials testimonials">
+            <div class="testimonials__container">
+               <div class="testimonials__header block-header block-header--white">
+                  <h2 class="block-header__title">TESTIMONIALS</h2>
+               </div>
+               <div class="testimonials__body">
+                  <!-- Slider main container -->
+                  <div class="testimonials__slider slider-testimonials swiper">
+                     <!-- Additional required wrapper -->
+                     <div class="slider-testimonials__wrapper swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="slider-testimonials__slide swiper-slide">
+                           <article class="item-testimonials">
+                              <img src="data:image/webp;base64,UklGRqgFAABXRUJQVlA4WAoAAAAQAAAATwAATwAAQUxQSNYBAAABkCJt21Nnj2W+QTOolFOWQqYSSzRZQFCclYSygSDRwSJxKKaJotITFvD9BTjwfe8CImICsLZ26XpxmtdtW+dp7LmXGiRmZlDwBYvAZHIY0cAXH54N4VSn4itXj6pIzH3lAr66TBir44J2lhgnCRf45UQA+4sL/WWvpXhc+CdlFT3jEmb6CpuGS9lsFtv3XNJ+v9Cm59L2m0X0hkvc6AsoGZc6U47zuORPR9lcevuIky/5vk7mJZzAl1kWJ9GawToaOjblciLdCfWVild1zOFkPo5VdFQjBifU+C+i5BkAGygZGGByUk0gpCUACloKaJxY7ZKaS5ca16fGi6mJU2rSnJq8pqZuqWnpqampc2rylJo0pib2qfEO1LhX1Fxq1GgoaCmAkJYAuKPFBNhAycAARJREAHBBifEfKjoqjDp0OGPqKxWv6hgOVLiYZB0NHZvCPQ0W5iYUJJh98iXf18k8PMhn41hPNg9HK5lcmXIc9EamRseSm16efoNl970s/R5Lbxo5mg2W1zMZMh1rKp54noKVH77E+rKx/kkiUnICIe87UToLorLDqwivLoPAqlOtVTkqRL+IhuWGyICU7C4slihCk0Fi7ergx2let22dp7HvXmpYG1ZQOCCsAwAAcBMAnQEqUABQAD6RRJtKJaOiIaZ2a5iwEgljAL9sLsxivPy5L68KtPe00pQbU5X/2xXBD4wuHQwrZ0tUBhFPilv3uMZIqG/6geWjh3IimaDV45ht7u/VpZ3KHU2+de54Va4Th6AuCyDrnWdl/SiwixS/Q8tYdvrA85Y4mLQedLBbjlJ40ohpgh3oPYtV7NTZ429jCZh/QXkWw0zW/J3L+mz0YDQA/vx6/+V/xt//yLLhdvsw8PJjmyX1tVXQ9gVJIHzyUYIVxVM/ABIxxNZfbozCpQJ+GFjXHhZNHVmBwllCPt5oGWMbeKZH0qHQY9HFJPZQRFLR/1T5QJK6Rnjdq46uNty+SKHnivj68Qq7ADV6XQxbYh+Q+FZ6Urbb0vEY2tk9yaeDfPv380acT1EnnbUZdE+zfSsxSwXMqn2ob3WlJUko1Y0Yc9+mp5yPVXeGucWNzr0PfmQX5sDBRNsair0XwUYpVFmqy9F9BljQtJEF/8dNILTxzgmiU3nw8j1Hlf6QC1rZizyiiE/roPvYRmPJzBvvsWSVDrxeu5Ej5Auh7U96puTXsnb4aQ33VMp/y1Fah1V+2fNS99UDjNyuXrAiWRxzVOW8l7/dwP9r+wjfigkwFfZXtLAXtxLbcbCiHHrqjMzwGGKqVdUbZzGcsbEjqTj8d5rdu2jmBzvaPP6hpvwBGv/vJQWUzfu4Va5YlMHUCSvillhLedWQ+DvTVrdRZGF0V18Lo0sZaAAWGb+643jaI4cHma3zQsOYHIXVVOMUGo6F+4cE3wqBsj9XGWi1HCdKMj2fv/E6WA2Uk/iv3r4/HOoNAQq16i9ypuBAdV9c2bmxzP4tdu8zVqjZrkSPKEloyiBAkqv7w9h+Y3KY2CNAfcXT52iaCl2npMdzBqudwwrRkcF1X23wr2YqHzlBYiTeEsRFoXqbx63vxBU9qN1TqNgu4kSs2D9YdfhziZYKywgmW4kQT4aha6C3AKCezHuQpKRRGSk+cw6YRnlEUTqr9Cb9fiJfYI3pFomwK+7nEmgWdFuy8/PeCzhUGtn+WZNFLtup9HDDnTEaM9rNfGxEUdgw9WZBNqaNRAZS9e8OoZquL7bThGusFn1Dz2N714oFQNivgiB1ACWCZvnin48hC0a1rPImrEjTejjwN4w3bpt1PibCw7TTAGHTcEKb5tDXPcF4h0T+Y89Or/DFOXobplQmkHXHCbmUV1EzP7cH//WCf/1f9//6u3gQFSFRwcbSCYDMA6gAAA==" alt="avatar image"
+                                 class="item-testimonials__avatar">
+                              <div class="item-testimonials__content">
+                                 <blockquote class="item-testimonials__text">
+                                    <p>"Temporibus autem quibusdam et aut officiis debitis. Itaque earum rerum hic
+                                       tenetur a sapiente
+                                       delectus Nam libero
+                                       tempore, cum soluta nobis est eligendi option."
+                                    </p>
+                                 </blockquote>
+                                 <div class="item-testimonials__footer">
+                                    <cite class="item-testimonials__name">TERESA LISBON</cite>
+                                    <span class="item-testimonials__label">HTMLBEANS - CEO</span>
+                                 </div>
+                              </div>
+                           </article>
+                        </div>
+                        <div class="slider-testimonials__slide swiper-slide">
+                           <article class="item-testimonials">
+                              <img src="data:image/webp;base64,UklGRqgFAABXRUJQVlA4WAoAAAAQAAAATwAATwAAQUxQSNYBAAABkCJt21Nnj2W+QTOolFOWQqYSSzRZQFCclYSygSDRwSJxKKaJotITFvD9BTjwfe8CImICsLZ26XpxmtdtW+dp7LmXGiRmZlDwBYvAZHIY0cAXH54N4VSn4itXj6pIzH3lAr66TBir44J2lhgnCRf45UQA+4sL/WWvpXhc+CdlFT3jEmb6CpuGS9lsFtv3XNJ+v9Cm59L2m0X0hkvc6AsoGZc6U47zuORPR9lcevuIky/5vk7mJZzAl1kWJ9GawToaOjblciLdCfWVild1zOFkPo5VdFQjBifU+C+i5BkAGygZGGByUk0gpCUACloKaJxY7ZKaS5ca16fGi6mJU2rSnJq8pqZuqWnpqampc2rylJo0pib2qfEO1LhX1Fxq1GgoaCmAkJYAuKPFBNhAycAARJREAHBBifEfKjoqjDp0OGPqKxWv6hgOVLiYZB0NHZvCPQ0W5iYUJJh98iXf18k8PMhn41hPNg9HK5lcmXIc9EamRseSm16efoNl970s/R5Lbxo5mg2W1zMZMh1rKp54noKVH77E+rKx/kkiUnICIe87UToLorLDqwivLoPAqlOtVTkqRL+IhuWGyICU7C4slihCk0Fi7ergx2let22dp7HvXmpYG1ZQOCCsAwAAcBMAnQEqUABQAD6RRJtKJaOiIaZ2a5iwEgljAL9sLsxivPy5L68KtPe00pQbU5X/2xXBD4wuHQwrZ0tUBhFPilv3uMZIqG/6geWjh3IimaDV45ht7u/VpZ3KHU2+de54Va4Th6AuCyDrnWdl/SiwixS/Q8tYdvrA85Y4mLQedLBbjlJ40ohpgh3oPYtV7NTZ429jCZh/QXkWw0zW/J3L+mz0YDQA/vx6/+V/xt//yLLhdvsw8PJjmyX1tVXQ9gVJIHzyUYIVxVM/ABIxxNZfbozCpQJ+GFjXHhZNHVmBwllCPt5oGWMbeKZH0qHQY9HFJPZQRFLR/1T5QJK6Rnjdq46uNty+SKHnivj68Qq7ADV6XQxbYh+Q+FZ6Urbb0vEY2tk9yaeDfPv380acT1EnnbUZdE+zfSsxSwXMqn2ob3WlJUko1Y0Yc9+mp5yPVXeGucWNzr0PfmQX5sDBRNsair0XwUYpVFmqy9F9BljQtJEF/8dNILTxzgmiU3nw8j1Hlf6QC1rZizyiiE/roPvYRmPJzBvvsWSVDrxeu5Ej5Auh7U96puTXsnb4aQ33VMp/y1Fah1V+2fNS99UDjNyuXrAiWRxzVOW8l7/dwP9r+wjfigkwFfZXtLAXtxLbcbCiHHrqjMzwGGKqVdUbZzGcsbEjqTj8d5rdu2jmBzvaPP6hpvwBGv/vJQWUzfu4Va5YlMHUCSvillhLedWQ+DvTVrdRZGF0V18Lo0sZaAAWGb+643jaI4cHma3zQsOYHIXVVOMUGo6F+4cE3wqBsj9XGWi1HCdKMj2fv/E6WA2Uk/iv3r4/HOoNAQq16i9ypuBAdV9c2bmxzP4tdu8zVqjZrkSPKEloyiBAkqv7w9h+Y3KY2CNAfcXT52iaCl2npMdzBqudwwrRkcF1X23wr2YqHzlBYiTeEsRFoXqbx63vxBU9qN1TqNgu4kSs2D9YdfhziZYKywgmW4kQT4aha6C3AKCezHuQpKRRGSk+cw6YRnlEUTqr9Cb9fiJfYI3pFomwK+7nEmgWdFuy8/PeCzhUGtn+WZNFLtup9HDDnTEaM9rNfGxEUdgw9WZBNqaNRAZS9e8OoZquL7bThGusFn1Dz2N714oFQNivgiB1ACWCZvnin48hC0a1rPImrEjTejjwN4w3bpt1PibCw7TTAGHTcEKb5tDXPcF4h0T+Y89Or/DFOXobplQmkHXHCbmUV1EzP7cH//WCf/1f9//6u3gQFSFRwcbSCYDMA6gAAA==" alt="avatar image"
+                                 class="item-testimonials__avatar">
+                              <div class="item-testimonials__content">
+                                 <blockquote class="item-testimonials__text">
+                                    <p>"Temporibus autem quibusdam et aut officiis debitis. Itaque earum rerum hic
+                                       tenetur a sapiente
+                                       delectus Nam libero
+                                       tempore, cum soluta nobis est eligendi option."
+                                    </p>
+                                 </blockquote>
+                                 <div class="item-testimonials__footer">
+                                    <cite class="item-testimonials__name">TERESA LISBON</cite>
+                                    <span class="item-testimonials__label">HTMLBEANS - CEO</span>
+                                 </div>
+                              </div>
+                           </article>
+                        </div>
+                        <div class="slider-testimonials__slide swiper-slide">
+                           <article class="item-testimonials">
+                              <img src="data:image/webp;base64,UklGRqgFAABXRUJQVlA4WAoAAAAQAAAATwAATwAAQUxQSNYBAAABkCJt21Nnj2W+QTOolFOWQqYSSzRZQFCclYSygSDRwSJxKKaJotITFvD9BTjwfe8CImICsLZ26XpxmtdtW+dp7LmXGiRmZlDwBYvAZHIY0cAXH54N4VSn4itXj6pIzH3lAr66TBir44J2lhgnCRf45UQA+4sL/WWvpXhc+CdlFT3jEmb6CpuGS9lsFtv3XNJ+v9Cm59L2m0X0hkvc6AsoGZc6U47zuORPR9lcevuIky/5vk7mJZzAl1kWJ9GawToaOjblciLdCfWVild1zOFkPo5VdFQjBifU+C+i5BkAGygZGGByUk0gpCUACloKaJxY7ZKaS5ca16fGi6mJU2rSnJq8pqZuqWnpqampc2rylJo0pib2qfEO1LhX1Fxq1GgoaCmAkJYAuKPFBNhAycAARJREAHBBifEfKjoqjDp0OGPqKxWv6hgOVLiYZB0NHZvCPQ0W5iYUJJh98iXf18k8PMhn41hPNg9HK5lcmXIc9EamRseSm16efoNl970s/R5Lbxo5mg2W1zMZMh1rKp54noKVH77E+rKx/kkiUnICIe87UToLorLDqwivLoPAqlOtVTkqRL+IhuWGyICU7C4slihCk0Fi7ergx2let22dp7HvXmpYG1ZQOCCsAwAAcBMAnQEqUABQAD6RRJtKJaOiIaZ2a5iwEgljAL9sLsxivPy5L68KtPe00pQbU5X/2xXBD4wuHQwrZ0tUBhFPilv3uMZIqG/6geWjh3IimaDV45ht7u/VpZ3KHU2+de54Va4Th6AuCyDrnWdl/SiwixS/Q8tYdvrA85Y4mLQedLBbjlJ40ohpgh3oPYtV7NTZ429jCZh/QXkWw0zW/J3L+mz0YDQA/vx6/+V/xt//yLLhdvsw8PJjmyX1tVXQ9gVJIHzyUYIVxVM/ABIxxNZfbozCpQJ+GFjXHhZNHVmBwllCPt5oGWMbeKZH0qHQY9HFJPZQRFLR/1T5QJK6Rnjdq46uNty+SKHnivj68Qq7ADV6XQxbYh+Q+FZ6Urbb0vEY2tk9yaeDfPv380acT1EnnbUZdE+zfSsxSwXMqn2ob3WlJUko1Y0Yc9+mp5yPVXeGucWNzr0PfmQX5sDBRNsair0XwUYpVFmqy9F9BljQtJEF/8dNILTxzgmiU3nw8j1Hlf6QC1rZizyiiE/roPvYRmPJzBvvsWSVDrxeu5Ej5Auh7U96puTXsnb4aQ33VMp/y1Fah1V+2fNS99UDjNyuXrAiWRxzVOW8l7/dwP9r+wjfigkwFfZXtLAXtxLbcbCiHHrqjMzwGGKqVdUbZzGcsbEjqTj8d5rdu2jmBzvaPP6hpvwBGv/vJQWUzfu4Va5YlMHUCSvillhLedWQ+DvTVrdRZGF0V18Lo0sZaAAWGb+643jaI4cHma3zQsOYHIXVVOMUGo6F+4cE3wqBsj9XGWi1HCdKMj2fv/E6WA2Uk/iv3r4/HOoNAQq16i9ypuBAdV9c2bmxzP4tdu8zVqjZrkSPKEloyiBAkqv7w9h+Y3KY2CNAfcXT52iaCl2npMdzBqudwwrRkcF1X23wr2YqHzlBYiTeEsRFoXqbx63vxBU9qN1TqNgu4kSs2D9YdfhziZYKywgmW4kQT4aha6C3AKCezHuQpKRRGSk+cw6YRnlEUTqr9Cb9fiJfYI3pFomwK+7nEmgWdFuy8/PeCzhUGtn+WZNFLtup9HDDnTEaM9rNfGxEUdgw9WZBNqaNRAZS9e8OoZquL7bThGusFn1Dz2N714oFQNivgiB1ACWCZvnin48hC0a1rPImrEjTejjwN4w3bpt1PibCw7TTAGHTcEKb5tDXPcF4h0T+Y89Or/DFOXobplQmkHXHCbmUV1EzP7cH//WCf/1f9//6u3gQFSFRwcbSCYDMA6gAAA==" alt="avatar image"
+                                 class="item-testimonials__avatar">
+                              <div class="item-testimonials__content">
+                                 <blockquote class="item-testimonials__text">
+                                    <p>"Temporibus autem quibusdam et aut officiis debitis. Itaque earum rerum hic
+                                       tenetur a sapiente
+                                       delectus Nam libero
+                                       tempore, cum soluta nobis est eligendi option."
+                                    </p>
+                                 </blockquote>
+                                 <div class="item-testimonials__footer">
+                                    <cite class="item-testimonials__name">TERESA LISBON</cite>
+                                    <span class="item-testimonials__label">HTMLBEANS - CEO</span>
+                                 </div>
+                              </div>
+                           </article>
+                        </div>
+                     </div>
+                  </div>
+                  <!-- If we need pagination -->
+                  <div class="slider-testimonials__pagination swiper-pagination"></div>
+               </div>
+            </div>
+         </section>
 
          <section class="page__work work">
             <div class="work__container">
@@ -592,6 +667,139 @@
                </div>
             </div>
          </section>
+
+         <section class="page__blogs blogs">
+            <div class="blogs__container">
+               <div class="blogs__header block-header">
+                  <h2 class="block-header__title">Our Blogs</h2>
+                  <div class="block-header__text">
+                     <p>Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+                        laoreet dolore magna
+                        aliquam erat volutpat. Ut wisi enim ad minim veniam
+                     </p>
+                  </div>
+               </div>
+               <div class="blogs__body">
+                  <!-- Slider main container -->
+                  <div class="blogs__slider slider-blogs swiper">
+                     <!-- Additional required wrapper -->
+                     <div class="slider-blogs__wrapper swiper-wrapper">
+                        <!-- Slides -->
+                        <div class="slider-blogs__slide swiper-slide">
+
+                        </div>
+                        <div class="slider-blogs__slide swiper-slide">
+
+                        </div>
+                        <div class="slider-blogs__slide swiper-slide">
+
+                        </div>
+                     </div>
+                  </div>
+                  <!-- If we need pagination -->
+                  <!-- <div class="slider-blogs__pagination swiper-pagination"></div> -->
+               </div>
+            </div>
+         </section>
+
+         <section class="page__facts facts">
+            <div class="facts__container">
+               <div class="facts__content content-facts">
+                  <div class="content-facts__header">
+                     <h2 class="content-facts__title">Company Facts Sheet</h2>
+                     <div class="content-facts__text">
+                        <p>Suspendisse et metus eu massa lobortis condimentum sed ut orci. Nullam viverra dapibus risus,
+                           eu
+                           tristique
+                           nislsollicitudin at. Etiam iaculis blandit libero. licitudtin at. Etiam iaculis blandit
+                           libero.
+                           licitudin.Lorem Ipsum is
+                           simply dummy text of the printing and typesetting industry.
+                        </p>
+                     </div>
+                  </div>
+                  <div class="content-facts__items">
+                     <article class="item-fact">
+                        <div class="item-fact__icon">
+                           <img src="/fekra/assets/fact-i-01.ac8d40f8.svg" alt="fact's icon">
+                        </div>
+                        <div class="item-fact__content">
+                           <h3 class="item-fact__title">56</h3>
+                           <span class="item-fact__label">CLIENTS WORKED</span>
+                        </div>
+                     </article>
+                     <article class="item-fact">
+                        <div class="item-fact__icon">
+                           <img src="/fekra/assets/fact-i-02.c0ffda77.svg" alt="fact's icon">
+                        </div>
+                        <div class="item-fact__content">
+                           <h3 class="item-fact__title">360</h3>
+                           <span class="item-fact__label">HAMBURGER ORDERED</span>
+                        </div>
+                     </article>
+                     <article class="item-fact">
+                        <div class="item-fact__icon">
+                           <img src="/fekra/assets/fact-i-03.130f7643.svg" alt="fact's icon">
+                        </div>
+                        <div class="item-fact__content">
+                           <h3 class="item-fact__title">89</h3>
+                           <span class="item-fact__label">PROJECT FINISHED</span>
+                        </div>
+                     </article>
+                     <article class="item-fact">
+                        <div class="item-fact__icon">
+                           <img src="/fekra/assets/fact-i-04.76bf76bc.svg" alt="fact's icon">
+                        </div>
+                        <div class="item-fact__content">
+                           <h3 class="item-fact__title">42</h3>
+                           <span class="item-fact__label">EMPLOYEER</span>
+                        </div>
+                     </article>
+                  </div>
+               </div>
+               <div class="facts__image">
+                  <img src="/fekra/assets/tablet-banner.63091df0.webp" alt="tablet banner">
+               </div>
+            </div>
+         </section>
+
+         <div class="page__partners partners">
+            <div class="partners__container">
+               <a href="#" class="partners__item">
+                  <img class="partners__icon" src="/fekra/assets/partners-logo-01.6cdce547.svg" alt="logo partners">
+               </a>
+               <a href="#" class="partners__item">
+                  <img class="partners__icon" src="/fekra/assets/partners-logo-02.218611a3.svg" alt="logo partners">
+               </a>
+               <a href="#" class="partners__item">
+                  <img class="partners__icon" src="/fekra/assets/partners-logo-03.0f3361ec.svg" alt="logo partners">
+               </a>
+               <a href="#" class="partners__item">
+                  <img class="partners__icon" src="/fekra/assets/partners-logo-04.d8b421a5.svg" alt="logo partners">
+               </a>
+            </div>
+         </div>
+
+         <section class="page__banner-social social-banner">
+            <div class="social-banner__container">
+               <h2 class="social-banner__title">Title social-banner</h2>
+               <div class="social-banner__logo">
+                  <img src="/fekra/assets/logo.2b9b155e.svg" alt="logo icon">
+               </div>
+               <div class="social-banner__text">
+                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Vestibulum turpis nulla,
+                     suscipit at lacinia
+                     et, elementum ac neque. Vestibulum at neque dui.
+                  </p>
+               </div>
+               <div class="social-banner__links">
+                  <a href="#" class="link-social link-social--icon-fb"></a>
+                  <a href="#" class="link-social link-social--icon-twitter"></a>
+                  <a href="#" class="link-social link-social--icon-google-plus"></a>
+                  <a href="#" class="link-social link-social--icon-telegram"></a>
+               </div>
+            </div>
+         </section>
       </main>
 
       <footer class="footer">
@@ -603,6 +811,7 @@
 
 
    <div id="app"></div>
+   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
    
 </body>
 
