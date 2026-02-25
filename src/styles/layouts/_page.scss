@@ -6,63 +6,63 @@
 
    // .page__hero
    &__hero {
-      display: none;
+      // display: none;
       @include adaptiveValue('padding-top', 375, 200);
       @include adaptiveValue('padding-bottom', 387, 100);
    }
 
    // .page__history
    &__history {
-      display: none;
+      // display: none;
       @include adaptiveValue('padding-block', 105, 50);
    }
 
    // .page__banner
    &__banner {
-      display: none;
+      // display: none;
       @include adaptiveValue('padding-block', 135, 50);
    }
 
    // .page__team
    &__team {
-      display: none;
+      // display: none;
       @include adaptiveValue('padding-block', 118, 50);
    }
 
    // .page__work
    &__work {
-      display: none;
+      // display: none;
       @include adaptiveValue('padding-top', 140, 50);
       @include adaptiveValue('padding-bottom', 120, 50);
    }
 
    // .page__features
    &__features {
-      display: none;
+      // display: none;
    }
 
    // .page__pricing
    &__pricing {
-      display: none;
+      // display: none;
       @include adaptiveValue('padding-top', 113, 50);
       @include adaptiveValue('padding-bottom', 158, 50);
    }
 
    // .page__facts
    &__facts {
-      display: none;
+      // display: none;
       padding-top: toRem(50);
       @include adaptiveValue('padding-bottom', 107, 50);
    }
 
    &__partners {
-      display: none;
+      // display: none;
       @include adaptiveValue('padding-block', 50, 25);
    }
 
    // .page__banner-social
    &__banner-social {
-      display: none;
+      // display: none;
       @include adaptiveValue('padding-top', 104, 50);
       @include adaptiveValue('padding-bottom', 60, 30);
    }
@@ -73,6 +73,12 @@
       @include adaptiveValue('padding-top', 106, 50);
       @include adaptiveValue('padding-bottom', 198, 50);
    }
+
+   // .page__blogs
+   &__blogs {
+      // display: none;
+      @include adaptiveValue('padding-block', 130, 50);
+   }
 }
 // ===========================================================================================
 // -----------------------------
@@ -80,8 +86,6 @@
 // -----------------------------
 .hero {
    @include img-bg-cover("/src/assets/img/images/hero-img.webp");
-   height: 100svh;
-   // width: 100dvw;
 
    @media (max-width: toEm($mobile)) {
       @include overlay-gradient($opacity-start: 0.5, $opacity-end: 0.3);
@@ -299,11 +303,7 @@
    }
 
    // .testimonials__body
-   &__body {
-      // display: flex;
-      // flex-direction: column;
-      // gap: toRem(40);
-   }
+   &__body {}
 
    // .testimonials__slider
    &__slider {
@@ -312,7 +312,7 @@
 }
 
 .slider-testimonials {
-   overflow: visible;
+   // overflow: visible;
 
    // .slider-testimonials__wrapper
    &__wrapper {}
@@ -321,24 +321,12 @@
    &__slide {}
 
    // .slider-testimonials__pagination
-   &__pagination {
-      position: static;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+   &__pagination {}
+}
 
-      .swiper-pagination-bullet {
-         width: toRem(5);
-         height: toRem(5);
-         opacity: 1;
-         background-color: transparent;
-         border: toRem(1) solid rgba(255, 255, 255, 1);
-
-      }
-      .swiper-pagination-bullet-active {
-         background-color: $accentOrange;
-         border: none;
-      }
+.swiper-pagination {
+   &.slider-testimonials__pagination {
+      @include customize-bullets($active-color: $accentOrange, $border: toRem(1), $scale-active: 1.1, $size: toRem(5));
    }
 }
 
@@ -381,6 +369,10 @@
    &__items {
       @include grid-adaptive($size: toRem(250));
       // @include flexbox($wrap:wrap);
+
+      @media (max-width: toEm($mobile)) {
+        gap: toRem(10);
+      }
 
       @media (max-width: toEm(629)) {
         flex-wrap: nowrap;
@@ -541,6 +533,86 @@
 // -----------------------------
 // blogs
 // -----------------------------
+.blogs {
+
+   // .blogs__header
+   &__header {
+      @include adaptiveValue('margin-bottom', 76, 35);
+      .block-header__text {
+         color: $black;
+         max-width: toRem(779);
+      }
+   }
+
+   // .blogs__body
+   &__body {}
+
+   // .blogs__slider
+   &__slider {}
+}
+
+.slider-blogs {
+   @include adaptiveValue('margin-bottom', 95, 40);
+}
+
+.item-blogs {
+
+   &__inner {
+      position: relative;
+   }
+
+   // .item-blogs__image
+   &__image {
+      aspect-ratio: 560 / 220;
+      margin-bottom: toRem(7);
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+
+   // .item-blogs__content
+   &__content {
+      color: $black;
+      @include flex-column($align-items:flex-start);
+      gap: toRem(8);
+      text-align: left;
+      padding-inline-start: percent(125,590);
+      padding-inline-end: toRem(10);
+
+      @media (max-width: toEm(800)) {
+         padding-inline-start: toRem(10);
+      }
+   }
+
+   // .item-blogs__title
+   &__title {
+      @include adaptiveValue('font-size', 18, 16);
+      font-weight: 700;
+      line-height: 133.333333%; /* 24/18 */
+   }
+
+   // .item-blogs__text
+   &__text {
+      @include adaptiveValue('font-size', 13, 11);
+      line-height: 169.230769%; /* 22/13 */
+   }
+}
+
+.swiper-pagination {
+   &.slider-blogs__pagination {
+      @include customize-bullets(
+               $active-color:$black,
+               $border:toRem(1),
+               $inactive-border-color:$white,
+               $background:$textGrey,
+               $size:toRem(10),
+               $gap: toRem(13),
+               $sizeBefore: toRem(20)
+            );
+   }
+}
 
 // ===========================================================================================
 // -----------------------------
@@ -584,6 +656,10 @@
       @include flex-column($align-items:flex-start);
       gap: toRem(15);
       @include adaptiveValue('margin-bottom', 53, 30);
+
+      @media (max-width: toEm(629)) {
+        align-items: center;
+      }
    }
 
    // .content-facts__title
@@ -600,12 +676,15 @@
       @include adaptiveValue('font-size', 16, 14);
       color: $textGrey;
       max-width: toRem(778);
+
+      @media (max-width: toEm(629)) {
+        text-align: center;
+      }
    }
 
    // .content-facts__items
    &__items {
       @include grid-adaptive($size: toRem(290), $gap: toRem(20));
-      row-gap: toRem(30);
    }
 }
 

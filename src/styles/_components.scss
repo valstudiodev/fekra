@@ -516,6 +516,8 @@
 .item-history-advant {
    will-change: box-shadow;
    transition: box-shadow 0.4s ease;
+   padding: toRem(5);
+
    &__inner {
       display: flex;
       @include adaptiveValue('gap', 41, 20);
@@ -541,13 +543,6 @@
          color: $accentOrange;
          @include transition;
       }
-
-      // @include hover {
-      //    &::before {
-      //       background-color: $accentOrange;
-      //       color: $white;
-      //    }
-      // }
    }
 
    &--feature {
@@ -813,8 +808,8 @@
    // .item-fact__title
    &__title {
       position: relative;
-      // @include adaptiveValue('font-size', 70, 50);
-      font-size: toRem(70);
+      @include adaptiveValue('font-size', 70, 50);
+      // font-size: toRem(70);
       color: $bgSecondaryDark;
       line-height: 120%; /* 84/70 */
       padding-bottom: toRem(11);
@@ -886,28 +881,79 @@
 }
 
 .item-img-date {
-   // position: relative;
-   // display: flex;
-   // flex-direction: column;
-   // align-items: center;
-   // border: toRem(4) solid $white;
+   position: absolute;
+   bottom: 0;
+   left: percent(12,590);
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+
+   @media (max-width: toEm(800)) {
+      top: toRem(5);
+      left: toRem(5);
+   }
+
+   &__top {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      // width: toRem(86);
+      @include adaptiveValue('width',86,60);
+      @include adaptiveValue('height',80,60);
+      border: toRem(4) solid $white;
+      border-bottom: none;
+
+      &::before {
+         content: "";
+         @include abs-center;
+         background-color: $accentOrange;
+         width: 100%;
+         height: 100%;
+         z-index: 1;
+      }
+
+      @media (max-width: toEm(800)) {
+        display: none;
+      }
+   }
 
    // .item-img-date__icon
    &__icon {
+      position: relative;
+      z-index: 2;
+      width: toRem(35);
+      height: toRem(35);
+      flex-shrink: 0;
+      fill: $white;
+   }
 
+   &__bottom {
+      @include adaptiveValue('width', 86, 60);
+      @include adaptiveValue('height', 80, 60);
+      border: toRem(4) solid $white;
+      border-top: none;
+      border-bottom: none;
    }
 
    // .item-img-date__date
    &__date {
       @include flex-column;
-      font-size: toRem(22);
+      justify-content: center;
       font-weight: 700;
+      text-transform: uppercase;
       color: $white;
       gap: toRem(4);
       line-height: 136.363636%; /* 30/22 */
       text-align: center;
+      width: 100%;
+      height: 100%;
       background-color: $bgSecondaryDark;
       padding-block: toRem(7);
       padding-inline: toRem(17);
+
+      span {
+         @include adaptiveValue('font-size', 22, 16);
+      }
    }
 }

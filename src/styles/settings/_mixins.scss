@@ -42,6 +42,58 @@
 
 // ===========================================================================================
 // -----------------------------
+// customize-bullets
+// -----------------------------
+@mixin customize-bullets(
+   $active-color,
+   $inactive-border-color: #fff,
+   $size: 12px,
+   $gap: 8px,
+   $scale-active: 1,
+   $border: none,
+   $background: transparent,
+   $sizeBefore: 10px)
+{
+   display: flex;
+   justify-content: center;
+   gap: $gap;
+   position: static;
+
+   .swiper-pagination-bullet {
+      width: $size;
+      height: $size;
+      border: $border solid $inactive-border-color;
+      background: $background;
+      position: relative;
+      opacity: 1;
+      box-sizing: border-box;
+      cursor: pointer;
+      margin: 0 !important;
+      transition:
+         background-color 0.3s ease,
+         border-color 0.3s ease,
+         transform 0.3s ease;
+
+      // Збільшуємо зону кліку до 44px (рекомендація Apple/Google)
+      &::before {
+         content: '';
+         position: absolute;
+         top: 50%;
+         left: 50%;
+         transform: translate(-50%, -50%);
+         width: $sizeBefore;
+         height: $sizeBefore;
+      }
+
+      &.swiper-pagination-bullet-active {
+         background-color: $active-color;
+         border-color: $active-color;
+         transform: scale($scale-active);
+      }
+   }
+}
+// ===========================================================================================
+// -----------------------------
 // buttons
 // -----------------------------
 @mixin buttonMore(

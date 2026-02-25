@@ -1,2 +1,315 @@
 @use '../settings/settings' as *;
 @use '../settings/mixins' as *;
+
+.footer {
+   color: $white;
+   background-color: $bgMainDark;
+}
+
+.body-footer {
+   @include adaptiveValue('padding-block', 80, 40);
+
+   // .body-footer__container
+   &__container {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      // @include adaptiveValue('gap', 20, 10);
+      gap: toRem(20);
+
+      @media (max-width: toEm(883)) {
+         justify-content: flex-start;
+      }
+      @media (max-width: toEm(644)) {
+        flex-direction: column;
+      }
+   }
+
+   // .body-footer__column
+   &__column {}
+}
+
+.bottom-footer {
+   @include adaptiveValue('padding-block', 35, 20);
+   background-color: $bgSecondaryDark;
+
+   // .bottom-footer__container
+   &__container {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      @include adaptiveValue('gap', 30, 15);
+
+      @media (max-width: toEm(596)) {
+        justify-content: center;
+      }
+   }
+
+   // .bottom-footer__list
+   &__list {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      @include adaptiveValue('column-gap', 15, 10);
+      row-gap: toRem(5);
+      justify-content: center;
+   }
+
+   // .bottom-footer__item
+   &__item {}
+
+   // .bottom-footer__link
+   &__link {
+      font-size: toRem(12);
+      color: rgba(247, 247, 247, 1);
+      text-transform: uppercase;
+      line-height: 116.666667%; /* 14/12 */
+      text-align: center;
+      @include transition;
+      @include link-hover-underline($height: toRem(1), $color: $textGrey);
+
+      @include hover {
+        color: $textGrey;
+      }
+   }
+
+   // .bottom-footer__copyright
+   &__copyright {
+      font-size: toRem(12);
+      line-height: 116.666667%; /* 14/12 */
+      text-align: center;
+      @include transition;
+      @include link-hover-underline($height: toRem(1), $color: $textGrey);
+
+      @include hover {
+         color: $textGrey;
+      }
+   }
+}
+
+.title-footer {
+   font-size: toRem(14);
+   font-weight: 700;
+   letter-spacing: ls(5%);
+   text-transform: uppercase;
+   line-height: 142.857143%; /* 20/14 */
+}
+
+// ====================column-touch=======================
+.column-touch {
+   // display: none;
+   line-height: 142.857143%;/* 20/14 */
+   font-size: toRem(14);
+
+   > * {
+      @include adaptiveValue('margin-bottom', 41, 20);
+      &:last-child {
+         margin-bottom: toRem(0);
+      }
+   }
+
+   @media (max-width: toEm(883)) {
+     width: 50%;
+   }
+   @media (max-width: toEm(644)) {
+      width: 100%;
+   }
+
+   // .column-touch__text
+   &__text {
+      max-width: toRem(258);
+      @include adaptiveValue('margin-bottom', 38, 20);
+   }
+
+   &__title {}
+
+   // .column-touch__address
+   &__address {}
+}
+
+.address-touch {
+   @include flex-column($align-items:flex-start);
+   gap: toRem(20);
+   // .address-touch__item
+   &__item {}
+
+   // .address-touch__link
+   &__link {
+      display: flex;
+      align-items: center;
+      gap: toRem(12);
+      @include link-hover-underline($height: toRem(1), $color: $textGrey);
+      &::before {
+         font-size: toRem(12);
+         color: $textGrey;
+      }
+   }
+}
+
+// ====================column-tags=======================
+.column-tags {
+
+   max-width: toRem(197);
+
+   @media (max-width: toEm(1164)) {
+      // order: 2;
+   }
+
+   &__title {
+      @include adaptiveValue('margin-bottom', 43, 20);
+   }
+
+   // .column-tags__list
+   &__list {}
+}
+
+.list-tags {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   column-gap: toRem(10);
+   row-gap: toRem(6);
+
+   // .list-tags__item
+   &__item {
+      background-color: rgba(63, 63, 63, 0.79);
+      flex-grow: 1;
+      @include transition;
+
+      @include hover {
+        background-color: $textGrey;
+
+         .list-tags__link {
+            color: $white;
+         }
+      }
+   }
+
+   // .list-tags__link
+   &__link {
+      font-size: toRem(10);
+      text-transform: uppercase;
+      letter-spacing: ls(5%);
+      text-align: center;
+      color: $textGrey;
+      line-height: 180%; /* 18/10 */
+      padding-top: toRem(5);
+      padding-bottom: toRem(1);
+      padding-inline: toRem(15);
+      @include transition;
+   }
+}
+
+// ====================column-news=======================
+.column-news {
+
+   @media (max-width: toEm(883)) {
+      width: 50%;
+   }
+   @media (max-width: toEm(644)) {
+     width: 100%;
+   }
+
+   &__title {
+      @include adaptiveValue('margin-bottom', 27, 20);
+   }
+
+   // .column-news__items
+   &__items {
+      // @include flex-column($align-items: flex-start);
+      gap: toRem(9);
+   }
+}
+
+.item-news {
+
+   &__inner {
+      display: flex;
+      @include adaptiveValue('gap', 26, 8);
+      align-items: flex-start;
+      padding-block: toRem(8);
+      padding-inline-start: toRem(7);
+      padding-inline-end: toRem(10);
+      @include transition;
+
+      @include hover {
+         box-shadow: 2px 3px 4px $white;
+      }
+   }
+
+   // .item-news__image
+   &__image {
+      aspect-ratio: 1;
+
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+
+   &__content {
+      @include flex-column($align-items:flex-start);
+      gap: toRem(8);
+      max-width: toRem(235);
+   }
+
+   // .item-news__text
+   &__text {
+      font-size: toRem(14);
+      line-height: 142.857143%; /* 20/14 */
+   }
+
+   // .item-news__time
+   &__time {}
+}
+
+// ====================column-stream=======================
+.column-stream {
+
+   @media (max-width: toEm(1164)) {
+
+   }
+
+   &__title {
+      @include adaptiveValue('margin-bottom', 27, 20);
+   }
+
+   // .column-stream__items
+   &__items {}
+}
+
+.item-stream {
+   display: grid;
+   grid-template-columns: repeat(4, auto);
+   gap: toRem(4);
+
+   // .item-stream__item
+   &__item {
+      flex: 1 1 toRem(60);
+      overflow: hidden;
+   }
+
+   // .item-stream__link
+   &__link {
+      transition: scale 0.4s ease;
+      will-change: scale;
+      @include hover {
+         scale: 1.1;
+      }
+   }
+
+   // .item-stream__img
+   &__img {
+      aspect-ratio: 1;
+
+      img {
+         width: 100%;
+         height: 100%;
+         object-fit: cover;
+      }
+   }
+}
+

@@ -54,15 +54,14 @@ document.addEventListener("click", (e) => {
 // SLIDER
 // -----------------------------
 function slidersInit() {
-   if (document.querySelector('.slider-testimonials')) {
-      const swiper = new Swiper('.slider-testimonials', {
+   if (document.querySelector('.slider-testimonials', '.slider-blogs')) {
+      const swiperTestimonials = new Swiper('.slider-testimonials', {
          loop: true,
          slidesPerView: 1,
-
          // spaceBetween: 30,
 
          pagination: {
-            el: ".swiper-pagination",
+            el: ".slider-testimonials__pagination",
             clickable: true
          },
 
@@ -86,6 +85,46 @@ function slidersInit() {
          //       spaceBetween: 30,
          //    },
          // },
+      });
+
+      const swiperBlogs = new Swiper('.slider-blogs', {
+         loop: true,
+         // slidesPerView: 1.1,
+         // spaceBetween: 10,
+
+         pagination: {
+            el: ".slider-blogs__pagination",
+            clickable: true
+         },
+
+         breakpoints: {
+            320: {
+               slidesPerView: 1.1,
+               spaceBetween: 10,
+            },
+            450: {
+               slidesPerView: 1.1,
+               spaceBetween: 10,
+            },
+            490: {
+               slidesPerView: 1.3,
+               spaceBetween: 10,
+            },
+            580: {
+               slidesPerView: 1.5,
+               spaceBetween: 15,
+               centteredSlides: true,
+            },
+            800: {
+               slidesPerView: 2.2,
+               spaceBetween: 30,
+               centteredSlides: false,
+            },
+            1240: {
+               slidesPerView: 2,
+               spaceBetween: 60,
+            },
+         },
       });
    }
 }
