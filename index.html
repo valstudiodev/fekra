@@ -47,7 +47,7 @@
 <body>
 
    <div class="wrapper">
-      <header class="header">
+      <header class="header" data-delay="1500">
          <div class="header__container">
             <div class="header__inner">
                <figure class="header__logo">
@@ -86,7 +86,7 @@
       </header>
 
       <main class="page">
-         <section class="page__hero hero">
+         <section class="page__hero hero" data-delay="600">
             <div class="hero__container">
                <div class="hero__content">
                   <h1 class="hero__title">EXPERIENCES & EXCELLENCE</h1>
@@ -103,7 +103,7 @@
 
          <section class="page__history history">
             <div class="history__container">
-               <div class="history__header block-header">
+               <div class="history__header block-header block-header--anim">
                   <h2 class="block-header__title">Our History</h2>
                   <div class="block-header__text">
                      <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
@@ -118,7 +118,7 @@
                      </p>
                   </div>
                </div>
-               <div class="history__gallery gallery-history">
+               <div class="history__gallery gallery-history gallery-history--anim">
                   <div class="gallery-history__wrap">
                      <img class="gallery-history__image gallery-history__image--small"
                         src="/src/assets/img/history/history-img-01.webp" alt="image of history">
@@ -132,8 +132,8 @@
                         src="/src/assets/img/history/history-img-03.webp" alt="image of history">
                   </div>
                </div>
-               <div class="history__advantages">
-                  <article class="item-history-advant">
+               <div class="history__advantages history__advantages--anim" data-delay="200" data-step="150">
+                  <article class="item-history-advant anim-child">
                      <a href="#" class="item-history-advant__inner">
                         <div class="item-history-advant__icon item-history-advant__icon--icon-heart"></div>
                         <div class="item-history-advant__content content-adv-history">
@@ -148,7 +148,7 @@
                         </div>
                      </a>
                   </article>
-                  <article class="item-history-advant">
+                  <article class="item-history-advant anim-child">
                      <a href="#" class="item-history-advant__inner">
                         <div class="item-history-advant__icon item-history-advant__icon--icon-monitor"></div>
                         <div class="item-history-advant__content content-adv-history">
@@ -163,7 +163,7 @@
                         </div>
                      </a>
                   </article>
-                  <article class="item-history-advant">
+                  <article class="item-history-advant anim-child">
                      <a href="#" class="item-history-advant__inner">
                         <div class="item-history-advant__icon item-history-advant__icon--icon-power"></div>
                         <div class="item-history-advant__content content-adv-history">
@@ -182,8 +182,8 @@
             </div>
          </section>
 
-         <section class="page__banner banner">
-            <div class="banner__container">
+         <section class="page__banner banner" data-delay="300">
+            <div class="banner__container banner__container--anim">
                <h2 class="banner__title">We grow brands by making decisions that are
                   rooted in business strategy.
                </h2>
@@ -193,7 +193,7 @@
 
          <section class="page__team team">
             <div class="team__container">
-               <div class="team__header block-header">
+               <div class="team__header block-header block-header--anim">
                   <h2 class="block-header__title">Awesome Team</h2>
                   <div class="block-header__text">
                      <p>Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
@@ -202,8 +202,8 @@
                      </p>
                   </div>
                </div>
-               <div class="team__items">
-                  <figure class="item-team">
+               <div class="team__items team__items--anim" data-delay="300" data-step="150">
+                  <figure class="item-team anim-child">
                      <div class="item-team__wrap">
                         <a href="#" class="item-team__image">
                            <img src="/src/assets/img/employees/employee-01.webp" alt="image of employee">
@@ -222,7 +222,7 @@
                         <span class="bottom-team__label">FOUNDER</span>
                      </figcaption>
                   </figure>
-                  <figure class="item-team">
+                  <figure class="item-team anim-child">
                      <div class="item-team__wrap">
                         <a href="#" class="item-team__image">
                            <img src="/src/assets/img/employees/employee-02.webp" alt="image of employee">
@@ -241,7 +241,7 @@
                         <span class="bottom-team__label">PROJECT MANAGER</span>
                      </figcaption>
                   </figure>
-                  <figure class="item-team">
+                  <figure class="item-team anim-child">
                      <div class="item-team__wrap">
                         <a href="#" class="item-team__image">
                            <img src="/src/assets/img/employees/employee-03.webp" alt="image of employee">
@@ -260,7 +260,7 @@
                         <span class="bottom-team__label">LORA BUTHCER</span>
                      </figcaption>
                   </figure>
-                  <figure class="item-team">
+                  <figure class="item-team anim-child">
                      <div class="item-team__wrap">
                         <a href="#" class="item-team__image">
                            <img src="/src/assets/img/employees/employee-04.webp" alt="image of employee">
@@ -284,8 +284,8 @@
          </section>
 
          <section class="page__testimonials testimonials">
-            <div class="testimonials__container">
-               <div class="testimonials__header block-header block-header--white">
+            <div class="testimonials__container testimonials__container--anim" data-delay="300" data-threshold="0.4">
+               <div class="testimonials__header block-header block-header--anim block-header--white">
                   <h2 class="block-header__title">TESTIMONIALS</h2>
                </div>
                <div class="testimonials__body">
@@ -361,7 +361,7 @@
 
          <section class="page__work work">
             <div class="work__container">
-               <div class="work__header block-header">
+               <div class="work__header block-header block-header--anim">
                   <h2 class="block-header__title block-header__title--lato">Recent Work</h2>
                   <div class="block-header__text">
                      <p>Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
@@ -370,27 +370,28 @@
                      </p>
                   </div>
                </div>
-               <div class="work__filter filter-work" data-filter data data-visible="8" data-scroll-offset="300">
+               <div class="work__filter filter-work filter-work--anim" data-threshold="0.1" data-step="150" data-filter
+                  data data-visible="8" data-scroll-offset="300">
                   <nav class="filter-work__controls" data-filter-controls>
-                     <ul class="filter-work__menu menu-filter">
-                        <li class="menu-filter__item">
+                     <ul class="filter-work__menu menu-filter menu-filter--anim" data-delay="300" data-step="150">
+                        <li class="menu-filter__item anim-child">
                            <button type="button" class="menu-filter__btn is-active"
                               data-filter-btn="design">DESIGN</button>
                         </li>
-                        <li class="menu-filter__item">
+                        <li class="menu-filter__item anim-child">
                            <button type="button" class="menu-filter__btn" data-filter-btn="fashion">FASHION</button>
                         </li>
-                        <li class="menu-filter__item">
+                        <li class="menu-filter__item anim-child">
                            <button type="button" class="menu-filter__btn"
                               data-filter-btn="illustration">ILLUSTRATION</button>
                         </li>
-                        <li class="menu-filter__item">
+                        <li class="menu-filter__item anim-child">
                            <button type="button" class="menu-filter__btn" data-filter-btn="products">PRODUCTS</button>
                         </li>
                      </ul>
                   </nav>
                   <div class="filter-work__items" data-filter-grid>
-                     <article class="item-work" data-filter-item data-category="design fashion">
+                     <article class="item-work anim-child" data-filter-item data-category="design fashion">
                         <a href="#" class="item-work__inner">
                            <div class="item-work__image">
                               <img src="/src/assets/img/works/work-img-01.webp" alt="image of work item">
@@ -401,7 +402,7 @@
                            </div>
                         </a>
                      </article>
-                     <article class="item-work" data-filter-item data-category="design fashion">
+                     <article class="item-work anim-child" data-filter-item data-category="design fashion">
                         <a href="#" class="item-work__inner">
                            <div class="item-work__image">
                               <img src="/src/assets/img/works/work-img-02.webp" alt="image of work item">
@@ -412,7 +413,8 @@
                            </div>
                         </a>
                      </article>
-                     <article class="item-work" data-filter-item data-category="design fashion illustration products">
+                     <article class="item-work anim-child" data-filter-item
+                        data-category="design fashion illustration products">
                         <a href="#" class="item-work__inner">
                            <div class="item-work__image">
                               <img src="/src/assets/img/works/work-img-03.webp" alt="image of work item">
@@ -423,7 +425,8 @@
                            </div>
                         </a>
                      </article>
-                     <article class="item-work" data-filter-item data-category="design fashion illustration products">
+                     <article class="item-work anim-child" data-filter-item
+                        data-category="design fashion illustration products">
                         <a href="#" class="item-work__inner">
                            <div class="item-work__image">
                               <img src="/src/assets/img/works/work-img-04.webp" alt="image of work item">
@@ -434,7 +437,8 @@
                            </div>
                         </a>
                      </article>
-                     <article class="item-work" data-filter-item data-category="design fashion illustration products">
+                     <article class="item-work anim-child" data-filter-item
+                        data-category="design fashion illustration products">
                         <a href="#" class="item-work__inner">
                            <div class="item-work__image">
                               <img src="/src/assets/img/works/work-img-05.webp" alt="image of work item">
@@ -445,7 +449,8 @@
                            </div>
                         </a>
                      </article>
-                     <article class="item-work" data-filter-item data-category="design fashion illustration products">
+                     <article class="item-work anim-child" data-filter-item
+                        data-category="design fashion illustration products">
                         <a href="#" class="item-work__inner">
                            <div class="item-work__image">
                               <img src="/src/assets/img/works/work-img-06.webp" alt="image of work item">
@@ -456,7 +461,8 @@
                            </div>
                         </a>
                      </article>
-                     <article class="item-work" data-filter-item data-category="design fashion illustration products">
+                     <article class="item-work anim-child" data-filter-item
+                        data-category="design fashion illustration products">
                         <a href="#" class="item-work__inner">
                            <div class="item-work__image">
                               <img src="/src/assets/img/works/work-img-07.webp" alt="image of work item">
@@ -467,7 +473,8 @@
                            </div>
                         </a>
                      </article>
-                     <article class="item-work" data-filter-item data-category="design fashion illustration products">
+                     <article class="item-work anim-child" data-filter-item
+                        data-category="design fashion illustration products">
                         <a href="#" class="item-work__inner">
                            <div class="item-work__image">
                               <img src="/src/assets/img/works/work-img-08.webp" alt="image of work item">
@@ -480,14 +487,16 @@
                      </article>
                   </div>
                </div>
-               <a href="#" target="_blank" class="work__button button button--dark">VIEW OUR PORTFOLIO</a>
+               <a href="#" target="_blank" class="work__button work__button--anim button button--dark"
+                  data-delay="300">VIEW OUR
+                  PORTFOLIO</a>
             </div>
          </section>
 
          <section class="page__features features">
             <div class="features__container">
                <div class="features__content">
-                  <div class="features__top top-features">
+                  <div class="features__top top-features top-features--anim" data-delay="500">
                      <h2 class="top-features__title">More Features Of Fekra</h2>
                      <div class="top-features__text">
                         <p>Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
@@ -497,9 +506,9 @@
                         </p>
                      </div>
                   </div>
-                  <ul class="features__items item-features">
+                  <ul class="features__items item-features item-features--anim" data-delay="300" data-step="150">
                      <li class="item-features__item">
-                        <article class="item-history-advant item-history-advant--feature">
+                        <article class="item-history-advant item-history-advant--feature  anim-child">
                            <a href="#" class="item-history-advant__inner">
                               <div class="item-history-advant__icon item-history-advant__icon--icon-pencil"></div>
                               <div class="item-history-advant__content content-adv-history">
@@ -515,7 +524,7 @@
                         </article>
                      </li>
                      <li class="item-features__item">
-                        <article class="item-history-advant item-history-advant--feature">
+                        <article class="item-history-advant item-history-advant--feature anim-child">
                            <a href="#" class="item-history-advant__inner">
                               <div class="item-history-advant__icon item-history-advant__icon--icon-cog"></div>
                               <div class="item-history-advant__content content-adv-history">
@@ -531,7 +540,7 @@
                         </article>
                      </li>
                      <li class="item-features__item">
-                        <article class="item-history-advant item-history-advant--feature">
+                        <article class="item-history-advant item-history-advant--feature anim-child">
                            <a href="#" class="item-history-advant__inner">
                               <div class="item-history-advant__icon item-history-advant__icon--icon-briefcase"></div>
                               <div class="item-history-advant__content content-adv-history">
@@ -547,7 +556,7 @@
                         </article>
                      </li>
                      <li class="item-features__item">
-                        <article class="item-history-advant item-history-advant--feature">
+                        <article class="item-history-advant item-history-advant--feature anim-child">
                            <a href="#" class="item-history-advant__inner">
                               <div class="item-history-advant__icon item-history-advant__icon--icon-monitor"></div>
                               <div class="item-history-advant__content content-adv-history">
@@ -564,7 +573,7 @@
                      </li>
                   </ul>
                </div>
-               <div class="features__image">
+               <div class="features__image features__image--anim" data-threshold="0.25">
                   <img src="/src/assets/img/banners/man-banner-img.webp" alt="smiling man">
                </div>
             </div>
@@ -572,7 +581,7 @@
 
          <section class="page__pricing pricing">
             <div class="pricing__container">
-               <div class="pricing__header block-header block-header--white">
+               <div class="pricing__header block-header block-header--anim block-header--white">
                   <h2 class="block-header__title">Pricing Tables</h2>
                   <div class="block-header__text">
                      <p>Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
@@ -581,8 +590,8 @@
                      </p>
                   </div>
                </div>
-               <div class="pricing__items">
-                  <article class="item-pricing">
+               <div class="pricing__items pricing__items--anim" data-delay="300" data-step="150">
+                  <article class="item-pricing anim-child">
                      <div class="item-pricing__top top-pricing">
                         <h3 class="top-pricing__title">STANDARD</h3>
                      </div>
@@ -602,7 +611,7 @@
                         <button type="button" class="body-pricing__button button button--purchase">PURCHASE NOW</button>
                      </div>
                   </article>
-                  <article class="item-pricing">
+                  <article class="item-pricing anim-child">
                      <div class="item-pricing__top top-pricing">
                         <h3 class="top-pricing__title">BUSINNES</h3>
                      </div>
@@ -622,7 +631,7 @@
                         <button type="button" class="body-pricing__button button button--purchase">PURCHASE NOW</button>
                      </div>
                   </article>
-                  <article class="item-pricing item-pricing--default">
+                  <article class="item-pricing anim-child item-pricing--default">
                      <div class="item-pricing__top top-pricing">
                         <h3 class="top-pricing__title">PREMIUM</h3>
                      </div>
@@ -642,7 +651,7 @@
                         <button type="button" class="body-pricing__button button button--purchase">PURCHASE NOW</button>
                      </div>
                   </article>
-                  <article class="item-pricing">
+                  <article class="item-pricing anim-child">
                      <div class="item-pricing__top top-pricing">
                         <h3 class="top-pricing__title">ADVANCED</h3>
                      </div>
@@ -668,7 +677,7 @@
 
          <section class="page__blogs blogs">
             <div class="blogs__container">
-               <div class="blogs__header block-header">
+               <div class="blogs__header block-header block-header--anim">
                   <h2 class="block-header__title">Our Blogs</h2>
                   <div class="block-header__text">
                      <p>Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
@@ -677,7 +686,7 @@
                      </p>
                   </div>
                </div>
-               <div class="blogs__body">
+               <div class="blogs__body blogs__body--anim" data-delay="300" data-threshold="0.3">
                   <!-- Slider main container -->
                   <div class="blogs__slider slider-blogs swiper">
                      <!-- Additional required wrapper -->
@@ -816,7 +825,7 @@
          </section>
 
          <section class="page__facts facts">
-            <div class="facts__container">
+            <div class="facts__container facts__container--anim" data-delay="300" data-threshold="0.2">
                <div class="facts__content content-facts">
                   <div class="content-facts__header">
                      <h2 class="content-facts__title">Company Facts Sheet</h2>
@@ -877,24 +886,25 @@
          </section>
 
          <div class="page__partners partners">
-            <div class="partners__container">
-               <a href="#" class="partners__item">
+            <div class="partners__container partners__container--anim" data-delay="300" data-step="150"
+               data-threshold="0.3">
+               <a href="#" class="partners__item anim-child">
                   <img class="partners__icon" src="/src/assets/icons/partners-logo-01.svg" alt="logo partners">
                </a>
-               <a href="#" class="partners__item">
+               <a href="#" class="partners__item anim-child">
                   <img class="partners__icon" src="/src/assets/icons/partners-logo-02.svg" alt="logo partners">
                </a>
-               <a href="#" class="partners__item">
+               <a href="#" class="partners__item anim-child">
                   <img class="partners__icon" src="/src/assets/icons/partners-logo-03.svg" alt="logo partners">
                </a>
-               <a href="#" class="partners__item">
+               <a href="#" class="partners__item anim-child">
                   <img class="partners__icon" src="/src/assets/icons/partners-logo-04.svg" alt="logo partners">
                </a>
             </div>
          </div>
 
          <section class="page__banner-social social-banner">
-            <div class="social-banner__container">
+            <div class="social-banner__container social-banner__container--anim" data-delay="300">
                <h2 class="social-banner__title">Title social-banner</h2>
                <div class="social-banner__logo">
                   <img src="/src/assets/icons/logo.svg" alt="logo icon">
@@ -917,8 +927,8 @@
 
       <footer class="footer">
          <div class="footer__body body-footer">
-            <div class="body-footer__container">
-               <div class="body-footer__column column-touch">
+            <div class="body-footer__container body-footer__container--anim" data-delay="300" data-step="150">
+               <div class="body-footer__column anim-child column-touch">
                   <h3 class="column-touch__title title-footer">GET IN TOUCH</h3>
                   <div class="column-touch__text">
                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry .</p>
@@ -939,7 +949,7 @@
                      </li>
                   </ul>
                </div>
-               <div class="body-footer__column column-tags">
+               <div class="body-footer__column anim-child column-tags">
                   <h3 class="column-tags__title title-footer">POPULAR TAGS</h3>
                   <ul class="column-tags__list list-tags">
                      <li class="list-tags__item">
@@ -974,7 +984,7 @@
                      </li>
                   </ul>
                </div>
-               <div class="body-footer__column column-news">
+               <div class="body-footer__column anim-child column-news">
                   <h3 class="column-news__title title-footer">LATEST NEWS</h3>
                   <div class="column-news__items">
                      <figure class="item-news">
@@ -1001,7 +1011,7 @@
                      </figure>
                   </div>
                </div>
-               <div class="body-footer__column column-stream">
+               <div class="body-footer__column anim-child column-stream">
                   <h3 class="column-stream__title title-footer">FLICKR STREAM</h3>
                   <ul class="column-stream__items item-stream">
                      <li class="item-stream__item">
@@ -1058,24 +1068,24 @@
          </div>
          <div class="footer__bottom bottom-footer">
             <div class="bottom-footer__container">
-               <ul class="bottom-footer__list">
-                  <li class="bottom-footer__item">
+               <ul class="bottom-footer__list bottom-footer__list--anim">
+                  <li class="bottom-footer__item anim-child">
                      <a href="#" class="bottom-footer__link">HOME</a>
                   </li>
-                  <li class="bottom-footer__item">
+                  <li class="bottom-footer__item anim-child">
                      <a href="#" class="bottom-footer__link">ABOUT US</a>
                   </li>
-                  <li class="bottom-footer__item">
+                  <li class="bottom-footer__item anim-child">
                      <a href="#" class="bottom-footer__link">CAREER</a>
                   </li>
-                  <li class="bottom-footer__item">
+                  <li class="bottom-footer__item anim-child">
                      <a href="#" class="bottom-footer__link">PRIVACY POLICY</a>
                   </li>
-                  <li class="bottom-footer__item">
+                  <li class="bottom-footer__item anim-child">
                      <a href="#" class="bottom-footer__link">USE OF TERMS</a>
                   </li>
                </ul>
-               <a href="#" class="bottom-footer__copyright">
+               <a href="#" class="bottom-footer__copyright bottom-footer__copyright--anim">
                   <p>&copy; 2016 FEKRA CORPORATION</p>
                </a>
             </div>

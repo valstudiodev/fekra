@@ -570,7 +570,8 @@
    $delay: 0s,
    $start-scale: 0.2,
    $origin: center,
-   $will-change: true) {
+   $will-change: true)
+{
    opacity: 0;
    transform: scale($start-scale);
    transform-origin: $origin;
@@ -593,5 +594,14 @@
       &:nth-child(#{$i}) {
          transition-delay: $start-delay + ($i - 1) * $delay-step;
       }
+   }
+}
+
+@mixin appearanceOpacity ($transition: 0.6s) {
+   opacity: 0;
+   transition: opacity $transition ease;
+
+   &.animate {
+      opacity: 1;
    }
 }

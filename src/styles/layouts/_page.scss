@@ -86,12 +86,18 @@
 // -----------------------------
 .hero {
    @include img-bg-cover("/src/assets/img/images/hero-img.webp");
+   opacity: 0;
+   scale: 0.5;
+   transition: scale 0.8s ease,opacity 0.8s ease;
 
    @media (max-width: toEm($mobile)) {
       @include overlay-gradient($opacity-start: 0.5, $opacity-end: 0.3);
    }
-   // .hero__container
-   &__container {}
+
+   [init-page-loader="ready"] & {
+     opacity: 1;
+     scale: 1;
+   }
 
    // .hero__content
    &__content {
@@ -157,9 +163,6 @@
       @include adaptiveValue('margin-bottom', 54, 25);
    }
 
-   // .history__gallery
-   &__gallery {}
-
    // .history__advantages
    &__advantages {
       @include grid-adaptive( $size: toRem(280), $gap: toRem(61));
@@ -176,13 +179,11 @@
    align-items: end;
    gap: toRem(21);
    @include adaptiveValue('margin-bottom', 80, 30);
+   @include popIn($duration: 0.8s, $origin: center);
 
    @media (max-width: toEm(650)) {
      grid-template-columns: auto;
    }
-
-   // .gallery-history__wrap
-   &__wrap {}
 
    &__image {
 
@@ -199,37 +200,6 @@
    }
 }
 
-.item-history-advant {
-
-   // .item-history-advant__inner
-   &__inner {}
-
-   // .item-history-advant__icon
-   &__icon {
-
-      // .item-history-advant__icon--icon-heart
-      &--icon-heart {}
-
-      // .item-history-advant__icon--icon-monitor
-      &--icon-monitor {}
-
-      // .item-history-advant__icon--icon-power
-      &--icon-power {}
-   }
-
-   // .item-history-advant__content
-   &__content {}
-}
-
-.content-adv-history {
-
-   // .content-adv-history__title
-   &__title {}
-
-   // .content-adv-history__text
-   &__text {}
-}
-
 // ===========================================================================================
 // -----------------------------
 // banner
@@ -237,10 +207,12 @@
 .banner {
    @include img-bg-cover("/src/assets/img/banners/banner.webp",$position:top);
    @include overlay;
+
    // .banner__container
    &__container {
       @include flex-column;
       @include adaptiveValue('gap', 40, 20);
+      @include popIn($duration: 1s, $origin: left top);
    }
 
    // .banner__title
@@ -294,8 +266,11 @@
    @media (max-width: toEm($mobile)) {
      @include overlay($opacity:0.4);
    }
+
    // .testimonials__container
-   &__container {}
+   &__container {
+      @include popIn($duration: 1s, $origin: left top);
+   }
 
    // .testimonials__header
    &__header {
@@ -354,6 +329,8 @@
    // .work__button
    &__button {
       align-self: center;
+      @include reveal((0, toRem(30)), 0.8s);
+
       @media (max-width: toEm(529)) {
         width: 100%;
       }
@@ -397,7 +374,9 @@
    @include adaptiveValue('margin-bottom', 64, 30);
 
    // .menu-filter__item
-   &__item {}
+   &__item {
+      @include reveal((0, toRem(0)), 0.8s);
+   }
 
    // .menu-filter__btn
    &__btn {
@@ -450,6 +429,12 @@
    &__image {
       flex: 1 1 50%;
       aspect-ratio: 622 / 1100;
+      opacity: 0;
+      transition: opacity 0.6s ease;
+
+      &.animate {
+         opacity: 1;
+      }
 
       img {
          width: 100%;
@@ -462,6 +447,12 @@
 .top-features {
    @include flex-column($align-items:flex-start);
    @include adaptiveValue('gap', 22, 10);
+   opacity: 0;
+   transition: opacity 0.6s ease;
+
+   &.animate {
+      opacity: 1;
+   }
 
    @media (max-width: toEm(370)) {
      align-items: center;
@@ -507,6 +498,7 @@
 .pricing {
    @include img-bg-cover("/src/assets/img/images/bg-pricing-img.webp");
    @include overlay($opacity:0.4);
+
    // .pricing__container
    &__container {}
 
@@ -545,7 +537,9 @@
    }
 
    // .blogs__body
-   &__body {}
+   &__body {
+      @include appearanceOpacity;
+   }
 
    // .blogs__slider
    &__slider {}
@@ -625,6 +619,7 @@
       display: flex;
       align-items: center;
       @include adaptiveValue('gap', 30, 15);
+      @include appearanceOpacity($transition:0.8s);
    }
 
    // .facts__content
@@ -709,6 +704,7 @@
       transition: box-shadow 0.4s ease;
       overflow: hidden;
       will-change:box-shadow;
+      @include reveal((0, toRem(30)), 0.8s);
 
       @include hover {
          box-shadow: 2px 3px 4px $accentOrange;
@@ -738,6 +734,7 @@
    &__container {
       @include flex-column;
       @include adaptiveValue('gap', 34, 15);
+      @include popIn($duration: 1s, $origin: left top);
    }
 
    &__title {

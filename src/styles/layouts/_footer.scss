@@ -27,7 +27,9 @@
    }
 
    // .body-footer__column
-   &__column {}
+   &__column {
+      @include reveal((0, toRem(30)), 0.8s);
+   }
 }
 
 .bottom-footer {
@@ -58,7 +60,9 @@
    }
 
    // .bottom-footer__item
-   &__item {}
+   &__item {
+      @include reveal((0, toRem(0)), 0.8s);
+   }
 
    // .bottom-footer__link
    &__link {
@@ -82,6 +86,7 @@
       text-align: center;
       @include transition;
       @include link-hover-underline($height: toRem(1), $color: $textGrey);
+      @include appearanceOpacity($transition:0.8s);
 
       @include hover {
          color: $textGrey;

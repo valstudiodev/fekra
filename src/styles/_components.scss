@@ -390,6 +390,8 @@
    @include flex-column;
    @include adaptiveValue('gap',45,20);
    z-index: 5;
+   opacity: 0;
+   transition: opacity 0.4s ease, translate 0.4s ease-in-out ;
 
    &--white {
       .block-header__title,
@@ -397,6 +399,10 @@
          color: $white;
       }
 
+   }
+   &.animate {
+      opacity: 1;
+      translate: 0 toRem(-30);
    }
 
    // .block-header__title
@@ -433,6 +439,7 @@
 }
 
 .item-pricing {
+   @include reveal((0, toRem(30)), 0.8s);
    &--default {
       .top-pricing {
          background-color: $accentOrange;
@@ -516,11 +523,12 @@
 .item-history-advant {
    will-change: box-shadow;
    transition: box-shadow 0.4s ease;
-   padding: toRem(5);
+   @include reveal((0, toRem(30)), 0.6s);
 
    &__inner {
       display: flex;
       @include adaptiveValue('gap', 41, 20);
+      padding: toRem(5);
 
       @include hover {
          .item-history-advant__icon {
@@ -578,6 +586,7 @@
 }
 
 .item-team {
+   @include reveal((0, toRem(30)), 0.8s);
 
    &__wrap {
       position: relative;
@@ -686,6 +695,7 @@
 .item-work {
    transition: opacity 0.4s ease;
    flex: 1 1 toRem(300);
+   @include reveal((0, toRem(30)), 0.8s);
 
    @media (max-width: toEm(629)) {
       flex-shrink: 0;
