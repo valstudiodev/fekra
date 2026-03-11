@@ -123,5 +123,11 @@ html[data-input="touch"] {
          }
       }
    }
+   .item-work__inner {
+      &::after {
+        opacity: 0.4;
+        translate: 0 0;
+      }
+   }
 }
 
