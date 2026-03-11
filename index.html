@@ -1,1104 +1,1096 @@
 <!doctype html>
 <html lang="en" init-page-loader>
 
-<head>
-   <meta charset="UTF-8" />
-   <style>
+  <head>
+    <meta charset="UTF-8" />
+    <style>
       /* Миттєвий фон для всього вікна */
       html {
-         background-color: #fff;
+        background-color: #fff;
       }
 
       /* Ховаємо контент, поки немає статусу "ready" */
       html[init-page-loader] body {
-         opacity: 0 !important;
-         visibility: hidden !important;
-         overflow: hidden;
-         /* Блокуємо скрол під час завантаження */
+        opacity: 0 !important;
+        visibility: hidden !important;
+        overflow: hidden;
+        /* Блокуємо скрол під час завантаження */
       }
 
       /* Повертаємо видимість та скрол */
       html[init-page-loader="ready"] body {
-         opacity: 1 !important;
-         visibility: visible !important;
-         overflow: visible;
-         transition: opacity 0.6s ease-in-out !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+        overflow: visible;
+        transition: opacity 0.6s ease-in-out !important;
       }
 
       /* Стиль прогрес-бару (щоб не чекати завантаження файлу CSS) */
       #loader-progress-bar {
-         position: fixed;
-         top: 0;
-         left: 0;
-         height: 2px;
-         background-color: #00ADB5;
-         z-index: 100000;
-         width: 0%;
-         transition: width 0.4s ease, opacity 0.3s ease;
-         box-shadow: 0 0 10px #0C73B8;
+        position: fixed;
+        top: 0;
+        left: 0;
+        height: 2px;
+        background-color: #00ADB5;
+        z-index: 100000;
+        width: 0%;
+        transition: width 0.4s ease, opacity 0.3s ease;
+        box-shadow: 0 0 10px #0C73B8;
       }
-   </style>
-   <link rel="icon" type="image/svg+xml" href="/fekra/favicon.ico" />
-   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
-   <title>Fekra</title>
-  <script type="module" crossorigin src="/fekra/assets/main.b21d6abf.js"></script>
-  <link rel="stylesheet" href="/fekra/assets/index.f4b6c4cb.css">
-</head>
 
-<body>
+    </style>
+    <link rel="icon" type="image/svg+xml" href="/fekra/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.css" />
+    <title>Fekra</title>
+    <script type="module" crossorigin src="/fekra/assets/main.93779c8a.js"></script>
+    <link rel="stylesheet" href="/fekra/assets/index.9d6a28df.css">
+  </head>
 
-   <div class="wrapper">
+  <body>
+
+    <div class="wrapper">
       <header class="header" data-delay="1500">
-         <div class="header__container">
-            <div class="header__inner">
-               <figure class="header__logo">
-                  <img src="/fekra/assets/logo.2b9b155e.svg" alt="logo icon Fekra">
-               </figure>
-               <nav class="header__menu menu-header">
-                  <ul class="menu-header__list">
-                     <li class="menu-header__item">
-                        <a href="#" class="menu-header__link">HOME</a>
-                     </li>
-                     <li class="menu-header__item">
-                        <a href="#" class="menu-header__link">PAGES</a>
-                     </li>
-                     <li class="menu-header__item">
-                        <a href="#" class="menu-header__link">ABOUT US</a>
-                     </li>
-                     <li class="menu-header__item">
-                        <a href="#" class="menu-header__link">OUR TEAM</a>
-                     </li>
-                     <li class="menu-header__item">
-                        <a href="#" class="menu-header__link">PORTFOLIO</a>
-                     </li>
-                     <li class="menu-header__item">
-                        <a href="#" class="menu-header__link">BLOG</a>
-                     </li>
-                     <li class="menu-header__item">
-                        <a href="#" class="menu-header__link">CONTACT</a>
-                     </li>
-                  </ul>
-               </nav>
-               <button class="icon-menu">
-                  <span></span>
-               </button>
-            </div>
-         </div>
+        <div class="header__container">
+          <div class="header__inner">
+            <figure class="header__logo">
+              <img src="/fekra/assets/logo.2b9b155e.svg" alt="logo icon Fekra">
+            </figure>
+            <nav class="header__menu menu-header">
+              <ul class="menu-header__list">
+                <li class="menu-header__item">
+                  <a href="#" class="menu-header__link">HOME</a>
+                </li>
+                <li class="menu-header__item">
+                  <a href="#" class="menu-header__link">PAGES</a>
+                </li>
+                <li class="menu-header__item">
+                  <a href="#" class="menu-header__link">ABOUT US</a>
+                </li>
+                <li class="menu-header__item">
+                  <a href="#" class="menu-header__link">OUR TEAM</a>
+                </li>
+                <li class="menu-header__item">
+                  <a href="#" class="menu-header__link">PORTFOLIO</a>
+                </li>
+                <li class="menu-header__item">
+                  <a href="#" class="menu-header__link">BLOG</a>
+                </li>
+                <li class="menu-header__item">
+                  <a href="#" class="menu-header__link">CONTACT</a>
+                </li>
+              </ul>
+            </nav>
+            <button class="icon-menu">
+              <span></span>
+            </button>
+          </div>
+        </div>
       </header>
 
       <main class="page">
-         <section class="page__hero hero" data-delay="600">
-            <div class="hero__container">
-               <div class="hero__content">
-                  <h1 class="hero__title">EXPERIENCES & EXCELLENCE</h1>
-                  <div class="hero__text">
-                     <p>We love clean design and advanced digital solutions</p>
-                  </div>
-                  <div class="hero__buttons">
-                     <a href="#" target="_blank" class="button button--white">LEARN MORE</a>
-                     <button type="button" class="button button--orange">BUY THEME</button>
-                  </div>
-               </div>
+        <section class="page__hero hero" data-delay="600">
+          <img class="hero__image" src="/fekra/assets/hero-img.9f27a224.webp" alt="">
+          <div class="hero__container">
+            <div class="hero__content">
+              <h1 class="hero__title">EXPERIENCES & EXCELLENCE</h1>
+              <div class="hero__text">
+                <p>We love clean design and advanced digital solutions</p>
+              </div>
+              <div class="hero__buttons">
+                <a href="#" target="_blank" class="button button--white">LEARN MORE</a>
+                <button type="button" class="button button--orange">BUY THEME</button>
+              </div>
             </div>
-         </section>
+          </div>
+        </section>
 
-         <section class="page__history history">
-            <div class="history__container">
-               <div class="history__header block-header block-header--anim">
-                  <h2 class="block-header__title">Our History</h2>
-                  <div class="block-header__text">
-                     <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
-                        laudantium,
-                        totam rem aperiam,
-                        eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
-                        explicabo.
-                        Nemo enim ipsam
-                        voluptatem quia voluptas sit aspernatur. Lorem Ipsum is simply dummy text of the printing and
-                        typesetting industry.
-                        Lorem Ipsum has been the industry's standard.
-                     </p>
-                  </div>
-               </div>
-               <div class="history__gallery gallery-history gallery-history--anim">
-                  <div class="gallery-history__wrap">
-                     <img class="gallery-history__image gallery-history__image--small"
-                        src="/fekra/assets/history-img-01.4eda588f.webp" alt="image of history">
-                  </div>
-                  <div class="gallery-history__wrap">
-                     <img class="gallery-history__image gallery-history__image--big"
-                        src="/fekra/assets/history-img-02.1b9fadd7.webp" alt="image of history">
-                  </div>
-                  <div class="gallery-history__wrap">
-                     <img class="gallery-history__image gallery-history__image--small"
-                        src="/fekra/assets/history-img-03.a90a3e03.webp" alt="image of history">
-                  </div>
-               </div>
-               <div class="history__advantages history__advantages--anim" data-delay="200" data-step="150">
-                  <article class="item-history-advant anim-child">
-                     <a href="#" class="item-history-advant__inner">
-                        <div class="item-history-advant__icon item-history-advant__icon--icon-heart"></div>
-                        <div class="item-history-advant__content content-adv-history">
-                           <h4 class="content-adv-history__title">TRENDY DESIGN</h4>
-                           <div class="content-adv-history__text">
-                              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                 has
-                                 been
-                                 the industry.
-                              </p>
-                           </div>
-                        </div>
-                     </a>
-                  </article>
-                  <article class="item-history-advant anim-child">
-                     <a href="#" class="item-history-advant__inner">
-                        <div class="item-history-advant__icon item-history-advant__icon--icon-monitor"></div>
-                        <div class="item-history-advant__content content-adv-history">
-                           <h4 class="content-adv-history__title">HOT FEATURES</h4>
-                           <div class="content-adv-history__text">
-                              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                 has
-                                 been
-                                 the industry.
-                              </p>
-                           </div>
-                        </div>
-                     </a>
-                  </article>
-                  <article class="item-history-advant anim-child">
-                     <a href="#" class="item-history-advant__inner">
-                        <div class="item-history-advant__icon item-history-advant__icon--icon-power"></div>
-                        <div class="item-history-advant__content content-adv-history">
-                           <h4 class="content-adv-history__title">CUSTOM SHORTCODES</h4>
-                           <div class="content-adv-history__text">
-                              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                                 has
-                                 been
-                                 the industry.
-                              </p>
-                           </div>
-                        </div>
-                     </a>
-                  </article>
-               </div>
+        <section class="page__history history">
+          <div class="history__container">
+            <div class="history__header block-header block-header--anim">
+              <h2 class="block-header__title">Our History</h2>
+              <div class="block-header__text">
+                <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque
+                  laudantium,
+                  totam rem aperiam,
+                  eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt
+                  explicabo.
+                  Nemo enim ipsam
+                  voluptatem quia voluptas sit aspernatur. Lorem Ipsum is simply dummy text of the printing and
+                  typesetting industry.
+                  Lorem Ipsum has been the industry's standard.
+                </p>
+              </div>
             </div>
-         </section>
-
-         <section class="page__banner banner" data-delay="300">
-            <div class="banner__container banner__container--anim">
-               <h2 class="banner__title">We grow brands by making decisions that are
-                  rooted in business strategy.
-               </h2>
-               <a href="#" target="_blank" class="banner__button button button--start">GET STARTED NOW</a>
+            <div class="history__gallery gallery-history gallery-history--anim" data-delay="200">
+              <div class="gallery-history__wrap">
+                <img class="gallery-history__image gallery-history__image--small"
+                  src="/fekra/assets/history-img-01.4eda588f.webp" alt="image of history">
+              </div>
+              <div class="gallery-history__wrap">
+                <img class="gallery-history__image gallery-history__image--big"
+                  src="/fekra/assets/history-img-02.1b9fadd7.webp" alt="image of history">
+              </div>
+              <div class="gallery-history__wrap">
+                <img class="gallery-history__image gallery-history__image--small"
+                  src="/fekra/assets/history-img-03.a90a3e03.webp" alt="image of history">
+              </div>
             </div>
-         </section>
-
-         <section class="page__team team">
-            <div class="team__container">
-               <div class="team__header block-header block-header--anim">
-                  <h2 class="block-header__title">Awesome Team</h2>
-                  <div class="block-header__text">
-                     <p>Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                        laoreet dolore magna
-                        aliquam erat volutpat. Ut wisi enim ad minim veniam
-                     </p>
+            <div class="history__advantages history__advantages--anim" data-delay="200" data-step="150">
+              <article class="item-history-advant anim-child">
+                <a href="#" class="item-history-advant__inner">
+                  <div class="item-history-advant__icon item-history-advant__icon--icon-heart"></div>
+                  <div class="item-history-advant__content content-adv-history">
+                    <h4 class="content-adv-history__title">TRENDY DESIGN</h4>
+                    <div class="content-adv-history__text">
+                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                        has
+                        been
+                        the industry.
+                      </p>
+                    </div>
                   </div>
-               </div>
-               <div class="team__items team__items--anim" data-delay="300" data-step="150">
-                  <figure class="item-team anim-child">
-                     <div class="item-team__wrap">
-                        <a href="#" class="item-team__image">
-                           <img src="/fekra/assets/employee-01.f0d5e434.webp" alt="image of employee">
-                        </a>
-                        <div class="social-media">
-                           <a href="#" class="social-media__link social-media__link--icon-fb"></a>
-                           <a href="#" class="social-media__link social-media__link--icon-twitter"></a>
-                           <a href="#" class="social-media__link social-media__link--icon-linked"></a>
-                           <a href="#" class="social-media__link social-media__link--icon-google-plus"></a>
-                        </div>
-                     </div>
-                     <figcaption class="item-team__bottom bottom-team">
-                        <h4 class="bottom-team__name">
-                           <a href="#" class="bottom-team__link">JOLIA ROBERTES</a>
-                        </h4>
-                        <span class="bottom-team__label">FOUNDER</span>
-                     </figcaption>
-                  </figure>
-                  <figure class="item-team anim-child">
-                     <div class="item-team__wrap">
-                        <a href="#" class="item-team__image">
-                           <img src="/fekra/assets/employee-02.f114de44.webp" alt="image of employee">
-                        </a>
-                        <div class="social-media">
-                           <a href="#" class="social-media__link social-media__link--icon-fb"></a>
-                           <a href="#" class="social-media__link social-media__link--icon-twitter"></a>
-                           <a href="#" class="social-media__link social-media__link--icon-linked"></a>
-                           <a href="#" class="social-media__link social-media__link--icon-google-plus"></a>
-                        </div>
-                     </div>
-                     <figcaption class="item-team__bottom bottom-team">
-                        <h4 class="bottom-team__name">
-                           <a href="#" class="bottom-team__link">JULIAN LECHER</a>
-                        </h4>
-                        <span class="bottom-team__label">PROJECT MANAGER</span>
-                     </figcaption>
-                  </figure>
-                  <figure class="item-team anim-child">
-                     <div class="item-team__wrap">
-                        <a href="#" class="item-team__image">
-                           <img src="/fekra/assets/employee-03.215c3e44.webp" alt="image of employee">
-                        </a>
-                        <div class="social-media">
-                           <a href="#" class="social-media__link social-media__link--icon-fb"></a>
-                           <a href="#" class="social-media__link social-media__link--icon-twitter"></a>
-                           <a href="#" class="social-media__link social-media__link--icon-linked"></a>
-                           <a href="#" class="social-media__link social-media__link--icon-google-plus"></a>
-                        </div>
-                     </div>
-                     <figcaption class="item-team__bottom bottom-team">
-                        <h4 class="bottom-team__name">
-                           <a href="#" class="bottom-team__link">LORA BUTHCER</a>
-                        </h4>
-                        <span class="bottom-team__label">LORA BUTHCER</span>
-                     </figcaption>
-                  </figure>
-                  <figure class="item-team anim-child">
-                     <div class="item-team__wrap">
-                        <a href="#" class="item-team__image">
-                           <img src="/fekra/assets/employee-04.63abb556.webp" alt="image of employee">
-                        </a>
-                        <div class="social-media">
-                           <a href="#" class="social-media__link social-media__link--icon-fb"></a>
-                           <a href="#" class="social-media__link social-media__link--icon-twitter"></a>
-                           <a href="#" class="social-media__link social-media__link--icon-linked"></a>
-                           <a href="#" class="social-media__link social-media__link--icon-google-plus"></a>
-                        </div>
-                     </div>
-                     <figcaption class="item-team__bottom bottom-team">
-                        <h4 class="bottom-team__name">
-                           <a href="#" class="bottom-team__link">HENRY FRANK</a>
-                        </h4>
-                        <span class="bottom-team__label">CREATIVE DESIGNER</span>
-                     </figcaption>
-                  </figure>
-               </div>
+                </a>
+              </article>
+              <article class="item-history-advant anim-child">
+                <a href="#" class="item-history-advant__inner">
+                  <div class="item-history-advant__icon item-history-advant__icon--icon-monitor"></div>
+                  <div class="item-history-advant__content content-adv-history">
+                    <h4 class="content-adv-history__title">HOT FEATURES</h4>
+                    <div class="content-adv-history__text">
+                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                        has
+                        been
+                        the industry.
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </article>
+              <article class="item-history-advant anim-child">
+                <a href="#" class="item-history-advant__inner">
+                  <div class="item-history-advant__icon item-history-advant__icon--icon-power"></div>
+                  <div class="item-history-advant__content content-adv-history">
+                    <h4 class="content-adv-history__title">CUSTOM SHORTCODES</h4>
+                    <div class="content-adv-history__text">
+                      <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
+                        has
+                        been
+                        the industry.
+                      </p>
+                    </div>
+                  </div>
+                </a>
+              </article>
             </div>
-         </section>
+          </div>
+        </section>
 
-         <section class="page__testimonials testimonials">
-            <div class="testimonials__container testimonials__container--anim" data-delay="300" data-threshold="0.4">
-               <div class="testimonials__header block-header block-header--anim block-header--white">
-                  <h2 class="block-header__title">TESTIMONIALS</h2>
-               </div>
-               <div class="testimonials__body">
-                  <!-- Slider main container -->
-                  <div class="testimonials__slider slider-testimonials swiper">
-                     <!-- Additional required wrapper -->
-                     <div class="slider-testimonials__wrapper swiper-wrapper">
-                        <!-- Slides -->
-                        <div class="slider-testimonials__slide swiper-slide">
-                           <article class="item-testimonials">
-                              <img src="data:image/webp;base64,UklGRqgFAABXRUJQVlA4WAoAAAAQAAAATwAATwAAQUxQSNYBAAABkCJt21Nnj2W+QTOolFOWQqYSSzRZQFCclYSygSDRwSJxKKaJotITFvD9BTjwfe8CImICsLZ26XpxmtdtW+dp7LmXGiRmZlDwBYvAZHIY0cAXH54N4VSn4itXj6pIzH3lAr66TBir44J2lhgnCRf45UQA+4sL/WWvpXhc+CdlFT3jEmb6CpuGS9lsFtv3XNJ+v9Cm59L2m0X0hkvc6AsoGZc6U47zuORPR9lcevuIky/5vk7mJZzAl1kWJ9GawToaOjblciLdCfWVild1zOFkPo5VdFQjBifU+C+i5BkAGygZGGByUk0gpCUACloKaJxY7ZKaS5ca16fGi6mJU2rSnJq8pqZuqWnpqampc2rylJo0pib2qfEO1LhX1Fxq1GgoaCmAkJYAuKPFBNhAycAARJREAHBBifEfKjoqjDp0OGPqKxWv6hgOVLiYZB0NHZvCPQ0W5iYUJJh98iXf18k8PMhn41hPNg9HK5lcmXIc9EamRseSm16efoNl970s/R5Lbxo5mg2W1zMZMh1rKp54noKVH77E+rKx/kkiUnICIe87UToLorLDqwivLoPAqlOtVTkqRL+IhuWGyICU7C4slihCk0Fi7ergx2let22dp7HvXmpYG1ZQOCCsAwAAcBMAnQEqUABQAD6RRJtKJaOiIaZ2a5iwEgljAL9sLsxivPy5L68KtPe00pQbU5X/2xXBD4wuHQwrZ0tUBhFPilv3uMZIqG/6geWjh3IimaDV45ht7u/VpZ3KHU2+de54Va4Th6AuCyDrnWdl/SiwixS/Q8tYdvrA85Y4mLQedLBbjlJ40ohpgh3oPYtV7NTZ429jCZh/QXkWw0zW/J3L+mz0YDQA/vx6/+V/xt//yLLhdvsw8PJjmyX1tVXQ9gVJIHzyUYIVxVM/ABIxxNZfbozCpQJ+GFjXHhZNHVmBwllCPt5oGWMbeKZH0qHQY9HFJPZQRFLR/1T5QJK6Rnjdq46uNty+SKHnivj68Qq7ADV6XQxbYh+Q+FZ6Urbb0vEY2tk9yaeDfPv380acT1EnnbUZdE+zfSsxSwXMqn2ob3WlJUko1Y0Yc9+mp5yPVXeGucWNzr0PfmQX5sDBRNsair0XwUYpVFmqy9F9BljQtJEF/8dNILTxzgmiU3nw8j1Hlf6QC1rZizyiiE/roPvYRmPJzBvvsWSVDrxeu5Ej5Auh7U96puTXsnb4aQ33VMp/y1Fah1V+2fNS99UDjNyuXrAiWRxzVOW8l7/dwP9r+wjfigkwFfZXtLAXtxLbcbCiHHrqjMzwGGKqVdUbZzGcsbEjqTj8d5rdu2jmBzvaPP6hpvwBGv/vJQWUzfu4Va5YlMHUCSvillhLedWQ+DvTVrdRZGF0V18Lo0sZaAAWGb+643jaI4cHma3zQsOYHIXVVOMUGo6F+4cE3wqBsj9XGWi1HCdKMj2fv/E6WA2Uk/iv3r4/HOoNAQq16i9ypuBAdV9c2bmxzP4tdu8zVqjZrkSPKEloyiBAkqv7w9h+Y3KY2CNAfcXT52iaCl2npMdzBqudwwrRkcF1X23wr2YqHzlBYiTeEsRFoXqbx63vxBU9qN1TqNgu4kSs2D9YdfhziZYKywgmW4kQT4aha6C3AKCezHuQpKRRGSk+cw6YRnlEUTqr9Cb9fiJfYI3pFomwK+7nEmgWdFuy8/PeCzhUGtn+WZNFLtup9HDDnTEaM9rNfGxEUdgw9WZBNqaNRAZS9e8OoZquL7bThGusFn1Dz2N714oFQNivgiB1ACWCZvnin48hC0a1rPImrEjTejjwN4w3bpt1PibCw7TTAGHTcEKb5tDXPcF4h0T+Y89Or/DFOXobplQmkHXHCbmUV1EzP7cH//WCf/1f9//6u3gQFSFRwcbSCYDMA6gAAA==" alt="avatar image"
-                                 class="item-testimonials__avatar">
-                              <div class="item-testimonials__content">
-                                 <blockquote class="item-testimonials__text">
-                                    <p>"Temporibus autem quibusdam et aut officiis debitis. Itaque earum rerum hic
-                                       tenetur a sapiente
-                                       delectus Nam libero
-                                       tempore, cum soluta nobis est eligendi option."
-                                    </p>
-                                 </blockquote>
-                                 <div class="item-testimonials__footer">
-                                    <cite class="item-testimonials__name">TERESA LISBON</cite>
-                                    <span class="item-testimonials__label">HTMLBEANS - CEO</span>
-                                 </div>
-                              </div>
-                           </article>
-                        </div>
-                        <div class="slider-testimonials__slide swiper-slide">
-                           <article class="item-testimonials">
-                              <img src="data:image/webp;base64,UklGRqgFAABXRUJQVlA4WAoAAAAQAAAATwAATwAAQUxQSNYBAAABkCJt21Nnj2W+QTOolFOWQqYSSzRZQFCclYSygSDRwSJxKKaJotITFvD9BTjwfe8CImICsLZ26XpxmtdtW+dp7LmXGiRmZlDwBYvAZHIY0cAXH54N4VSn4itXj6pIzH3lAr66TBir44J2lhgnCRf45UQA+4sL/WWvpXhc+CdlFT3jEmb6CpuGS9lsFtv3XNJ+v9Cm59L2m0X0hkvc6AsoGZc6U47zuORPR9lcevuIky/5vk7mJZzAl1kWJ9GawToaOjblciLdCfWVild1zOFkPo5VdFQjBifU+C+i5BkAGygZGGByUk0gpCUACloKaJxY7ZKaS5ca16fGi6mJU2rSnJq8pqZuqWnpqampc2rylJo0pib2qfEO1LhX1Fxq1GgoaCmAkJYAuKPFBNhAycAARJREAHBBifEfKjoqjDp0OGPqKxWv6hgOVLiYZB0NHZvCPQ0W5iYUJJh98iXf18k8PMhn41hPNg9HK5lcmXIc9EamRseSm16efoNl970s/R5Lbxo5mg2W1zMZMh1rKp54noKVH77E+rKx/kkiUnICIe87UToLorLDqwivLoPAqlOtVTkqRL+IhuWGyICU7C4slihCk0Fi7ergx2let22dp7HvXmpYG1ZQOCCsAwAAcBMAnQEqUABQAD6RRJtKJaOiIaZ2a5iwEgljAL9sLsxivPy5L68KtPe00pQbU5X/2xXBD4wuHQwrZ0tUBhFPilv3uMZIqG/6geWjh3IimaDV45ht7u/VpZ3KHU2+de54Va4Th6AuCyDrnWdl/SiwixS/Q8tYdvrA85Y4mLQedLBbjlJ40ohpgh3oPYtV7NTZ429jCZh/QXkWw0zW/J3L+mz0YDQA/vx6/+V/xt//yLLhdvsw8PJjmyX1tVXQ9gVJIHzyUYIVxVM/ABIxxNZfbozCpQJ+GFjXHhZNHVmBwllCPt5oGWMbeKZH0qHQY9HFJPZQRFLR/1T5QJK6Rnjdq46uNty+SKHnivj68Qq7ADV6XQxbYh+Q+FZ6Urbb0vEY2tk9yaeDfPv380acT1EnnbUZdE+zfSsxSwXMqn2ob3WlJUko1Y0Yc9+mp5yPVXeGucWNzr0PfmQX5sDBRNsair0XwUYpVFmqy9F9BljQtJEF/8dNILTxzgmiU3nw8j1Hlf6QC1rZizyiiE/roPvYRmPJzBvvsWSVDrxeu5Ej5Auh7U96puTXsnb4aQ33VMp/y1Fah1V+2fNS99UDjNyuXrAiWRxzVOW8l7/dwP9r+wjfigkwFfZXtLAXtxLbcbCiHHrqjMzwGGKqVdUbZzGcsbEjqTj8d5rdu2jmBzvaPP6hpvwBGv/vJQWUzfu4Va5YlMHUCSvillhLedWQ+DvTVrdRZGF0V18Lo0sZaAAWGb+643jaI4cHma3zQsOYHIXVVOMUGo6F+4cE3wqBsj9XGWi1HCdKMj2fv/E6WA2Uk/iv3r4/HOoNAQq16i9ypuBAdV9c2bmxzP4tdu8zVqjZrkSPKEloyiBAkqv7w9h+Y3KY2CNAfcXT52iaCl2npMdzBqudwwrRkcF1X23wr2YqHzlBYiTeEsRFoXqbx63vxBU9qN1TqNgu4kSs2D9YdfhziZYKywgmW4kQT4aha6C3AKCezHuQpKRRGSk+cw6YRnlEUTqr9Cb9fiJfYI3pFomwK+7nEmgWdFuy8/PeCzhUGtn+WZNFLtup9HDDnTEaM9rNfGxEUdgw9WZBNqaNRAZS9e8OoZquL7bThGusFn1Dz2N714oFQNivgiB1ACWCZvnin48hC0a1rPImrEjTejjwN4w3bpt1PibCw7TTAGHTcEKb5tDXPcF4h0T+Y89Or/DFOXobplQmkHXHCbmUV1EzP7cH//WCf/1f9//6u3gQFSFRwcbSCYDMA6gAAA==" alt="avatar image"
-                                 class="item-testimonials__avatar">
-                              <div class="item-testimonials__content">
-                                 <blockquote class="item-testimonials__text">
-                                    <p>"Temporibus autem quibusdam et aut officiis debitis. Itaque earum rerum hic
-                                       tenetur a sapiente
-                                       delectus Nam libero
-                                       tempore, cum soluta nobis est eligendi option."
-                                    </p>
-                                 </blockquote>
-                                 <div class="item-testimonials__footer">
-                                    <cite class="item-testimonials__name">TERESA LISBON</cite>
-                                    <span class="item-testimonials__label">HTMLBEANS - CEO</span>
-                                 </div>
-                              </div>
-                           </article>
-                        </div>
-                        <div class="slider-testimonials__slide swiper-slide">
-                           <article class="item-testimonials">
-                              <img src="data:image/webp;base64,UklGRqgFAABXRUJQVlA4WAoAAAAQAAAATwAATwAAQUxQSNYBAAABkCJt21Nnj2W+QTOolFOWQqYSSzRZQFCclYSygSDRwSJxKKaJotITFvD9BTjwfe8CImICsLZ26XpxmtdtW+dp7LmXGiRmZlDwBYvAZHIY0cAXH54N4VSn4itXj6pIzH3lAr66TBir44J2lhgnCRf45UQA+4sL/WWvpXhc+CdlFT3jEmb6CpuGS9lsFtv3XNJ+v9Cm59L2m0X0hkvc6AsoGZc6U47zuORPR9lcevuIky/5vk7mJZzAl1kWJ9GawToaOjblciLdCfWVild1zOFkPo5VdFQjBifU+C+i5BkAGygZGGByUk0gpCUACloKaJxY7ZKaS5ca16fGi6mJU2rSnJq8pqZuqWnpqampc2rylJo0pib2qfEO1LhX1Fxq1GgoaCmAkJYAuKPFBNhAycAARJREAHBBifEfKjoqjDp0OGPqKxWv6hgOVLiYZB0NHZvCPQ0W5iYUJJh98iXf18k8PMhn41hPNg9HK5lcmXIc9EamRseSm16efoNl970s/R5Lbxo5mg2W1zMZMh1rKp54noKVH77E+rKx/kkiUnICIe87UToLorLDqwivLoPAqlOtVTkqRL+IhuWGyICU7C4slihCk0Fi7ergx2let22dp7HvXmpYG1ZQOCCsAwAAcBMAnQEqUABQAD6RRJtKJaOiIaZ2a5iwEgljAL9sLsxivPy5L68KtPe00pQbU5X/2xXBD4wuHQwrZ0tUBhFPilv3uMZIqG/6geWjh3IimaDV45ht7u/VpZ3KHU2+de54Va4Th6AuCyDrnWdl/SiwixS/Q8tYdvrA85Y4mLQedLBbjlJ40ohpgh3oPYtV7NTZ429jCZh/QXkWw0zW/J3L+mz0YDQA/vx6/+V/xt//yLLhdvsw8PJjmyX1tVXQ9gVJIHzyUYIVxVM/ABIxxNZfbozCpQJ+GFjXHhZNHVmBwllCPt5oGWMbeKZH0qHQY9HFJPZQRFLR/1T5QJK6Rnjdq46uNty+SKHnivj68Qq7ADV6XQxbYh+Q+FZ6Urbb0vEY2tk9yaeDfPv380acT1EnnbUZdE+zfSsxSwXMqn2ob3WlJUko1Y0Yc9+mp5yPVXeGucWNzr0PfmQX5sDBRNsair0XwUYpVFmqy9F9BljQtJEF/8dNILTxzgmiU3nw8j1Hlf6QC1rZizyiiE/roPvYRmPJzBvvsWSVDrxeu5Ej5Auh7U96puTXsnb4aQ33VMp/y1Fah1V+2fNS99UDjNyuXrAiWRxzVOW8l7/dwP9r+wjfigkwFfZXtLAXtxLbcbCiHHrqjMzwGGKqVdUbZzGcsbEjqTj8d5rdu2jmBzvaPP6hpvwBGv/vJQWUzfu4Va5YlMHUCSvillhLedWQ+DvTVrdRZGF0V18Lo0sZaAAWGb+643jaI4cHma3zQsOYHIXVVOMUGo6F+4cE3wqBsj9XGWi1HCdKMj2fv/E6WA2Uk/iv3r4/HOoNAQq16i9ypuBAdV9c2bmxzP4tdu8zVqjZrkSPKEloyiBAkqv7w9h+Y3KY2CNAfcXT52iaCl2npMdzBqudwwrRkcF1X23wr2YqHzlBYiTeEsRFoXqbx63vxBU9qN1TqNgu4kSs2D9YdfhziZYKywgmW4kQT4aha6C3AKCezHuQpKRRGSk+cw6YRnlEUTqr9Cb9fiJfYI3pFomwK+7nEmgWdFuy8/PeCzhUGtn+WZNFLtup9HDDnTEaM9rNfGxEUdgw9WZBNqaNRAZS9e8OoZquL7bThGusFn1Dz2N714oFQNivgiB1ACWCZvnin48hC0a1rPImrEjTejjwN4w3bpt1PibCw7TTAGHTcEKb5tDXPcF4h0T+Y89Or/DFOXobplQmkHXHCbmUV1EzP7cH//WCf/1f9//6u3gQFSFRwcbSCYDMA6gAAA==" alt="avatar image"
-                                 class="item-testimonials__avatar">
-                              <div class="item-testimonials__content">
-                                 <blockquote class="item-testimonials__text">
-                                    <p>"Temporibus autem quibusdam et aut officiis debitis. Itaque earum rerum hic
-                                       tenetur a sapiente
-                                       delectus Nam libero
-                                       tempore, cum soluta nobis est eligendi option."
-                                    </p>
-                                 </blockquote>
-                                 <div class="item-testimonials__footer">
-                                    <cite class="item-testimonials__name">TERESA LISBON</cite>
-                                    <span class="item-testimonials__label">HTMLBEANS - CEO</span>
-                                 </div>
-                              </div>
-                           </article>
-                        </div>
-                     </div>
-                  </div>
-                  <!-- If we need pagination -->
-                  <div class="slider-testimonials__pagination swiper-pagination"></div>
-               </div>
+        <section class="page__banner banner" data-delay="300">
+          <div class="banner__container banner__container--anim">
+            <h2 class="banner__title">We grow brands by making decisions that are
+              rooted in business strategy.
+            </h2>
+            <a href="#" target="_blank" class="banner__button button button--start">GET STARTED NOW</a>
+          </div>
+        </section>
+
+        <section class="page__team team">
+          <div class="team__container">
+            <div class="team__header block-header block-header--anim">
+              <h2 class="block-header__title">Awesome Team</h2>
+              <div class="block-header__text">
+                <p>Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+                  laoreet dolore magna
+                  aliquam erat volutpat. Ut wisi enim ad minim veniam
+                </p>
+              </div>
             </div>
-         </section>
-
-         <section class="page__work work">
-            <div class="work__container">
-               <div class="work__header block-header block-header--anim">
-                  <h2 class="block-header__title block-header__title--lato">Recent Work</h2>
-                  <div class="block-header__text">
-                     <p>Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                        laoreet dolore magna
-                        aliquam erat volutpat. Ut wisi enim ad minim veniam
-                     </p>
+            <div class="team__items team__items--anim" data-delay="300" data-step="150">
+              <figure class="item-team anim-child">
+                <div class="item-team__wrap">
+                  <a href="#" class="item-team__image">
+                    <img src="/fekra/assets/employee-01.f0d5e434.webp" alt="image of employee">
+                  </a>
+                  <div class="social-media">
+                    <a href="#" class="social-media__link social-media__link--icon-fb"></a>
+                    <a href="#" class="social-media__link social-media__link--icon-twitter"></a>
+                    <a href="#" class="social-media__link social-media__link--icon-linked"></a>
+                    <a href="#" class="social-media__link social-media__link--icon-google-plus"></a>
                   </div>
-               </div>
-               <div class="work__filter filter-work filter-work--anim" data-threshold="0.1" data-step="150" data-filter
-                  data data-visible="8" data-scroll-offset="300">
-                  <nav class="filter-work__controls" data-filter-controls>
-                     <ul class="filter-work__menu menu-filter menu-filter--anim" data-delay="300" data-step="150">
-                        <li class="menu-filter__item anim-child">
-                           <button type="button" class="menu-filter__btn is-active"
-                              data-filter-btn="design">DESIGN</button>
-                        </li>
-                        <li class="menu-filter__item anim-child">
-                           <button type="button" class="menu-filter__btn" data-filter-btn="fashion">FASHION</button>
-                        </li>
-                        <li class="menu-filter__item anim-child">
-                           <button type="button" class="menu-filter__btn"
-                              data-filter-btn="illustration">ILLUSTRATION</button>
-                        </li>
-                        <li class="menu-filter__item anim-child">
-                           <button type="button" class="menu-filter__btn" data-filter-btn="products">PRODUCTS</button>
-                        </li>
-                     </ul>
-                  </nav>
-                  <div class="filter-work__items" data-filter-grid>
-                     <article class="item-work anim-child" data-filter-item data-category="design fashion">
-                        <a href="#" class="item-work__inner">
-                           <div class="item-work__image">
-                              <img src="/fekra/assets/work-img-01.18048a9f.webp" alt="image of work item">
-                           </div>
-                           <div class="item-work__content">
-                              <h3 class="item-work__title">PRODUCT WE HAVE</h3>
-                              <span class="item-work__label">PRODUCT</span>
-                           </div>
-                        </a>
-                     </article>
-                     <article class="item-work anim-child" data-filter-item data-category="design fashion">
-                        <a href="#" class="item-work__inner">
-                           <div class="item-work__image">
-                              <img src="/fekra/assets/work-img-02.b32b3efe.webp" alt="image of work item">
-                           </div>
-                           <div class="item-work__content">
-                              <h3 class="item-work__title">PRODUCT WE HAVE</h3>
-                              <span class="item-work__label">PRODUCT</span>
-                           </div>
-                        </a>
-                     </article>
-                     <article class="item-work anim-child" data-filter-item
-                        data-category="design fashion illustration products">
-                        <a href="#" class="item-work__inner">
-                           <div class="item-work__image">
-                              <img src="/fekra/assets/work-img-03.94d90e3e.webp" alt="image of work item">
-                           </div>
-                           <div class="item-work__content">
-                              <h3 class="item-work__title">PRODUCT WE HAVE</h3>
-                              <span class="item-work__label">PRODUCT</span>
-                           </div>
-                        </a>
-                     </article>
-                     <article class="item-work anim-child" data-filter-item
-                        data-category="design fashion illustration products">
-                        <a href="#" class="item-work__inner">
-                           <div class="item-work__image">
-                              <img src="/fekra/assets/work-img-04.2e92dce1.webp" alt="image of work item">
-                           </div>
-                           <div class="item-work__content">
-                              <h3 class="item-work__title">PRODUCT WE HAVE</h3>
-                              <span class="item-work__label">PRODUCT</span>
-                           </div>
-                        </a>
-                     </article>
-                     <article class="item-work anim-child" data-filter-item
-                        data-category="design fashion illustration products">
-                        <a href="#" class="item-work__inner">
-                           <div class="item-work__image">
-                              <img src="/fekra/assets/work-img-05.22c3aa98.webp" alt="image of work item">
-                           </div>
-                           <div class="item-work__content">
-                              <h3 class="item-work__title">PRODUCT WE HAVE</h3>
-                              <span class="item-work__label">PRODUCT</span>
-                           </div>
-                        </a>
-                     </article>
-                     <article class="item-work anim-child" data-filter-item
-                        data-category="design fashion illustration products">
-                        <a href="#" class="item-work__inner">
-                           <div class="item-work__image">
-                              <img src="/fekra/assets/work-img-06.9594acd5.webp" alt="image of work item">
-                           </div>
-                           <div class="item-work__content">
-                              <h3 class="item-work__title">PRODUCT WE HAVE</h3>
-                              <span class="item-work__label">PRODUCT</span>
-                           </div>
-                        </a>
-                     </article>
-                     <article class="item-work anim-child" data-filter-item
-                        data-category="design fashion illustration products">
-                        <a href="#" class="item-work__inner">
-                           <div class="item-work__image">
-                              <img src="/fekra/assets/work-img-07.08e66385.webp" alt="image of work item">
-                           </div>
-                           <div class="item-work__content">
-                              <h3 class="item-work__title">PRODUCT WE HAVE</h3>
-                              <span class="item-work__label">PRODUCT</span>
-                           </div>
-                        </a>
-                     </article>
-                     <article class="item-work anim-child" data-filter-item
-                        data-category="design fashion illustration products">
-                        <a href="#" class="item-work__inner">
-                           <div class="item-work__image">
-                              <img src="data:image/webp;base64,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" alt="image of work item">
-                           </div>
-                           <div class="item-work__content">
-                              <h3 class="item-work__title">PRODUCT WE HAVE</h3>
-                              <span class="item-work__label">PRODUCT</span>
-                           </div>
-                        </a>
-                     </article>
+                </div>
+                <figcaption class="item-team__bottom bottom-team">
+                  <h4 class="bottom-team__name">
+                    <a href="#" class="bottom-team__link">JOLIA ROBERTES</a>
+                  </h4>
+                  <span class="bottom-team__label">FOUNDER</span>
+                </figcaption>
+              </figure>
+              <figure class="item-team anim-child">
+                <div class="item-team__wrap">
+                  <a href="#" class="item-team__image">
+                    <img src="/fekra/assets/employee-02.f114de44.webp" alt="image of employee">
+                  </a>
+                  <div class="social-media">
+                    <a href="#" class="social-media__link social-media__link--icon-fb"></a>
+                    <a href="#" class="social-media__link social-media__link--icon-twitter"></a>
+                    <a href="#" class="social-media__link social-media__link--icon-linked"></a>
+                    <a href="#" class="social-media__link social-media__link--icon-google-plus"></a>
                   </div>
-               </div>
-               <a href="#" target="_blank" class="work__button work__button--anim button button--dark"
-                  data-delay="300">VIEW OUR
-                  PORTFOLIO</a>
+                </div>
+                <figcaption class="item-team__bottom bottom-team">
+                  <h4 class="bottom-team__name">
+                    <a href="#" class="bottom-team__link">JULIAN LECHER</a>
+                  </h4>
+                  <span class="bottom-team__label">PROJECT MANAGER</span>
+                </figcaption>
+              </figure>
+              <figure class="item-team anim-child">
+                <div class="item-team__wrap">
+                  <a href="#" class="item-team__image">
+                    <img src="/fekra/assets/employee-03.215c3e44.webp" alt="image of employee">
+                  </a>
+                  <div class="social-media">
+                    <a href="#" class="social-media__link social-media__link--icon-fb"></a>
+                    <a href="#" class="social-media__link social-media__link--icon-twitter"></a>
+                    <a href="#" class="social-media__link social-media__link--icon-linked"></a>
+                    <a href="#" class="social-media__link social-media__link--icon-google-plus"></a>
+                  </div>
+                </div>
+                <figcaption class="item-team__bottom bottom-team">
+                  <h4 class="bottom-team__name">
+                    <a href="#" class="bottom-team__link">LORA BUTHCER</a>
+                  </h4>
+                  <span class="bottom-team__label">LORA BUTHCER</span>
+                </figcaption>
+              </figure>
+              <figure class="item-team anim-child">
+                <div class="item-team__wrap">
+                  <a href="#" class="item-team__image">
+                    <img src="/fekra/assets/employee-04.63abb556.webp" alt="image of employee">
+                  </a>
+                  <div class="social-media">
+                    <a href="#" class="social-media__link social-media__link--icon-fb"></a>
+                    <a href="#" class="social-media__link social-media__link--icon-twitter"></a>
+                    <a href="#" class="social-media__link social-media__link--icon-linked"></a>
+                    <a href="#" class="social-media__link social-media__link--icon-google-plus"></a>
+                  </div>
+                </div>
+                <figcaption class="item-team__bottom bottom-team">
+                  <h4 class="bottom-team__name">
+                    <a href="#" class="bottom-team__link">HENRY FRANK</a>
+                  </h4>
+                  <span class="bottom-team__label">CREATIVE DESIGNER</span>
+                </figcaption>
+              </figure>
             </div>
-         </section>
+          </div>
+        </section>
 
-         <section class="page__features features">
-            <div class="features__container">
-               <div class="features__content">
-                  <div class="features__top top-features top-features--anim" data-delay="500">
-                     <h2 class="top-features__title">More Features Of Fekra</h2>
-                     <div class="top-features__text">
-                        <p>Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
-                           ut
-                           laoreet dolore magna
-                           aliquam erat volutpat. Ut wisi enim ad minim veniam
-                        </p>
-                     </div>
-                  </div>
-                  <ul class="features__items item-features item-features--anim" data-delay="300" data-step="150">
-                     <li class="item-features__item">
-                        <article class="item-history-advant item-history-advant--feature  anim-child">
-                           <a href="#" class="item-history-advant__inner">
-                              <div class="item-history-advant__icon item-history-advant__icon--icon-pencil"></div>
-                              <div class="item-history-advant__content content-adv-history">
-                                 <h4 class="content-adv-history__title">TRENDY DESIGN</h4>
-                                 <div class="content-adv-history__text">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry It has
-                                       survived not only five centuries, but
-                                       also the leap into electroni remaining essentially unchanged
-                                    </p>
-                                 </div>
-                              </div>
-                           </a>
-                        </article>
-                     </li>
-                     <li class="item-features__item">
-                        <article class="item-history-advant item-history-advant--feature anim-child">
-                           <a href="#" class="item-history-advant__inner">
-                              <div class="item-history-advant__icon item-history-advant__icon--icon-cog"></div>
-                              <div class="item-history-advant__content content-adv-history">
-                                 <h4 class="content-adv-history__title">THEME OPTIONS</h4>
-                                 <div class="content-adv-history__text">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry It has
-                                       survived not only five centuries, but
-                                       also the leap into electroni remaining essentially unchanged
-                                    </p>
-                                 </div>
-                              </div>
-                           </a>
-                        </article>
-                     </li>
-                     <li class="item-features__item">
-                        <article class="item-history-advant item-history-advant--feature anim-child">
-                           <a href="#" class="item-history-advant__inner">
-                              <div class="item-history-advant__icon item-history-advant__icon--icon-briefcase"></div>
-                              <div class="item-history-advant__content content-adv-history">
-                                 <h4 class="content-adv-history__title">FULL OF FEATURES</h4>
-                                 <div class="content-adv-history__text">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry It has
-                                       survived not only five centuries, but
-                                       also the leap into electroni remaining essentially unchanged
-                                    </p>
-                                 </div>
-                              </div>
-                           </a>
-                        </article>
-                     </li>
-                     <li class="item-features__item">
-                        <article class="item-history-advant item-history-advant--feature anim-child">
-                           <a href="#" class="item-history-advant__inner">
-                              <div class="item-history-advant__icon item-history-advant__icon--icon-monitor"></div>
-                              <div class="item-history-advant__content content-adv-history">
-                                 <h4 class="content-adv-history__title">CLEAN & MODERN CODE</h4>
-                                 <div class="content-adv-history__text">
-                                    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry It has
-                                       survived not only five centuries, but
-                                       also the leap into electroni remaining essentially unchanged
-                                    </p>
-                                 </div>
-                              </div>
-                           </a>
-                        </article>
-                     </li>
-                  </ul>
-               </div>
-               <div class="features__image features__image--anim" data-threshold="0.25">
-                  <img src="/fekra/assets/man-banner-img.a2c0d354.webp" alt="smiling man">
-               </div>
+        <section class="page__testimonials testimonials">
+          <div class="testimonials__container testimonials__container--anim" data-delay="300" data-threshold="0.2">
+            <div class="testimonials__header block-header block-header--anim block-header--white">
+              <h2 class="block-header__title">TESTIMONIALS</h2>
             </div>
-         </section>
-
-         <section class="page__pricing pricing">
-            <div class="pricing__container">
-               <div class="pricing__header block-header block-header--anim block-header--white">
-                  <h2 class="block-header__title">Pricing Tables</h2>
-                  <div class="block-header__text">
-                     <p>Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                        laoreet dolore magna
-                        aliquam erat volutpat. Ut wisi enim ad minim veniam
-                     </p>
+            <div class="testimonials__body">
+              <!-- Slider main container -->
+              <div class="testimonials__slider slider-testimonials swiper">
+                <!-- Additional required wrapper -->
+                <div class="slider-testimonials__wrapper swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="slider-testimonials__slide swiper-slide">
+                    <article class="item-testimonials">
+                      <img src="data:image/webp;base64,UklGRqgFAABXRUJQVlA4WAoAAAAQAAAATwAATwAAQUxQSNYBAAABkCJt21Nnj2W+QTOolFOWQqYSSzRZQFCclYSygSDRwSJxKKaJotITFvD9BTjwfe8CImICsLZ26XpxmtdtW+dp7LmXGiRmZlDwBYvAZHIY0cAXH54N4VSn4itXj6pIzH3lAr66TBir44J2lhgnCRf45UQA+4sL/WWvpXhc+CdlFT3jEmb6CpuGS9lsFtv3XNJ+v9Cm59L2m0X0hkvc6AsoGZc6U47zuORPR9lcevuIky/5vk7mJZzAl1kWJ9GawToaOjblciLdCfWVild1zOFkPo5VdFQjBifU+C+i5BkAGygZGGByUk0gpCUACloKaJxY7ZKaS5ca16fGi6mJU2rSnJq8pqZuqWnpqampc2rylJo0pib2qfEO1LhX1Fxq1GgoaCmAkJYAuKPFBNhAycAARJREAHBBifEfKjoqjDp0OGPqKxWv6hgOVLiYZB0NHZvCPQ0W5iYUJJh98iXf18k8PMhn41hPNg9HK5lcmXIc9EamRseSm16efoNl970s/R5Lbxo5mg2W1zMZMh1rKp54noKVH77E+rKx/kkiUnICIe87UToLorLDqwivLoPAqlOtVTkqRL+IhuWGyICU7C4slihCk0Fi7ergx2let22dp7HvXmpYG1ZQOCCsAwAAcBMAnQEqUABQAD6RRJtKJaOiIaZ2a5iwEgljAL9sLsxivPy5L68KtPe00pQbU5X/2xXBD4wuHQwrZ0tUBhFPilv3uMZIqG/6geWjh3IimaDV45ht7u/VpZ3KHU2+de54Va4Th6AuCyDrnWdl/SiwixS/Q8tYdvrA85Y4mLQedLBbjlJ40ohpgh3oPYtV7NTZ429jCZh/QXkWw0zW/J3L+mz0YDQA/vx6/+V/xt//yLLhdvsw8PJjmyX1tVXQ9gVJIHzyUYIVxVM/ABIxxNZfbozCpQJ+GFjXHhZNHVmBwllCPt5oGWMbeKZH0qHQY9HFJPZQRFLR/1T5QJK6Rnjdq46uNty+SKHnivj68Qq7ADV6XQxbYh+Q+FZ6Urbb0vEY2tk9yaeDfPv380acT1EnnbUZdE+zfSsxSwXMqn2ob3WlJUko1Y0Yc9+mp5yPVXeGucWNzr0PfmQX5sDBRNsair0XwUYpVFmqy9F9BljQtJEF/8dNILTxzgmiU3nw8j1Hlf6QC1rZizyiiE/roPvYRmPJzBvvsWSVDrxeu5Ej5Auh7U96puTXsnb4aQ33VMp/y1Fah1V+2fNS99UDjNyuXrAiWRxzVOW8l7/dwP9r+wjfigkwFfZXtLAXtxLbcbCiHHrqjMzwGGKqVdUbZzGcsbEjqTj8d5rdu2jmBzvaPP6hpvwBGv/vJQWUzfu4Va5YlMHUCSvillhLedWQ+DvTVrdRZGF0V18Lo0sZaAAWGb+643jaI4cHma3zQsOYHIXVVOMUGo6F+4cE3wqBsj9XGWi1HCdKMj2fv/E6WA2Uk/iv3r4/HOoNAQq16i9ypuBAdV9c2bmxzP4tdu8zVqjZrkSPKEloyiBAkqv7w9h+Y3KY2CNAfcXT52iaCl2npMdzBqudwwrRkcF1X23wr2YqHzlBYiTeEsRFoXqbx63vxBU9qN1TqNgu4kSs2D9YdfhziZYKywgmW4kQT4aha6C3AKCezHuQpKRRGSk+cw6YRnlEUTqr9Cb9fiJfYI3pFomwK+7nEmgWdFuy8/PeCzhUGtn+WZNFLtup9HDDnTEaM9rNfGxEUdgw9WZBNqaNRAZS9e8OoZquL7bThGusFn1Dz2N714oFQNivgiB1ACWCZvnin48hC0a1rPImrEjTejjwN4w3bpt1PibCw7TTAGHTcEKb5tDXPcF4h0T+Y89Or/DFOXobplQmkHXHCbmUV1EzP7cH//WCf/1f9//6u3gQFSFRwcbSCYDMA6gAAA==" alt="avatar image"
+                        class="item-testimonials__avatar">
+                      <div class="item-testimonials__content">
+                        <blockquote class="item-testimonials__text">
+                          <p>"Temporibus autem quibusdam et aut officiis debitis. Itaque earum rerum hic
+                            tenetur a sapiente
+                            delectus Nam libero
+                            tempore, cum soluta nobis est eligendi option."
+                          </p>
+                        </blockquote>
+                        <div class="item-testimonials__footer">
+                          <cite class="item-testimonials__name">TERESA LISBON</cite>
+                          <span class="item-testimonials__label">HTMLBEANS - CEO</span>
+                        </div>
+                      </div>
+                    </article>
                   </div>
-               </div>
-               <div class="pricing__items pricing__items--anim" data-delay="300" data-step="150">
-                  <article class="item-pricing anim-child">
-                     <div class="item-pricing__top top-pricing">
-                        <h3 class="top-pricing__title">STANDARD</h3>
-                     </div>
-                     <div class="item-pricing__body body-pricing">
-                        <div class="body-pricing__price price">
-                           <span class="price__amount"><small>$</small>3.99</span>
-                           <span class="price__label">PER MONTH</span>
+                  <div class="slider-testimonials__slide swiper-slide">
+                    <article class="item-testimonials">
+                      <img src="data:image/webp;base64,UklGRqgFAABXRUJQVlA4WAoAAAAQAAAATwAATwAAQUxQSNYBAAABkCJt21Nnj2W+QTOolFOWQqYSSzRZQFCclYSygSDRwSJxKKaJotITFvD9BTjwfe8CImICsLZ26XpxmtdtW+dp7LmXGiRmZlDwBYvAZHIY0cAXH54N4VSn4itXj6pIzH3lAr66TBir44J2lhgnCRf45UQA+4sL/WWvpXhc+CdlFT3jEmb6CpuGS9lsFtv3XNJ+v9Cm59L2m0X0hkvc6AsoGZc6U47zuORPR9lcevuIky/5vk7mJZzAl1kWJ9GawToaOjblciLdCfWVild1zOFkPo5VdFQjBifU+C+i5BkAGygZGGByUk0gpCUACloKaJxY7ZKaS5ca16fGi6mJU2rSnJq8pqZuqWnpqampc2rylJo0pib2qfEO1LhX1Fxq1GgoaCmAkJYAuKPFBNhAycAARJREAHBBifEfKjoqjDp0OGPqKxWv6hgOVLiYZB0NHZvCPQ0W5iYUJJh98iXf18k8PMhn41hPNg9HK5lcmXIc9EamRseSm16efoNl970s/R5Lbxo5mg2W1zMZMh1rKp54noKVH77E+rKx/kkiUnICIe87UToLorLDqwivLoPAqlOtVTkqRL+IhuWGyICU7C4slihCk0Fi7ergx2let22dp7HvXmpYG1ZQOCCsAwAAcBMAnQEqUABQAD6RRJtKJaOiIaZ2a5iwEgljAL9sLsxivPy5L68KtPe00pQbU5X/2xXBD4wuHQwrZ0tUBhFPilv3uMZIqG/6geWjh3IimaDV45ht7u/VpZ3KHU2+de54Va4Th6AuCyDrnWdl/SiwixS/Q8tYdvrA85Y4mLQedLBbjlJ40ohpgh3oPYtV7NTZ429jCZh/QXkWw0zW/J3L+mz0YDQA/vx6/+V/xt//yLLhdvsw8PJjmyX1tVXQ9gVJIHzyUYIVxVM/ABIxxNZfbozCpQJ+GFjXHhZNHVmBwllCPt5oGWMbeKZH0qHQY9HFJPZQRFLR/1T5QJK6Rnjdq46uNty+SKHnivj68Qq7ADV6XQxbYh+Q+FZ6Urbb0vEY2tk9yaeDfPv380acT1EnnbUZdE+zfSsxSwXMqn2ob3WlJUko1Y0Yc9+mp5yPVXeGucWNzr0PfmQX5sDBRNsair0XwUYpVFmqy9F9BljQtJEF/8dNILTxzgmiU3nw8j1Hlf6QC1rZizyiiE/roPvYRmPJzBvvsWSVDrxeu5Ej5Auh7U96puTXsnb4aQ33VMp/y1Fah1V+2fNS99UDjNyuXrAiWRxzVOW8l7/dwP9r+wjfigkwFfZXtLAXtxLbcbCiHHrqjMzwGGKqVdUbZzGcsbEjqTj8d5rdu2jmBzvaPP6hpvwBGv/vJQWUzfu4Va5YlMHUCSvillhLedWQ+DvTVrdRZGF0V18Lo0sZaAAWGb+643jaI4cHma3zQsOYHIXVVOMUGo6F+4cE3wqBsj9XGWi1HCdKMj2fv/E6WA2Uk/iv3r4/HOoNAQq16i9ypuBAdV9c2bmxzP4tdu8zVqjZrkSPKEloyiBAkqv7w9h+Y3KY2CNAfcXT52iaCl2npMdzBqudwwrRkcF1X23wr2YqHzlBYiTeEsRFoXqbx63vxBU9qN1TqNgu4kSs2D9YdfhziZYKywgmW4kQT4aha6C3AKCezHuQpKRRGSk+cw6YRnlEUTqr9Cb9fiJfYI3pFomwK+7nEmgWdFuy8/PeCzhUGtn+WZNFLtup9HDDnTEaM9rNfGxEUdgw9WZBNqaNRAZS9e8OoZquL7bThGusFn1Dz2N714oFQNivgiB1ACWCZvnin48hC0a1rPImrEjTejjwN4w3bpt1PibCw7TTAGHTcEKb5tDXPcF4h0T+Y89Or/DFOXobplQmkHXHCbmUV1EzP7cH//WCf/1f9//6u3gQFSFRwcbSCYDMA6gAAA==" alt="avatar image"
+                        class="item-testimonials__avatar">
+                      <div class="item-testimonials__content">
+                        <blockquote class="item-testimonials__text">
+                          <p>"Temporibus autem quibusdam et aut officiis debitis. Itaque earum rerum hic
+                            tenetur a sapiente
+                            delectus Nam libero
+                            tempore, cum soluta nobis est eligendi option."
+                          </p>
+                        </blockquote>
+                        <div class="item-testimonials__footer">
+                          <cite class="item-testimonials__name">TERESA LISBON</cite>
+                          <span class="item-testimonials__label">HTMLBEANS - CEO</span>
                         </div>
-                        <ul class="body-pricing__tariffs tarrifs">
-                           <li class="tarrifs__item">Unlimited Bandwidth</li>
-                           <li class="tarrifs__item">100 GB Space</li>
-                           <li class="tarrifs__item">10 Databases</li>
-                           <li class="tarrifs__item">Free Ad Credits</li>
-                           <li class="tarrifs__item">2 Month Support</li>
-                           <li class="tarrifs__item">Unlimate File Access</li>
-                        </ul>
-                        <button type="button" class="body-pricing__button button button--purchase">PURCHASE NOW</button>
-                     </div>
-                  </article>
-                  <article class="item-pricing anim-child">
-                     <div class="item-pricing__top top-pricing">
-                        <h3 class="top-pricing__title">BUSINNES</h3>
-                     </div>
-                     <div class="item-pricing__body body-pricing">
-                        <div class="body-pricing__price price">
-                           <span class="price__amount"><small>$</small>9.99</span>
-                           <span class="price__label">PER MONTH</span>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="slider-testimonials__slide swiper-slide">
+                    <article class="item-testimonials">
+                      <img src="data:image/webp;base64,UklGRqgFAABXRUJQVlA4WAoAAAAQAAAATwAATwAAQUxQSNYBAAABkCJt21Nnj2W+QTOolFOWQqYSSzRZQFCclYSygSDRwSJxKKaJotITFvD9BTjwfe8CImICsLZ26XpxmtdtW+dp7LmXGiRmZlDwBYvAZHIY0cAXH54N4VSn4itXj6pIzH3lAr66TBir44J2lhgnCRf45UQA+4sL/WWvpXhc+CdlFT3jEmb6CpuGS9lsFtv3XNJ+v9Cm59L2m0X0hkvc6AsoGZc6U47zuORPR9lcevuIky/5vk7mJZzAl1kWJ9GawToaOjblciLdCfWVild1zOFkPo5VdFQjBifU+C+i5BkAGygZGGByUk0gpCUACloKaJxY7ZKaS5ca16fGi6mJU2rSnJq8pqZuqWnpqampc2rylJo0pib2qfEO1LhX1Fxq1GgoaCmAkJYAuKPFBNhAycAARJREAHBBifEfKjoqjDp0OGPqKxWv6hgOVLiYZB0NHZvCPQ0W5iYUJJh98iXf18k8PMhn41hPNg9HK5lcmXIc9EamRseSm16efoNl970s/R5Lbxo5mg2W1zMZMh1rKp54noKVH77E+rKx/kkiUnICIe87UToLorLDqwivLoPAqlOtVTkqRL+IhuWGyICU7C4slihCk0Fi7ergx2let22dp7HvXmpYG1ZQOCCsAwAAcBMAnQEqUABQAD6RRJtKJaOiIaZ2a5iwEgljAL9sLsxivPy5L68KtPe00pQbU5X/2xXBD4wuHQwrZ0tUBhFPilv3uMZIqG/6geWjh3IimaDV45ht7u/VpZ3KHU2+de54Va4Th6AuCyDrnWdl/SiwixS/Q8tYdvrA85Y4mLQedLBbjlJ40ohpgh3oPYtV7NTZ429jCZh/QXkWw0zW/J3L+mz0YDQA/vx6/+V/xt//yLLhdvsw8PJjmyX1tVXQ9gVJIHzyUYIVxVM/ABIxxNZfbozCpQJ+GFjXHhZNHVmBwllCPt5oGWMbeKZH0qHQY9HFJPZQRFLR/1T5QJK6Rnjdq46uNty+SKHnivj68Qq7ADV6XQxbYh+Q+FZ6Urbb0vEY2tk9yaeDfPv380acT1EnnbUZdE+zfSsxSwXMqn2ob3WlJUko1Y0Yc9+mp5yPVXeGucWNzr0PfmQX5sDBRNsair0XwUYpVFmqy9F9BljQtJEF/8dNILTxzgmiU3nw8j1Hlf6QC1rZizyiiE/roPvYRmPJzBvvsWSVDrxeu5Ej5Auh7U96puTXsnb4aQ33VMp/y1Fah1V+2fNS99UDjNyuXrAiWRxzVOW8l7/dwP9r+wjfigkwFfZXtLAXtxLbcbCiHHrqjMzwGGKqVdUbZzGcsbEjqTj8d5rdu2jmBzvaPP6hpvwBGv/vJQWUzfu4Va5YlMHUCSvillhLedWQ+DvTVrdRZGF0V18Lo0sZaAAWGb+643jaI4cHma3zQsOYHIXVVOMUGo6F+4cE3wqBsj9XGWi1HCdKMj2fv/E6WA2Uk/iv3r4/HOoNAQq16i9ypuBAdV9c2bmxzP4tdu8zVqjZrkSPKEloyiBAkqv7w9h+Y3KY2CNAfcXT52iaCl2npMdzBqudwwrRkcF1X23wr2YqHzlBYiTeEsRFoXqbx63vxBU9qN1TqNgu4kSs2D9YdfhziZYKywgmW4kQT4aha6C3AKCezHuQpKRRGSk+cw6YRnlEUTqr9Cb9fiJfYI3pFomwK+7nEmgWdFuy8/PeCzhUGtn+WZNFLtup9HDDnTEaM9rNfGxEUdgw9WZBNqaNRAZS9e8OoZquL7bThGusFn1Dz2N714oFQNivgiB1ACWCZvnin48hC0a1rPImrEjTejjwN4w3bpt1PibCw7TTAGHTcEKb5tDXPcF4h0T+Y89Or/DFOXobplQmkHXHCbmUV1EzP7cH//WCf/1f9//6u3gQFSFRwcbSCYDMA6gAAA==" alt="avatar image"
+                        class="item-testimonials__avatar">
+                      <div class="item-testimonials__content">
+                        <blockquote class="item-testimonials__text">
+                          <p>"Temporibus autem quibusdam et aut officiis debitis. Itaque earum rerum hic
+                            tenetur a sapiente
+                            delectus Nam libero
+                            tempore, cum soluta nobis est eligendi option."
+                          </p>
+                        </blockquote>
+                        <div class="item-testimonials__footer">
+                          <cite class="item-testimonials__name">TERESA LISBON</cite>
+                          <span class="item-testimonials__label">HTMLBEANS - CEO</span>
                         </div>
-                        <ul class="body-pricing__tariffs tarrifs">
-                           <li class="tarrifs__item">Unlimited Bandwidth</li>
-                           <li class="tarrifs__item">100 GB Space</li>
-                           <li class="tarrifs__item">10 Databases</li>
-                           <li class="tarrifs__item">Free Ad Credits</li>
-                           <li class="tarrifs__item">2 Month Support</li>
-                           <li class="tarrifs__item">Unlimate File Access</li>
-                        </ul>
-                        <button type="button" class="body-pricing__button button button--purchase">PURCHASE NOW</button>
-                     </div>
-                  </article>
-                  <article class="item-pricing anim-child item-pricing--default">
-                     <div class="item-pricing__top top-pricing">
-                        <h3 class="top-pricing__title">PREMIUM</h3>
-                     </div>
-                     <div class="item-pricing__body body-pricing">
-                        <div class="body-pricing__price price">
-                           <span class="price__amount"><small>$</small>78.99</span>
-                           <span class="price__label">PER MONTH</span>
-                        </div>
-                        <ul class="body-pricing__tariffs tarrifs">
-                           <li class="tarrifs__item">Unlimited Bandwidth</li>
-                           <li class="tarrifs__item">100 GB Space</li>
-                           <li class="tarrifs__item">10 Databases</li>
-                           <li class="tarrifs__item">Free Ad Credits</li>
-                           <li class="tarrifs__item">2 Month Support</li>
-                           <li class="tarrifs__item">Unlimate File Access</li>
-                        </ul>
-                        <button type="button" class="body-pricing__button button button--purchase">PURCHASE NOW</button>
-                     </div>
-                  </article>
-                  <article class="item-pricing anim-child">
-                     <div class="item-pricing__top top-pricing">
-                        <h3 class="top-pricing__title">ADVANCED</h3>
-                     </div>
-                     <div class="item-pricing__body body-pricing">
-                        <div class="body-pricing__price price">
-                           <span class="price__amount"><small>$</small>98.99</span>
-                           <span class="price__label">PER MONTH</span>
-                        </div>
-                        <ul class="body-pricing__tariffs tarrifs">
-                           <li class="tarrifs__item">Unlimited Bandwidth</li>
-                           <li class="tarrifs__item">100 GB Space</li>
-                           <li class="tarrifs__item">10 Databases</li>
-                           <li class="tarrifs__item">Free Ad Credits</li>
-                           <li class="tarrifs__item">2 Month Support</li>
-                           <li class="tarrifs__item">Unlimate File Access</li>
-                        </ul>
-                        <button type="button" class="body-pricing__button button button--purchase">PURCHASE NOW</button>
-                     </div>
-                  </article>
-               </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+              <!-- If we need pagination -->
+              <div class="slider-testimonials__pagination swiper-pagination"></div>
             </div>
-         </section>
+          </div>
+        </section>
 
-         <section class="page__blogs blogs">
-            <div class="blogs__container">
-               <div class="blogs__header block-header block-header--anim">
-                  <h2 class="block-header__title">Our Blogs</h2>
-                  <div class="block-header__text">
-                     <p>Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
-                        laoreet dolore magna
-                        aliquam erat volutpat. Ut wisi enim ad minim veniam.
-                     </p>
-                  </div>
-               </div>
-               <div class="blogs__body blogs__body--anim" data-delay="300" data-threshold="0.3">
-                  <!-- Slider main container -->
-                  <div class="blogs__slider slider-blogs swiper">
-                     <!-- Additional required wrapper -->
-                     <div class="slider-blogs__wrapper swiper-wrapper">
-                        <!-- Slides -->
-                        <div class="slider-blogs__slide swiper-slide">
-                           <article class="item-blogs">
-                              <div class="item-blogs__inner">
-                                 <div class="item-blogs__image">
-                                    <img src="/fekra/assets/blog-img-01.74087276.webp" alt="blog image">
-                                 </div>
-                                 <div class="item-blogs__content">
-                                    <h3 class="item-blogs__title">Why Does Music Feels So Good?</h3>
-                                    <div class="item-blogs__text">
-                                       <p>Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                                          euismod
-                                          tincidunt ut laoreet dolore magna...
-                                       </p>
-                                    </div>
-                                 </div>
-                                 <div class="item-img-date">
-                                    <div class="item-img-date__top">
-                                       <svg class="item-img-date__icon">
-                                          <use href="/fekra/assets/symbol-defs.18c9d60e.svg#icon-image"></use>
-                                       </svg>
-                                    </div>
-                                    <div class="item-img-date__bottom">
-                                       <div class="item-img-date__date">
-                                          <span>18</span>
-                                          <span>JAN</span>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </article>
-                        </div>
-                        <div class="slider-blogs__slide swiper-slide">
-                           <article class="item-blogs">
-                              <div class="item-blogs__inner">
-                                 <div class="item-blogs__image">
-                                    <img src="/fekra/assets/blog-img-02.275e5590.webp" alt="blog image">
-                                 </div>
-                                 <div class="item-blogs__content">
-                                    <h3 class="item-blogs__title">Why Does Music Feels So Good?</h3>
-                                    <div class="item-blogs__text">
-                                       <p>Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                                          euismod
-                                          tincidunt ut laoreet dolore magna...
-                                       </p>
-                                    </div>
-                                 </div>
-                                 <div class="item-img-date">
-                                    <div class="item-img-date__top">
-                                       <svg class="item-img-date__icon">
-                                          <use href="/fekra/assets/symbol-defs.18c9d60e.svg#icon-image"></use>
-                                       </svg>
-                                    </div>
-                                    <div class="item-img-date__bottom">
-                                       <div class="item-img-date__date">
-                                          <span>20</span>
-                                          <span>may</span>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </article>
-                        </div>
-                        <div class="slider-blogs__slide swiper-slide">
-                           <article class="item-blogs">
-                              <div class="item-blogs__inner">
-                                 <div class="item-blogs__image">
-                                    <img src="/fekra/assets/blog-img-01.74087276.webp" alt="blog image">
-                                 </div>
-                                 <div class="item-blogs__content">
-                                    <h3 class="item-blogs__title">Why Does Music Feels So Good?</h3>
-                                    <div class="item-blogs__text">
-                                       <p>Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                                          euismod
-                                          tincidunt ut laoreet dolore magna...
-                                       </p>
-                                    </div>
-                                 </div>
-                                 <div class="item-img-date">
-                                    <div class="item-img-date__top">
-                                       <svg class="item-img-date__icon">
-                                          <use href="/fekra/assets/symbol-defs.18c9d60e.svg#icon-image"></use>
-                                       </svg>
-                                    </div>
-                                    <div class="item-img-date__bottom">
-                                       <div class="item-img-date__date">
-                                          <span>18</span>
-                                          <span>JAN</span>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </article>
-                        </div>
-                        <div class="slider-blogs__slide swiper-slide">
-                           <article class="item-blogs">
-                              <div class="item-blogs__inner">
-                                 <div class="item-blogs__image">
-                                    <img src="/fekra/assets/blog-img-02.275e5590.webp" alt="blog image">
-                                 </div>
-                                 <div class="item-blogs__content">
-                                    <h3 class="item-blogs__title">Why Does Music Feels So Good?</h3>
-                                    <div class="item-blogs__text">
-                                       <p>Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
-                                          euismod
-                                          tincidunt ut laoreet dolore magna...
-                                       </p>
-                                    </div>
-                                 </div>
-                                 <div class="item-img-date">
-                                    <div class="item-img-date__top">
-                                       <svg class="item-img-date__icon">
-                                          <use href="/fekra/assets/symbol-defs.18c9d60e.svg#icon-image"></use>
-                                       </svg>
-                                    </div>
-                                    <div class="item-img-date__bottom">
-                                       <div class="item-img-date__date">
-                                          <span>20</span>
-                                          <span>may</span>
-                                       </div>
-                                    </div>
-                                 </div>
-                              </div>
-                           </article>
-                        </div>
-                     </div>
-                  </div>
-                  <!-- If we need pagination -->
-                  <div class="slider-blogs__pagination swiper-pagination"></div>
-               </div>
+        <section class="page__work work">
+          <div class="work__container">
+            <div class="work__header block-header block-header--anim">
+              <h2 class="block-header__title block-header__title--lato">Recent Work</h2>
+              <div class="block-header__text">
+                <p>Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+                  laoreet dolore magna
+                  aliquam erat volutpat. Ut wisi enim ad minim veniam
+                </p>
+              </div>
             </div>
-         </section>
-
-         <section class="page__facts facts">
-            <div class="facts__container facts__container--anim" data-delay="300" data-threshold="0.2">
-               <div class="facts__content content-facts">
-                  <div class="content-facts__header">
-                     <h2 class="content-facts__title">Company Facts Sheet</h2>
-                     <div class="content-facts__text">
-                        <p>Suspendisse et metus eu massa lobortis condimentum sed ut orci. Nullam viverra dapibus risus,
-                           eu
-                           tristique
-                           nislsollicitudin at. Etiam iaculis blandit libero. licitudtin at. Etiam iaculis blandit
-                           libero.
-                           licitudin.Lorem Ipsum is
-                           simply dummy text of the printing and typesetting industry.
-                        </p>
-                     </div>
-                  </div>
-                  <div class="content-facts__items">
-                     <article class="item-fact">
-                        <div class="item-fact__icon">
-                           <img src="/fekra/assets/fact-i-01.ac8d40f8.svg" alt="fact's icon">
-                        </div>
-                        <div class="item-fact__content">
-                           <h3 class="item-fact__title">56</h3>
-                           <span class="item-fact__label">CLIENTS WORKED</span>
-                        </div>
-                     </article>
-                     <article class="item-fact">
-                        <div class="item-fact__icon">
-                           <img src="/fekra/assets/fact-i-02.c0ffda77.svg" alt="fact's icon">
-                        </div>
-                        <div class="item-fact__content">
-                           <h3 class="item-fact__title">360</h3>
-                           <span class="item-fact__label">HAMBURGER ORDERED</span>
-                        </div>
-                     </article>
-                     <article class="item-fact">
-                        <div class="item-fact__icon">
-                           <img src="/fekra/assets/fact-i-03.130f7643.svg" alt="fact's icon">
-                        </div>
-                        <div class="item-fact__content">
-                           <h3 class="item-fact__title">89</h3>
-                           <span class="item-fact__label">PROJECT FINISHED</span>
-                        </div>
-                     </article>
-                     <article class="item-fact">
-                        <div class="item-fact__icon">
-                           <img src="/fekra/assets/fact-i-04.76bf76bc.svg" alt="fact's icon">
-                        </div>
-                        <div class="item-fact__content">
-                           <h3 class="item-fact__title">42</h3>
-                           <span class="item-fact__label">EMPLOYEER</span>
-                        </div>
-                     </article>
-                  </div>
-               </div>
-               <div class="facts__image">
-                  <img src="/fekra/assets/tablet-banner.63091df0.webp" alt="tablet banner">
-               </div>
+            <div class="work__filter filter-work filter-work--anim" data-threshold="0.1" data-step="150" data-filter
+              data data-visible="8" data-scroll-offset="300">
+              <nav class="filter-work__controls" data-filter-controls>
+                <ul class="filter-work__menu menu-filter menu-filter--anim" data-delay="300" data-step="150">
+                  <li class="menu-filter__item anim-child">
+                    <button type="button" class="menu-filter__btn is-active" data-filter-btn="design">DESIGN</button>
+                  </li>
+                  <li class="menu-filter__item anim-child">
+                    <button type="button" class="menu-filter__btn" data-filter-btn="fashion">FASHION</button>
+                  </li>
+                  <li class="menu-filter__item anim-child">
+                    <button type="button" class="menu-filter__btn" data-filter-btn="illustration">ILLUSTRATION</button>
+                  </li>
+                  <li class="menu-filter__item anim-child">
+                    <button type="button" class="menu-filter__btn" data-filter-btn="products">PRODUCTS</button>
+                  </li>
+                </ul>
+              </nav>
+              <div class="filter-work__items" data-filter-grid>
+                <article class="item-work anim-child" data-filter-item data-category="design fashion">
+                  <a href="#" class="item-work__inner">
+                    <div class="item-work__image">
+                      <img src="/fekra/assets/work-img-01.18048a9f.webp" alt="image of work item">
+                    </div>
+                    <div class="item-work__content">
+                      <h3 class="item-work__title">PRODUCT WE HAVE</h3>
+                      <span class="item-work__label">PRODUCT</span>
+                    </div>
+                  </a>
+                </article>
+                <article class="item-work anim-child" data-filter-item data-category="design fashion">
+                  <a href="#" class="item-work__inner">
+                    <div class="item-work__image">
+                      <img src="/fekra/assets/work-img-02.b32b3efe.webp" alt="image of work item">
+                    </div>
+                    <div class="item-work__content">
+                      <h3 class="item-work__title">PRODUCT WE HAVE</h3>
+                      <span class="item-work__label">PRODUCT</span>
+                    </div>
+                  </a>
+                </article>
+                <article class="item-work anim-child" data-filter-item
+                  data-category="design fashion illustration products">
+                  <a href="#" class="item-work__inner">
+                    <div class="item-work__image">
+                      <img src="/fekra/assets/work-img-03.94d90e3e.webp" alt="image of work item">
+                    </div>
+                    <div class="item-work__content">
+                      <h3 class="item-work__title">PRODUCT WE HAVE</h3>
+                      <span class="item-work__label">PRODUCT</span>
+                    </div>
+                  </a>
+                </article>
+                <article class="item-work anim-child" data-filter-item
+                  data-category="design fashion illustration products">
+                  <a href="#" class="item-work__inner">
+                    <div class="item-work__image">
+                      <img src="/fekra/assets/work-img-04.2e92dce1.webp" alt="image of work item">
+                    </div>
+                    <div class="item-work__content">
+                      <h3 class="item-work__title">PRODUCT WE HAVE</h3>
+                      <span class="item-work__label">PRODUCT</span>
+                    </div>
+                  </a>
+                </article>
+                <article class="item-work anim-child" data-filter-item
+                  data-category="design fashion illustration products">
+                  <a href="#" class="item-work__inner">
+                    <div class="item-work__image">
+                      <img src="/fekra/assets/work-img-05.22c3aa98.webp" alt="image of work item">
+                    </div>
+                    <div class="item-work__content">
+                      <h3 class="item-work__title">PRODUCT WE HAVE</h3>
+                      <span class="item-work__label">PRODUCT</span>
+                    </div>
+                  </a>
+                </article>
+                <article class="item-work anim-child" data-filter-item
+                  data-category="design fashion illustration products">
+                  <a href="#" class="item-work__inner">
+                    <div class="item-work__image">
+                      <img src="/fekra/assets/work-img-06.9594acd5.webp" alt="image of work item">
+                    </div>
+                    <div class="item-work__content">
+                      <h3 class="item-work__title">PRODUCT WE HAVE</h3>
+                      <span class="item-work__label">PRODUCT</span>
+                    </div>
+                  </a>
+                </article>
+                <article class="item-work anim-child" data-filter-item
+                  data-category="design fashion illustration products">
+                  <a href="#" class="item-work__inner">
+                    <div class="item-work__image">
+                      <img src="/fekra/assets/work-img-07.08e66385.webp" alt="image of work item">
+                    </div>
+                    <div class="item-work__content">
+                      <h3 class="item-work__title">PRODUCT WE HAVE</h3>
+                      <span class="item-work__label">PRODUCT</span>
+                    </div>
+                  </a>
+                </article>
+                <article class="item-work anim-child" data-filter-item
+                  data-category="design fashion illustration products">
+                  <a href="#" class="item-work__inner">
+                    <div class="item-work__image">
+                      <img src="data:image/webp;base64,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" alt="image of work item">
+                    </div>
+                    <div class="item-work__content">
+                      <h3 class="item-work__title">PRODUCT WE HAVE</h3>
+                      <span class="item-work__label">PRODUCT</span>
+                    </div>
+                  </a>
+                </article>
+              </div>
             </div>
-         </section>
+            <a href="#" target="_blank" class="work__button work__button--anim button button--dark"
+              data-delay="300">VIEW OUR
+              PORTFOLIO</a>
+          </div>
+        </section>
 
-         <div class="page__partners partners">
-            <div class="partners__container partners__container--anim" data-delay="300" data-step="150"
-               data-threshold="0.3">
-               <a href="#" class="partners__item anim-child">
-                  <img class="partners__icon" src="/fekra/assets/partners-logo-01.6cdce547.svg" alt="logo partners">
-               </a>
-               <a href="#" class="partners__item anim-child">
-                  <img class="partners__icon" src="/fekra/assets/partners-logo-02.218611a3.svg" alt="logo partners">
-               </a>
-               <a href="#" class="partners__item anim-child">
-                  <img class="partners__icon" src="/fekra/assets/partners-logo-03.0f3361ec.svg" alt="logo partners">
-               </a>
-               <a href="#" class="partners__item anim-child">
-                  <img class="partners__icon" src="/fekra/assets/partners-logo-04.d8b421a5.svg" alt="logo partners">
-               </a>
-            </div>
-         </div>
-
-         <section class="page__banner-social social-banner">
-            <div class="social-banner__container social-banner__container--anim" data-delay="300">
-               <h2 class="social-banner__title">Title social-banner</h2>
-               <div class="social-banner__logo">
-                  <img src="/fekra/assets/logo.2b9b155e.svg" alt="logo icon">
-               </div>
-               <div class="social-banner__text">
-                  <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Vestibulum turpis nulla,
-                     suscipit at lacinia
-                     et, elementum ac neque. Vestibulum at neque dui.
+        <section class="page__features features">
+          <div class="features__container">
+            <div class="features__content">
+              <div class="features__top top-features top-features--anim" data-delay="500">
+                <h2 class="top-features__title">More Features Of Fekra</h2>
+                <div class="top-features__text">
+                  <p>Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt
+                    ut
+                    laoreet dolore magna
+                    aliquam erat volutpat. Ut wisi enim ad minim veniam
                   </p>
-               </div>
-               <div class="social-banner__links">
-                  <a href="#" class="link-social link-social--icon-fb"></a>
-                  <a href="#" class="link-social link-social--icon-twitter"></a>
-                  <a href="#" class="link-social link-social--icon-google-plus"></a>
-                  <a href="#" class="link-social link-social--icon-telegram"></a>
-               </div>
+                </div>
+              </div>
+              <ul class="features__items item-features item-features--anim" data-delay="300" data-step="150">
+                <li class="item-features__item">
+                  <article class="item-history-advant item-history-advant--feature  anim-child">
+                    <a href="#" class="item-history-advant__inner">
+                      <div class="item-history-advant__icon item-history-advant__icon--icon-pencil"></div>
+                      <div class="item-history-advant__content content-adv-history">
+                        <h4 class="content-adv-history__title">TRENDY DESIGN</h4>
+                        <div class="content-adv-history__text">
+                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry It has
+                            survived not only five centuries, but
+                            also the leap into electroni remaining essentially unchanged
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </article>
+                </li>
+                <li class="item-features__item">
+                  <article class="item-history-advant item-history-advant--feature anim-child">
+                    <a href="#" class="item-history-advant__inner">
+                      <div class="item-history-advant__icon item-history-advant__icon--icon-cog"></div>
+                      <div class="item-history-advant__content content-adv-history">
+                        <h4 class="content-adv-history__title">THEME OPTIONS</h4>
+                        <div class="content-adv-history__text">
+                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry It has
+                            survived not only five centuries, but
+                            also the leap into electroni remaining essentially unchanged
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </article>
+                </li>
+                <li class="item-features__item">
+                  <article class="item-history-advant item-history-advant--feature anim-child">
+                    <a href="#" class="item-history-advant__inner">
+                      <div class="item-history-advant__icon item-history-advant__icon--icon-briefcase"></div>
+                      <div class="item-history-advant__content content-adv-history">
+                        <h4 class="content-adv-history__title">FULL OF FEATURES</h4>
+                        <div class="content-adv-history__text">
+                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry It has
+                            survived not only five centuries, but
+                            also the leap into electroni remaining essentially unchanged
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </article>
+                </li>
+                <li class="item-features__item">
+                  <article class="item-history-advant item-history-advant--feature anim-child">
+                    <a href="#" class="item-history-advant__inner">
+                      <div class="item-history-advant__icon item-history-advant__icon--icon-monitor"></div>
+                      <div class="item-history-advant__content content-adv-history">
+                        <h4 class="content-adv-history__title">CLEAN & MODERN CODE</h4>
+                        <div class="content-adv-history__text">
+                          <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry It has
+                            survived not only five centuries, but
+                            also the leap into electroni remaining essentially unchanged
+                          </p>
+                        </div>
+                      </div>
+                    </a>
+                  </article>
+                </li>
+              </ul>
             </div>
-         </section>
+            <div class="features__image features__image--anim" data-threshold="0.25">
+              <img src="/fekra/assets/man-banner-img.a2c0d354.webp" alt="smiling man">
+            </div>
+          </div>
+        </section>
+
+        <section class="page__pricing pricing">
+          <div class="pricing__container">
+            <div class="pricing__header block-header block-header--anim block-header--white">
+              <h2 class="block-header__title">Pricing Tables</h2>
+              <div class="block-header__text">
+                <p>Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+                  laoreet dolore magna
+                  aliquam erat volutpat. Ut wisi enim ad minim veniam
+                </p>
+              </div>
+            </div>
+            <div class="pricing__items pricing__items--anim" data-delay="300" data-step="150">
+              <article class="item-pricing anim-child">
+                <div class="item-pricing__top top-pricing">
+                  <h3 class="top-pricing__title">STANDARD</h3>
+                </div>
+                <div class="item-pricing__body body-pricing">
+                  <div class="body-pricing__price price">
+                    <span class="price__amount"><small>$</small>3.99</span>
+                    <span class="price__label">PER MONTH</span>
+                  </div>
+                  <ul class="body-pricing__tariffs tarrifs">
+                    <li class="tarrifs__item">Unlimited Bandwidth</li>
+                    <li class="tarrifs__item">100 GB Space</li>
+                    <li class="tarrifs__item">10 Databases</li>
+                    <li class="tarrifs__item">Free Ad Credits</li>
+                    <li class="tarrifs__item">2 Month Support</li>
+                    <li class="tarrifs__item">Unlimate File Access</li>
+                  </ul>
+                  <button type="button" class="body-pricing__button button button--purchase">PURCHASE NOW</button>
+                </div>
+              </article>
+              <article class="item-pricing anim-child">
+                <div class="item-pricing__top top-pricing">
+                  <h3 class="top-pricing__title">BUSINNES</h3>
+                </div>
+                <div class="item-pricing__body body-pricing">
+                  <div class="body-pricing__price price">
+                    <span class="price__amount"><small>$</small>9.99</span>
+                    <span class="price__label">PER MONTH</span>
+                  </div>
+                  <ul class="body-pricing__tariffs tarrifs">
+                    <li class="tarrifs__item">Unlimited Bandwidth</li>
+                    <li class="tarrifs__item">100 GB Space</li>
+                    <li class="tarrifs__item">10 Databases</li>
+                    <li class="tarrifs__item">Free Ad Credits</li>
+                    <li class="tarrifs__item">2 Month Support</li>
+                    <li class="tarrifs__item">Unlimate File Access</li>
+                  </ul>
+                  <button type="button" class="body-pricing__button button button--purchase">PURCHASE NOW</button>
+                </div>
+              </article>
+              <article class="item-pricing anim-child item-pricing--default">
+                <div class="item-pricing__top top-pricing">
+                  <h3 class="top-pricing__title">PREMIUM</h3>
+                </div>
+                <div class="item-pricing__body body-pricing">
+                  <div class="body-pricing__price price">
+                    <span class="price__amount"><small>$</small>78.99</span>
+                    <span class="price__label">PER MONTH</span>
+                  </div>
+                  <ul class="body-pricing__tariffs tarrifs">
+                    <li class="tarrifs__item">Unlimited Bandwidth</li>
+                    <li class="tarrifs__item">100 GB Space</li>
+                    <li class="tarrifs__item">10 Databases</li>
+                    <li class="tarrifs__item">Free Ad Credits</li>
+                    <li class="tarrifs__item">2 Month Support</li>
+                    <li class="tarrifs__item">Unlimate File Access</li>
+                  </ul>
+                  <button type="button" class="body-pricing__button button button--purchase">PURCHASE NOW</button>
+                </div>
+              </article>
+              <article class="item-pricing anim-child">
+                <div class="item-pricing__top top-pricing">
+                  <h3 class="top-pricing__title">ADVANCED</h3>
+                </div>
+                <div class="item-pricing__body body-pricing">
+                  <div class="body-pricing__price price">
+                    <span class="price__amount"><small>$</small>98.99</span>
+                    <span class="price__label">PER MONTH</span>
+                  </div>
+                  <ul class="body-pricing__tariffs tarrifs">
+                    <li class="tarrifs__item">Unlimited Bandwidth</li>
+                    <li class="tarrifs__item">100 GB Space</li>
+                    <li class="tarrifs__item">10 Databases</li>
+                    <li class="tarrifs__item">Free Ad Credits</li>
+                    <li class="tarrifs__item">2 Month Support</li>
+                    <li class="tarrifs__item">Unlimate File Access</li>
+                  </ul>
+                  <button type="button" class="body-pricing__button button button--purchase">PURCHASE NOW</button>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <section class="page__blogs blogs">
+          <div class="blogs__container">
+            <div class="blogs__header block-header block-header--anim" data-delay="300">
+              <h2 class="block-header__title">Our Blogs</h2>
+              <div class="block-header__text">
+                <p>Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut
+                  laoreet dolore magna
+                  aliquam erat volutpat. Ut wisi enim ad minim veniam.
+                </p>
+              </div>
+            </div>
+            <div class="blogs__body blogs__body--anim" data-delay="100" data-threshold="0.2">
+              <!-- Slider main container -->
+              <div class="blogs__slider slider-blogs swiper">
+                <!-- Additional required wrapper -->
+                <div class="slider-blogs__wrapper swiper-wrapper">
+                  <!-- Slides -->
+                  <div class="slider-blogs__slide swiper-slide">
+                    <article class="item-blogs">
+                      <div class="item-blogs__inner">
+                        <div class="item-blogs__image">
+                          <img src="/fekra/assets/blog-img-01.74087276.webp" alt="blog image">
+                        </div>
+                        <div class="item-blogs__content">
+                          <h3 class="item-blogs__title">Why Does Music Feels So Good?</h3>
+                          <div class="item-blogs__text">
+                            <p>Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                              euismod
+                              tincidunt ut laoreet dolore magna...
+                            </p>
+                          </div>
+                        </div>
+                        <div class="item-img-date">
+                          <div class="item-img-date__top">
+                            <svg class="item-img-date__icon">
+                              <use href="/fekra/assets/symbol-defs.18c9d60e.svg#icon-image"></use>
+                            </svg>
+                          </div>
+                          <div class="item-img-date__bottom">
+                            <div class="item-img-date__date">
+                              <span>18</span>
+                              <span>JAN</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="slider-blogs__slide swiper-slide">
+                    <article class="item-blogs">
+                      <div class="item-blogs__inner">
+                        <div class="item-blogs__image">
+                          <img src="/fekra/assets/blog-img-02.275e5590.webp" alt="blog image">
+                        </div>
+                        <div class="item-blogs__content">
+                          <h3 class="item-blogs__title">Why Does Music Feels So Good?</h3>
+                          <div class="item-blogs__text">
+                            <p>Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                              euismod
+                              tincidunt ut laoreet dolore magna...
+                            </p>
+                          </div>
+                        </div>
+                        <div class="item-img-date">
+                          <div class="item-img-date__top">
+                            <svg class="item-img-date__icon">
+                              <use href="/fekra/assets/symbol-defs.18c9d60e.svg#icon-image"></use>
+                            </svg>
+                          </div>
+                          <div class="item-img-date__bottom">
+                            <div class="item-img-date__date">
+                              <span>20</span>
+                              <span>may</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="slider-blogs__slide swiper-slide">
+                    <article class="item-blogs">
+                      <div class="item-blogs__inner">
+                        <div class="item-blogs__image">
+                          <img src="/fekra/assets/blog-img-01.74087276.webp" alt="blog image">
+                        </div>
+                        <div class="item-blogs__content">
+                          <h3 class="item-blogs__title">Why Does Music Feels So Good?</h3>
+                          <div class="item-blogs__text">
+                            <p>Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                              euismod
+                              tincidunt ut laoreet dolore magna...
+                            </p>
+                          </div>
+                        </div>
+                        <div class="item-img-date">
+                          <div class="item-img-date__top">
+                            <svg class="item-img-date__icon">
+                              <use href="/fekra/assets/symbol-defs.18c9d60e.svg#icon-image"></use>
+                            </svg>
+                          </div>
+                          <div class="item-img-date__bottom">
+                            <div class="item-img-date__date">
+                              <span>18</span>
+                              <span>JAN</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                  <div class="slider-blogs__slide swiper-slide">
+                    <article class="item-blogs">
+                      <div class="item-blogs__inner">
+                        <div class="item-blogs__image">
+                          <img src="/fekra/assets/blog-img-02.275e5590.webp" alt="blog image">
+                        </div>
+                        <div class="item-blogs__content">
+                          <h3 class="item-blogs__title">Why Does Music Feels So Good?</h3>
+                          <div class="item-blogs__text">
+                            <p>Ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh
+                              euismod
+                              tincidunt ut laoreet dolore magna...
+                            </p>
+                          </div>
+                        </div>
+                        <div class="item-img-date">
+                          <div class="item-img-date__top">
+                            <svg class="item-img-date__icon">
+                              <use href="/fekra/assets/symbol-defs.18c9d60e.svg#icon-image"></use>
+                            </svg>
+                          </div>
+                          <div class="item-img-date__bottom">
+                            <div class="item-img-date__date">
+                              <span>20</span>
+                              <span>may</span>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  </div>
+                </div>
+              </div>
+              <!-- If we need pagination -->
+              <div class="slider-blogs__pagination swiper-pagination"></div>
+            </div>
+          </div>
+        </section>
+
+        <section class="page__facts facts">
+          <div class="facts__container facts__container--anim" data-delay="300" data-threshold="0.2">
+            <div class="facts__content content-facts">
+              <div class="content-facts__header">
+                <h2 class="content-facts__title">Company Facts Sheet</h2>
+                <div class="content-facts__text">
+                  <p>Suspendisse et metus eu massa lobortis condimentum sed ut orci. Nullam viverra dapibus risus,
+                    eu
+                    tristique
+                    nislsollicitudin at. Etiam iaculis blandit libero. licitudtin at. Etiam iaculis blandit
+                    libero.
+                    licitudin.Lorem Ipsum is
+                    simply dummy text of the printing and typesetting industry.
+                  </p>
+                </div>
+              </div>
+              <div class="content-facts__items">
+                <article class="item-fact">
+                  <div class="item-fact__icon">
+                    <img src="/fekra/assets/fact-i-01.ac8d40f8.svg" alt="fact's icon">
+                  </div>
+                  <div class="item-fact__content">
+                    <h3 class="item-fact__title">56</h3>
+                    <span class="item-fact__label">CLIENTS WORKED</span>
+                  </div>
+                </article>
+                <article class="item-fact">
+                  <div class="item-fact__icon">
+                    <img src="/fekra/assets/fact-i-02.c0ffda77.svg" alt="fact's icon">
+                  </div>
+                  <div class="item-fact__content">
+                    <h3 class="item-fact__title">360</h3>
+                    <span class="item-fact__label">HAMBURGER ORDERED</span>
+                  </div>
+                </article>
+                <article class="item-fact">
+                  <div class="item-fact__icon">
+                    <img src="/fekra/assets/fact-i-03.130f7643.svg" alt="fact's icon">
+                  </div>
+                  <div class="item-fact__content">
+                    <h3 class="item-fact__title">89</h3>
+                    <span class="item-fact__label">PROJECT FINISHED</span>
+                  </div>
+                </article>
+                <article class="item-fact">
+                  <div class="item-fact__icon">
+                    <img src="/fekra/assets/fact-i-04.76bf76bc.svg" alt="fact's icon">
+                  </div>
+                  <div class="item-fact__content">
+                    <h3 class="item-fact__title">42</h3>
+                    <span class="item-fact__label">EMPLOYEER</span>
+                  </div>
+                </article>
+              </div>
+            </div>
+            <div class="facts__image">
+              <img src="/fekra/assets/tablet-banner.63091df0.webp" alt="tablet banner">
+            </div>
+          </div>
+        </section>
+
+        <div class="page__partners partners">
+          <div class="partners__container partners__container--anim" data-delay="300" data-step="150"
+            data-threshold="0.3">
+            <a href="#" class="partners__item anim-child">
+              <img class="partners__icon" src="/fekra/assets/partners-logo-01.6cdce547.svg" alt="logo partners">
+            </a>
+            <a href="#" class="partners__item anim-child">
+              <img class="partners__icon" src="/fekra/assets/partners-logo-02.218611a3.svg" alt="logo partners">
+            </a>
+            <a href="#" class="partners__item anim-child">
+              <img class="partners__icon" src="/fekra/assets/partners-logo-03.0f3361ec.svg" alt="logo partners">
+            </a>
+            <a href="#" class="partners__item anim-child">
+              <img class="partners__icon" src="/fekra/assets/partners-logo-04.d8b421a5.svg" alt="logo partners">
+            </a>
+          </div>
+        </div>
+
+        <section class="page__banner-social social-banner">
+          <div class="social-banner__container social-banner__container--anim" data-delay="300">
+            <h2 class="social-banner__title">Title social-banner</h2>
+            <div class="social-banner__logo">
+              <img src="/fekra/assets/logo.2b9b155e.svg" alt="logo icon">
+            </div>
+            <div class="social-banner__text">
+              <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Vestibulum turpis nulla,
+                suscipit at lacinia
+                et, elementum ac neque. Vestibulum at neque dui.
+              </p>
+            </div>
+            <div class="social-banner__links">
+              <a href="#" class="link-social link-social--icon-fb"></a>
+              <a href="#" class="link-social link-social--icon-twitter"></a>
+              <a href="#" class="link-social link-social--icon-google-plus"></a>
+              <a href="#" class="link-social link-social--icon-telegram"></a>
+            </div>
+          </div>
+        </section>
       </main>
 
       <footer class="footer">
-         <div class="footer__body body-footer">
-            <div class="body-footer__container body-footer__container--anim" data-delay="300" data-step="150">
-               <div class="body-footer__column anim-child column-touch">
-                  <h3 class="column-touch__title title-footer">GET IN TOUCH</h3>
-                  <div class="column-touch__text">
-                     <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry .</p>
-                  </div>
-                  <ul class="column-touch__address address-touch">
-                     <li class="address-touch__item">
-                        <a href="#" class="address-touch__link address-touch__link--icon-location">1422 1st St. Santa
-                           Rosa,t CA 94559.
-                           USA</a>
-                     </li>
-                     <li class="address-touch__item">
-                        <a href="mailto:admin@e-mail.com"
-                           class="address-touch__link address-touch__link--icon-mail1">admin@e-mail.com</a>
-                     </li>
-                     <li class="address-touch__item">
-                        <a href="phone:00201008431112" class="address-touch__link address-touch__link--icon-phone">002-
-                           01008431112</a>
-                     </li>
-                  </ul>
-               </div>
-               <div class="body-footer__column anim-child column-tags">
-                  <h3 class="column-tags__title title-footer">POPULAR TAGS</h3>
-                  <ul class="column-tags__list list-tags">
-                     <li class="list-tags__item">
-                        <a href="#" class="list-tags__link">BUSINNESS</a>
-                     </li>
-                     <li class="list-tags__item">
-                        <a href="#" class="list-tags__link">CREATIVE</a>
-                     </li>
-                     <li class="list-tags__item">
-                        <a href="#" class="list-tags__link">ONE PAGE</a>
-                     </li>
-                     <li class="list-tags__item">
-                        <a href="#" class="list-tags__link">CREATIVE</a>
-                     </li>
-                     <li class="list-tags__item">
-                        <a href="#" class="list-tags__link">CLEAN</a>
-                     </li>
-                     <li class="list-tags__item">
-                        <a href="#" class="list-tags__link">CUSTOMIZATION</a>
-                     </li>
-                     <li class="list-tags__item">
-                        <a href="#" class="list-tags__link">THEMEFOREST</a>
-                     </li>
-                     <li class="list-tags__item">
-                        <a href="#" class="list-tags__link">VISUAL</a>
-                     </li>
-                     <li class="list-tags__item">
-                        <a href="#" class="list-tags__link">ELEGANT</a>
-                     </li>
-                     <li class="list-tags__item">
-                        <a href="#" class="list-tags__link">DEVELOPMENT</a>
-                     </li>
-                  </ul>
-               </div>
-               <div class="body-footer__column anim-child column-news">
-                  <h3 class="column-news__title title-footer">LATEST NEWS</h3>
-                  <div class="column-news__items">
-                     <figure class="item-news">
-                        <a href="#" class="item-news__inner">
-                           <img src="data:image/webp;base64,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" alt="image news" class="item-news__image">
-                           <figcaption class="item-news__content">
-                              <p class="item-news__text">Lorem Ipsum is simply dummy text of the printing and
-                                 typesetting
-                                 industry .</p>
-                              <time datetime="2015-02-02" class="item-news__time">2 FEB 2015</time>
-                           </figcaption>
-                        </a>
-                     </figure>
-                     <figure class="item-news">
-                        <a href="#" class="item-news__inner">
-                           <img src="data:image/webp;base64,UklGRpQEAABXRUJQVlA4WAoAAAAQAAAAUgAATgAAQUxQSBcAAAABD/Dt/4iIYKZtG7cdf/J7IvofAXCfBQBWUDggVgQAAHAYAJ0BKlMATwA+kUKaSaWjoiEmdVz4sBIJQBhPEJrbgR+u4mcjHcN89G5N5Y0z+b0vKeGdxUmsQ5nQqA5H/+XHeuvp0GuZRhjWk+tfD4Hv4G8bcyBBoeHZcpk18m0xHsTbq4yJB/G5IEdYfs5kUeqMPJj//86dr/FVWMJG78oGX9n+mFKKoyOccSgdUM//8lgc+eQOCJtA//9LDSr8NMcqvQB9VfP1DMNz7+ynjZflpOmfhOl/9oWCHWKzhQEp82MDsizzUl6idOGYYAD9IXtrEQ3TTXkE7WJydI676P2xDBbFl/+GWgybXrDf+WdPSA1pXAlMw+wdhXbuvQfsF0glg4YhkjHCnWsUcu3Se9+5APl5GTRDlHxKxpfEKXEcgihMu71a4ZryZmVo1/ohY+R3XgvFi9z3qUk4FWrIrRQWez0nCZVAVLMjZaYHXDxCvuq0Tc2SJiJsGpO9xb0Za2k45PEdBpqvYavp/2QOYY5d4J2D3JPMK1NXFwU6paM9uxBbJZQzGP9mzA0aw/RZAZFthH/rGausIY0h+cikQfOsdIEEo33/jpyYIPtSp0Hctxp7DZ3KfMVHhyyaoVfKDemElu3KhO/Z6F1TVPqnLxARGidpmlXm16XHpzLsc5XSM2r9BaIUFbzL+/fgufUR5JeGnTQQKIm6rd47vsq0kCqOR+aDHEI6feQdUifdRL5kC8OKJ+ow7UxWwdYLSdXb5NUafnZWwgscTMA0v7ScX89YyMKSIxlxDmC+ubdnToW3AvsmZBSGTHTcERf+keNX4hXIYxnqbIHVqdrkj0j8WM0YVkk/bMHK8+YDS5NNRAex4tvThJutGYwOTcgGgZ44Lnt7XuIx7KEVeD9eC4aKc+N9a7nv334h2M/z7G9lGlJFzX1+11eaIgahvDdfaPqzU7PkZ2dHdnejykz76dG9BxNobcGRrvCOWqyTVcYe0CSPO4sPVoP3FXjce739CygUFJI8PmQFI6BVO+sUPd7yDNN7cnUH1MlVZUGqx+gaIhUTneQSmxobHf3yOtJPkIX0wL+eRa1orIrHT6oVZ0zaUu/hOUoPrA1hyLDry1CcgjpdZsI9oDAQ4yOsHcUvNiL4nyHRFZChynfxXG/CjiOf20zPhCGw9pfjEvtZ3SYFt0dE4tZLC0l9ehmTCzqqB/1Ya47ouOkZIFCetvnUlJ7D9xH5lYuTZ1pvlm9HXElBQsv2Gb449kE6lweYzU36D8LTTXsxuzixJlM4evSzOipSsVQptAI5y0sNXtC/Cbf8czMlTKiE3bhMPJrf1tvE/cuiGM0PPKeFyMD7nSLQdk8kI3NN1xA2JAQQpmRhqxCv7M3l4T94F6FL22km++UxNNE2ZnAYIAQ5tkbsQasyBgwJZ7PDq9+vzLn6iLKwaFzOC57B+lnxVZALl3dkAChTtLB/o3kXi6dKoOYNUfakELkdkDXBJdNhGstzNOs3M/GDTzV10IrGagAAAA==" alt="image news" class="item-news__image">
-                           <figcaption class="item-news__content">
-                              <p class="item-news__text">Lorem Ipsum is simply dummy text of the printing and
-                                 typesetting
-                                 industry .</p>
-                              <time datetime="2016-08-24" class="item-news__time">24 AUG 2016</time>
-                           </figcaption>
-                        </a>
-                     </figure>
-                  </div>
-               </div>
-               <div class="body-footer__column anim-child column-stream">
-                  <h3 class="column-stream__title title-footer">FLICKR STREAM</h3>
-                  <ul class="column-stream__items item-stream">
-                     <li class="item-stream__item">
-                        <a href="#" class="item-stream__link">
-                           <img src="data:image/webp;base64,UklGRs4DAABXRUJQVlA4WAoAAAAQAAAAOwAAOwAAQUxQSCUAAAABF0AgQPH/ZuGGGxERZzAUwAzNVoJmKl+BfSL6PwENn8XvrTR8AFZQOCCCAwAAEBEAnQEqPAA8AD6NNpdHpSKiIS4ZLVCgEYliALEficpoasxh4M+T0IscPebLz08bTw/qHBMhHNdkBab8iKO+SfuhNUwN5vcCsRts+AMdb/XnvuxPMa4dCvM8nIWKfu2TngSJevEq8x9IlzhDuVLBUuK2Pxe248WNfsUVtyXJzTTjpU154Npaj72qB/43Qs78AAD8h1O6Bt8NRR2l8n6bJ8qQizhquWqqwSp4LBBbyu0JmHpwnGx4qjOhiH0kYqhHWjoUHWWJB5ULCusJHuMim3mQi1X6s03KCHMgEYnbAWCFE4HFEFfE3AmlzsqClP8/CtnXBOTgievAVBZhbUhvNwy3q17OgViEdwFJGGASdm0UIs4mzvIgm3TLL3scMdsB0ra4bxnntYuNAbSfc2JLdEI/eIXWw1m+gRDC4xvuRGAYgMMVoxQnVB3t/9sGlORRPJgjZeekzGf70efmQXZE6KurT+9lx4hVx5PeazGJRNZs+9kW0ARHmP+aLtnim+R9IKkrZ2N8dNBUgssUVtHIQyOQb903mQY1IloP4Klgcht+2bUE6/80ghsDSdB0HuIRua5Vn5G8XIVpSI8XP84EMZ7kdv9f3+s2VCqxHCfjfkYmbB6qQ18534ZSF4GVX0zFfoZZV4KXgVk7e0yNUYbBaU2rVfYXckVaRqnvytKtVvxeEMdjqh5ICJ4WZwtdShpduOQQsue30uHY5E87V423//DZO9+fAwfw5nLAbiFF4Tjr7W61oxz3cE5sxg+z0RDbStdYWXFr2KAo0qEV8/3kzyCuQsqAHlwvpp/wB+GWArzktoADYr87KlDUYSrVx/ZCI++n7+dcSq37PohN0nxMN9TLvLQmh4LcNzOC/JxvjYtG9nVrwZh674EenaE1tLL/yTZje75ZmycRuGxeHMmFlZTtSxE/8mdcbrCbjy7y5uV7daOIoFsvGLmcfFgnhc3anHaceG6zTpHSzSQioIjPHHNdg7NRcphfkMvUreQWzLOSuevb06imYTm5rPTdJB6KuBtSklMfRZy0mF2QTxjVRXb9DXcf7Bb5kIrdkNsGU7RaV4sfFNg4VR7+PiVcbqim9XijnPBZhDTINQU7fVFP+LEL/CBKa5QO/FzsjlCG87YjUL3x9wUgrv0KTEMQ6rcQfzHJzaQMlpOxf2hU5LWPwZsFiFtFn6TKddJv30oTUIAAAA==" alt="stream image"
-                              class="item-stream__img">
-                        </a>
-                     </li>
-                     <li class="item-stream__item">
-                        <a href="#" class="item-stream__link">
-                           <img src="data:image/webp;base64,UklGRnIFAABXRUJQVlA4WAoAAAAQAAAAOwAAOwAAQUxQSCUAAAABF0AgQPH/ZuGGGxERZzAUwAzNVoJmKl+BfSL6PwENn8XvrTR8AFZQOCAmBQAA8BUAnQEqPAA8AD6ROpVIpaMhoTAWDACwEglsALszOQG0mK8KPNCk28XmA3MDqTN6Gs0rfTiU5Z/gccy4f6+B5nLOeowO0yU1Xy5ahS3QpLa0taY/HtVe7RipP8m7VqDC+7tXd3BDANuyWv9DfDBOiu4iuzWmRPL0lW4ARN+ITwZ9XJbQMjWKaOb3Rkqr9hBja9oGTfNAeYCbfpMMuJFQ+DrMgxZQ95ojd16RbjL+FzUIqXRIBN7wAAD+em5g3klzXdgdycVUjh5C1buoI7gWiFoPGQN7FfT1lMqcgMckQpv2b/RZnXcRWPB9PPFugFuB16/jsJENjrc//yBPz38HJU3iA+ripi1WJQdRYKssdnyZgDlt1u791czrNWQHgGxo9UUxvoi2wyqrUIA1RpWKcPXedP0jJl9foSntEFI5dzhQ6V+RdSwafYwTq6nlxqqvECj9GDvg/S9cseOfwajJ6tbAiLD+wEh26Ew1c9Wk8bIZ2w4Sjf/3BjkthhRKJoJ3vO81a9owK9kUAndLwJo5l70LS4YXmTzwov9nfPs7qncJQKQDDVEOX9atNBW5wBmDDKFnAyGwMkkpUS4QWBNfOLEs8e+Fo/Il8zo0R6VFnCj2bQFEEQuW3MV8zbZwFgS67xa2YqRJ3YWR+AaG5T338A3r3hWU5sGMvbz+htF+DnnlX/3TTDq1JeAYWo3+P/X/wd/CSJB01+B1O17DwDnHbW9BumNEAy6rkVsg8X4aXE8HTb6t/P6viscN6v5W8t5IaUGX4u0rQJl+VjdyvZI56e1lbUkHTIGDoFzBrGfHaBuhD//qXYlEdosWDVI2sS6F1BM8mvVDP7F9hbHB8GgW1TFzMxfX377pdTLdmkMWkOVpbl8uDLYUn9D+kwik/Vwu3M6t8L3nOc4SICN3JqwWGZBHjBgGC2v4NeUqYkv+ciAhWHQx0K8iDM+ZljsoUFtbKLAWaDC2W6KGVQkAAfhNw+FCecjNQIx/BFmv8SPz6iDrOC88GQmd7SI6eRJc9w167KwcE7juo3h90LBQ+mXvPkId0NMwrAozTqrEuGCvs3Tp2oU+Hn0HpAL2himGcXXeEIUlzZC6NnlYqPD8Vl+hSUszJgIggu7lmVAI5sFXqm+/+ZTgy2pa+V5gLWB+BHFuu3w8PoT10m5IC6IL800RBCnoMFBmepJR6CDWu64le6f7pfDH2yOkBMSFdSx35YTo7b1sz2slW3PWTiafqehrhTeT22BUyxiYsUrLuekcB6lNjfYeMKbPHOYLpfneYoPtvasDGNfwIuHUM5+Uam92RgB/ZWtHDNRnSxmxlm2mcaajZFP7Ob05XBgEqvxoMkUGfYwHc72CcKD5T1bb64CXy7aDfnN/OcMlnOYu0M2rg1eprUNpzKfSvvmfHl63BughpXa2/X0cCiTvqZiZfRrfOYSH8KBIxNTBwDH/NwjX9VL+gNmbbWlrTznvcpeUYG8SDaIJ9ustr+QBrM8PFAKzFz63px/vP8efltcfEPsn/+fsUa/mpvOW8CiGtOZGWe6VpXyJs96FmSJSAv7VCvRtuvrKQ+YT1t1sEeTxnrynMYcYXpMEMwITSc7BtwsyKwa9iIHu6b7+8XGsIX/UgZ6I/c1O/UJSWG/LM+NsSPdK1G+MFKsWuWsEwOAA8675JrAr6OkISNoLXQeKKeCIZ11SPkzgaMOCcZ0erBEYjcXfCAnFwhgxw7x/bsblQBz/QA2Wan0DvLkBfFU/RRtQQIrsHpB1+4gAAA==" alt="stream image"
-                              class="item-stream__img">
-                        </a>
-                     </li>
-                     <li class="item-stream__item">
-                        <a href="#" class="item-stream__link">
-                           <img src="data:image/webp;base64,UklGRloEAABXRUJQVlA4WAoAAAAQAAAAOwAAOwAAQUxQSCUAAAABF0AgQPH/ZuGGGxERZzAUwAzNVoJmKl+BfSL6PwENn8XvrTR8AFZQOCAOBAAAcBQAnQEqPAA8AD6NNpVHpSKiITAZ/PigEYlmALfrcgn35LyZ9z0a7bXnjPSRvPPoAdMXaDnDT834c+W4Kfhu2jzyrl88N9O60sgZl6nB7GslLcqXQsEPAEq+lBcQEgexRUc9t4MrWFwTIdRtnAEeqb7yJaaOGbApfvsnYElei8WKxnvFl1jYLK0dTvZr3+sJ6sucsikwfwRKHMTzlX1B/iPaww6Ae6cmVKqwAAD++p8PeE3R8M5ZuS9+O5XY5xboFMWFHHd+g3drFjdKHbdtsFSpTcMkejSstSnkcAzRAO6aiCDXVEEBXeSpMeEH2W3LuzXHd98sCfTUfUqZFtZPZShaDc9seNfU72k+63SYh9oMKFGsGuBbBb5SESXe3QpJq03LkpV5wwk9qdrtChWoD0Y+AvzuZmh3fRS/1btLw38IFyqSfMig35LMsbRVXeu+DTl1f34NaUmY1wKJgfMqjJN4W8+8PKQQ1GbRxm0QLPBdqc5tAaQa7x2cbwUPNYl3tg0+XumtHZJClhxGrq39VdVNCwPX6hmLcLngLpnsxZ3eSJPDyW6+I+ZYzNLXJwBgjnlwHBKBWgV0ZCF9xFMHfCaf/wFZqKk2Eru8KgFTVc54PZ+kWefmitZSfbltQJkYPwCtsLAgoVs+vc5CDBTlgg5tk3hN8OsD+bqbHx6aZjADK0Y1FBO6LJzmNaFyxIg69Xg+OnMH+HeRT+AhmTv3TU59q1VnGuIAnhs/XlHI2qzuWajIQ8D7DlSA/XoAxlAbJqijzzYA3afzGgYE3qIxkr3F+bKh1o71ZJwd2BSvqZVWN0lyK8/TlPQEut3MI08cM+DmJtxU3IkkG7RvTIHnXiyhwQ/N0sNvRHIu0Dc1d+507jUpLaAdsd/pCqpmhbZaR5bZna0U5Z3sb7A4VWrEJTR9aPc9UjwSGpSu3vN2aLV4UtTsr/ImQj7wA2VsfUyY8AGjaXWIftQRUxiU/mkI7G6vEo3+UrI/ms+eAlJq9cP10Ckoy5LIvd9e1NQGRSnwodu0lh387CLUJ3G+3zbC0SKGG2XiDNpeBDbiJ3QIuVVM1xKpDrePEpmzU3Ph+2ObRcx7AQV709HT78clToX9vOTW+cHiRfdtitSdjZZ6Fy80VaZh1GVpimydFJTyffjPe0uNGy84n7tlXd5dSZEWb5OOh6T/c46L1YNz0KsZFxG2v6xXXuh2VSEdSnTrlUGlj35jJCzkGe8ijQjCO6Z4dwHYT27sThwWNqxarlInGglFK+5Ucd+PjsSwcbGESUjbClBUiGtn0BYRJU41PXGhsIOrhL6NBJBW/PVI0H5cmEaD/n6p6Og8j37sTSilbI0Y62VFN7zbHU6xN9Gcxy+WmEVSCaHQrjapnj3xgQAA" alt="stream image"
-                              class="item-stream__img">
-                        </a>
-                     </li>
-                     <li class="item-stream__item">
-                        <a href="#" class="item-stream__link">
-                           <img src="data:image/webp;base64,UklGRsIFAABXRUJQVlA4WAoAAAAQAAAAOwAAOwAAQUxQSCUAAAABF0AgQPH/ZuGGGxERZzAUwAzNVoJmKl+BfSL6PwENn8XvrTR8AFZQOCB2BQAA0BYAnQEqPAA8AD6JNpRHpSMiITH6rbCgEQlsAKktQVLeJeZPeD9TPFXPj8XpQ25vOwelD/mb6zvPdnXNItDny/BW538x/rkGT8753HA7THzVvLVeek6A3SXzcVajYHCKCrqpovf5fOYLklnCC/WQGam2Ci9X6wxxXAFeX9ZJrPbZduy17LYEw/K/8+UykmlAdK1cjcLKdLlTK6E40klJv2Ubrok6zGrowXAJD1qEMBHjnYiYePkj5CEniv2EUNAA/vllWUVQ6d35LU9SJG9H/jYdmkWOhO5RFNRlp23kQsOLCal1cTfiVvm+0oH+FyARxpzaBwPy5Nw1yr7u5dNcFbXVYeBhd9PBudFecERxEFE65wmTu2Kl2EAdMbSypFsbps3C3Ouiqc6dJMjJNNf1G+Sb4XfkisJw//WWqXMyLfC0bNsk7RSg+k7+CWgkL3mSYGTGqj0zf/P/Xar/tn5e6i7wULaIK70uY9VjisGsGXwBVBb+M52vz4eqMUvIvwWDGUrRTKxEVcF/fTSIUbDhncdn8pggVrT85bJ996OCf00ZH/MhelLXGKGdNfFzljsAiz/Z+p/vMtkPM8RfXDlAlOJXGe1tXwgzdRpbJtkANUnvTjko/juSZIz22kBx9HWshoLhxWCZNRgWuXlcUBKiTDDZ789Aex0sh1JlOPF7EyTfj7gOhPzKzRzkPGy04Fg6orSd30Ckv6pVOknFRtO/3fSOMMRysMp8uEk+FhKs+e/s7RVOOCQ/QL7TSChWfNdk0TOYKM3jlrDueYZ0pL4Y2kKvQrVscReNEpoxvd9TW6ic00R+420OmLdfOcButXrITTWkc1xQKBhRT5vgojRMGiMs83gypfFJ6CPf/T2/kD9OrF+O7Wsja4mcJUrdJbu2G7j3ZqXFbloQyt/18irM6cMKnHzvtnH+d4j/+j930t5o6Qjj7FnYksAtHTrwj9Vh31VJRRso2yMGEqTR/M/z18IMRVqmILz6jCmwU6Acy4BD4lglFOdrohOwTtb/cpOVBM9RfTxok1Tx3bt3q6VDcSprM9e3htfaZ2QYYQMuD2cFNZ3kvZtE5VHaCB8as0i3XmmccXHshyYqdowZAborMt94AZdPkHWVeoA4nynFfXQuvUIXaNHzxzjfcUVlBzDTQYCIJLNSTVP5oL1aT0OLDixpp0CuC14CR71YoFgcIwPmubasuGQwqNpMz03zNNRl+A9oBTLrxD+FGTisNa7Rqf+xarddvPYdvLJJTemhZyLajZg5vnA/7WE/nyMfh4bRZhLx5zKIPSE68plR+tqXLB28R1THIfZzaPLXJHu3ZZwEFmxB1jQHKa6qZAHGZOsSzkDxnMz59jmTfavFLEPQzmAHJ5OulWLyL/LUaW01Q/2jMP83wJOJXdc70T5x4Uoj30qRvfNPbJbfWG//dfPu2EFuN1f/y27Er7lcMe5aAvrsthAb4hN/Z0xBNgr+UIKMKCOpdKs1Ev9ls8buGzzclJXH3Y3P6lgdD1snQZq/iugmN1obUOmAL5RjLZ9mLhGWMBiamH1UjOQlXasuMVmyDlz1mtkn6Xf0uhGDL62nTiZOv+t4BQErJwk3sRFH0ov4Jk4GAVm2AXAupIwQNJrn4xQe/ngyNJ+82KvSKkV5cqA/UTFM9QncZwfwy5FWuM7y9gL/4/yelda116C2aH9IiYKVXevH+M+n1xI13pnceN8qWk8pgDIHUD3tIDQZ6S82ozDLQjfiyHi4s62jzMY4SsYGuNMq/EpMf9eodO0FMlbPzKAqhRVClCAE6iU/58DBiMsCEZNpL+O733mV/YZ/5E/grFsRKSJH5BpTeAO6VX/SLMXSFQXukP79j+jNhZhed2BjgAAA" alt="stream image"
-                              class="item-stream__img">
-                        </a>
-                     </li>
-                     <li class="item-stream__item">
-                        <a href="#" class="item-stream__link">
-                           <img src="data:image/webp;base64,UklGRi4EAABXRUJQVlA4ICIEAACQEwCdASo8ADwAPpE8nEqloyKhqBv4qLASCWQArk85D+l5xLQubgBjv/47wh8iSYOBOZwDvzTfJ5qDdKNLG/JbAqVRqX9C1b782agvW1njHMTnYOFYxoJKLyVScIKY8NrShltBBauKHcqerS29KsrGERC8AFpkXWhut/mDB1R/CUu0Zi0zQvLmH7+jN1cwr1MtlZi68+BA9GA2jV3Y19Hc3jjUZOgA/v8a3TmT9b8Bbd8goe5Y0ZoUw/vFwPOmp/J6drJhNseiX8AAZkfHTMp79k+HCZcLQocXOjL+seivkV4vHD6G0OzBqclRe8SQ0DRsyddDkF0/QkXsVLsPJZK2r9uB2j93beVS4nobxET6Tisk0EhK6GPaO/Nk+sm1GkDtehFTj//A2j6F/7xhA8SPyMOP9wG1CMf4tfNnP6XgYWbPATsJJjcN5S6fGZZBJ0k2jLtUhfLIA3Kxq2esiOXgxLCzJ7DQqjRr7wwmvj8nPM8TF2o7+mNNyeqmYDroHdL04Y0jRzYbUSuerbyQVyzFT6tHXKm9dx69oyWuenOL469df+oS6F6yzgXZEq8QdckwDNjrHG1Du3/hVbCTSJmQ21YMxcSopv8FJwoI57tvWNIK9xJRE+Rm7RMOvFieidOl2EMhsBQCQiXOjA5cO+ERt0IAyPb+EISBY19wWAgbJETFpc01Gz7/Zc53vh8ZJww+c1rRNnoJslgdmYHXnJN+5g3VwF5XenWLM5OpkqOTeAixVaOl883hKdPl+k861ra2Nch64v4PCTSutThYdxlaQ0tyYM1+i1NrAxwFO/t7KxHa1xRQmpNp6CKiHkSFHSEw4UQXBVvBseixK5fX3bSiZCNrvUbhKcDKCsCj/gnngcQuc/lVEfdxdLCObIXPh0c+fgvWiWQX2BPWrHKHK5oSw2BLBRcuyphga3MnywCQ+9RBTxPE1x4tM2UOwiItSUyEUiwf50ZqpFTzZRynwmNKJ5lAu1pf9TPQfIv7uUk2wqpEv9zYBj1/qnvaDEO5Pm2EshyhmWV8H6a/6Y/L7ng9i0Hl4n2yCH6g5S6SDoChPOpUKYDU8xh77VjYanW14eodCdQGTXRhcz7kVC5qbQPCY8LAZH8YFTXRGU9S2eYK4DtwhzdKdeWDkvjFCZ6tDW1TXs9wsPqzPllm4XJZSIhKYqIH42eYVLFeV9Ipk0hYMiQnsydBi7pR02OhT77nUKXpZMQtnsDo6Tzowe5gzJR9rM41iqGry3tAiUDznGN+KspLBdfPK7KOQQHnbtXm8LBVcsIU6fomv6Zexe6gW3075+egbmABMAl1VncCGKOTSCIeUHNeboMWxlhR2P6xuiOlq7Z7eDPyEOjUXS4PhSUfeQkJfcTkVdBbt0L5jaAijF6Sx0rhDAaWkFCNf3xdsXgAAA==" alt="stream image"
-                              class="item-stream__img">
-                        </a>
-                     </li>
-                     <li class="item-stream__item">
-                        <a href="#" class="item-stream__link">
-                           <img src="data:image/webp;base64,UklGRj4FAABXRUJQVlA4IDIFAABwFgCdASo8ADwAPo00lUelIqIhMBn9+KARiWYAnTKhCZFeQ2wI4JG3y52bTlZRTpV8eHwDNzxf2lfXSOKs0LHb+Pqod8tb0M06C9Q/pfF2JFLEeIJsxJpbB/796iXxIWhbcQJTwsBKkb22Q1MYLsWNWk/X8WWDFicjzqcE1ciR6T+M6Lmz/RLRmfCJn5av+aRYvJrlB3NiVuavECFKDdBjIjYTlgEbnHQ8H3mCIf+0L5VGU/rkNbBV1riAAAD7g76XhWJEArYgmUQfxgOZW3VL7Dw7jDi8qPVbgLsR35wGZ/7hS94F2vg/qbuQ45+yzdD5u6vVgSqbX6FZmD2GCNNJqG2ckklkPJygwIvtp657+t/q1WiikWPmxMTRpjfeC29WdaxzSsPqimk8nexRDdGo5ORqFCHxrhLiMUkI58FW49EbhGxzu675TsjokgHfcs+YbV/OXTxMXbg1BT/a5WNd8HgecVgs5mJ9LQViQAaU3KzYQMuRK6EUrGqOk5HUQZJwRg35t61BbweEP6DZqdJCvrnUG2UTdoe/v8HzexnncZjtViIyEazlM86K4S4SlN1+cn0dN0zAysfJwiEtnJMdDylfc1cFuRitvCX6GYc+enWYp3PtXGLP/lDSZJg36YRqi8hWRnRVlO760Yo2ckG7YBUPT/H/5T94VJqTPnFYb7Xt3vbmUbD6KRfMvGmSBAPXMEoTdT1ttHnrzRq34RiDydxiNHx6urOtCkwVJD0gm659cj0/p387VVAcIB+vFHJytCdJNhHE2lLZQJaASg/w3JtlXdB78vD6aQtz7Q6oVj864NT0oXWc261lqr2m0H0/iJf2rTYSW9AP2lWvnjr23Omlvp6i7qmy7VmEtE76jGqIJuT2tT6Xqc4sRcOvnmN9pz/VMT1lm1a2pIjFwggNP4OU7B/DV5DNw/mxkwo7ZgGrkBj0399j4FiWbrqAwtXO+hFdUhShcOHeGdjGllMrPa9yYIAXnbKw7nRvGh0bUUij7dOz+XdVmOBJh+pTk/JizbKjb7uxsZUD2ZwElLmdlA3mPlLuQf8bQv7c/beSoku+tPVEhyP1saqfM6e6TheFQyGusuiXcOKNFHPa8KOmQlpVtUXKydkEz54U76BwKOQZB8yZajV9XuGrW3DtheEnvu8KIvVOYmldio02L34Jokzmjk0OxNumfOQ0Xkydh5Jh+5sAatPg6UM3m512VVj1s7bO55IKNasTZmTOdTMPVgqfee5lERfsD8NgAgmuo6mtoEMep8y2KfosBFedrWlMqA+UWeq4Wp7mK8zVX5/XIB6zuZEjHahCI3Qqqdmr0i+PWlJvI013gAa+Y+lyMax/gWinmHXQGeiNRXEVXnnsTBLLn+I8LN5Kf8uJegv9JIz+JYZeoJ6l9nm9ilacki5ZDVJofCXd9vR+AG90DSG/MJdNVSYNik5aNbhkdsz6eY6WOQj/kIbSfk+784N7a/OShzMMMudktPOrYLX3L30vFZCSK0qzPx8Ih+Est8RjGHBUCRXiW6Lqok5wY04logIsx9fmiKQkAH7BiBWQUJI2Cz0ldHQdpTd8QZhyyldYDzqAS1OX3GpcWDbTH0T7MpObg7iuP3Htod6gvbXgVOZz/5I5m+SLjsKAK0qbLOt/3gjYxhWAW7FONsxPRp7Zq62Q8PyGff86vbToKaG1CDdn2axymbD85xVjuX64tshcGxw4GGkHdS3IoB63PPCmHkLIEXRGb5xaGLy4dBrs/6KWCVJIcoMglXfLFdJtflXaxmAA" alt="stream image"
-                              class="item-stream__img">
-                        </a>
-                     </li>
-                     <li class="item-stream__item">
-                        <a href="#" class="item-stream__link">
-                           <img src="data:image/webp;base64,UklGRtQEAABXRUJQVlA4IMgEAADQFQCdASo8ADwAPpE0lUgloqGhMBn6ALASCWwAnTLoQJ/GeZjZuxXFw29vPi6abKTfcv+W8K/Gp7k3cy+eCGmAmleQnUI6WnoqhtVm09J29vShfX1+YDDxvDR3DYEFXk2gHtx+Ujcxzomj1U8b6fskgMP8L1nY+nst/NMVF9M/eQgq7NdZCzvmpIlD5mfupO1SiJP7cm1UVV5N1Dy8mm1cPgmyd0538jrK8fS3rjl0Ux0lCiDMVmAA/vm5A6khMMYTmnTkSg6aMZm9sASpzFgJ3ViAINMrXs+m/g4hPT9Z1jbM602MLD4OeXsbp/QPpJ1c6MBuSE/BcxwEu3b78ItH7fj9qzx32XroGEQPgOXqq+h9004PKLcXe2e6EPgxoGu7lOQD/7ZtM5in6/fnd/FY6tdBVzZ4q7oiTmfL8ZwtDpkt5by4Fp9VVqC8EJo33+poTtOFyWHIxHxl94O0A4zwe9j0d5MsMcT9vQK8DQv467pf3yfxVkjGTMWtVsxo2jPjVjWQIESVm0X7b9ReGuZnS+UyaJ9MG9N+Eb1LY6sutuxD0aCIjqv+YU4enf3Fb0hBESalxBdomuNZZ+fxDCl+vmExRZaeU6VvEX0o1K8XZTZ71Fcbjy2/6boZck4OA2jHXjwP72pM/0Edobx/st9FQOrOM2MxUz5DQeFpTRrOHQfi61DfpQtIY+DsEUeVNU3oWW+3YGJxZPak9+LLCGLkRnwNQZktR7uAqNOt2Vq4c+jPy19YV/jy45W50NuLn4KIvJ4WQnaJH/lys9Lpbl89lV+5X3oi9QD7LnzX+CxpIj8GmrsO3NgTfuJ7AFnJ8/UOLIu7iR1fKwrUtZkmSMhFi+VJqk3NMk932P4xz6lI7GSSZcBVld9TgAhDi91rzilxVwUTNQymLv0QSo6EFAX+TKJpFf49gnM6VJgJAdjsucrHIROPRQTPvtnlehMzesHAj3+F1/jz9YuNs8xdqHPHYvTcb9wI8pH7ID90Dk45QGP4Oi5fxs4MTSksr/MAn0GZpsWtek+cyDSUkAl9Y+wRgNDFI0vdel+vtZTRyDHTFLY/lXV0f2TJjJ1tVha0LFB1LMlWI9fu/SBohQTghUgVM8G36SWk6Sfla+oIgJzxobohP1agUY6laD5ld8b2uoCM4sjTzwP48oto5lv4fEoWysqujqc0nj+jo0cmOq07cbOV156ulGY9+qYy9wvENuhJRZH4ooP1xH/D5vEzgCvnPzy7fY0w5+w+aeVzNe3b6owOd0AtaDhwflX+CiSl6nnP40XQqgO8FxcBwPivB02k4lIqYfkotSJ2YY+AKKUqVIW0Iw+qkPiYwYwJPw46P0g8GVWWb32A3N7Dam1hU+H7f5Xgv+JbKTlpGR0d/05aZyYmp4KGP3dlH6FdncwluzfuI0yttdA1sivIFgWxGi0VP8UaCMaW5NJYu9woRuE43QvLp1NpJtBk5VnWkRvNoy09Rn0sf27gre47jcgrJ/KxpPbXP+9d5NhBx5XvNezY0b8GMByX8GZMLGTx81rQB1292F0yMZ910hoqSk8aVDk2eEEMPTN3wbJWSkzNgAFNz00aNgZ6406ITiqhfHJLpLvyfhnMxbop937bRYZVoy5OpWkw4DGAAAA=" alt="stream image"
-                              class="item-stream__img">
-                        </a>
-                     </li>
-                     <li class="item-stream__item">
-                        <a href="#" class="item-stream__link">
-                           <img src="data:image/webp;base64,UklGRiYEAABXRUJQVlA4IBoEAABQEgCdASo8ADwAPpE8l0gloyIhMBYLALASCWIAnTNaTNA4b1xTdAlmqMly8Xt/9pswZhppfWkP78QWGVLrTXSk09cNiukwl20pfj8Y6hY0qPUBy03779VW5AYBYsQJ25XC+POUYFrJrEUEbU+3PRUOBStHtl7yvXwjcusVDGHIJA11UxAHYZh/jRiWKwT6UhOUfenYJ9z5LAVoAAD+4pf3QLUP2MNOqHrBXHqjhWvsgs+XJzunTU9N/WG5t+OowX53kJaY0d1Y9OdM4IOEdsmwWk9uB+oJ2VEf0LPcd32C08M65sdQfrA8k5JYRLxoNGDDUF+KO4JqpR3n0upZ/Hljk0HlS0MYpAQeINhwT2z35Rrxc1fkh3VMo5g5oxKmVavJEOys+gruqRQbw50e+abrkzgLQyYDE2mIB2uvm154Xz9tNZaoGofC7zvTkH+onVGpGMu0LQF85PBFBRvD2uYSn9tbs1sH/r7U4mCZTH/icI/GGQKX71TZWGaDj61cKTu4zWdUTzutR32Y4osExSpqK5+BCu1UtQKiiJnNkXdQeElShEVn4ccNvDHyvcKA5BUMwzwMEvQbcCHa59n62QGX4xcRTPVm2yIUg1jJsmUJdq3MTcOMisGDieGIBUkH2HKW7dOKA0prGXstovz7tUivqFo2xkd5JrGmnKvEM7sJJZ27rNoKPSIAnwQ+NAmOOwDgSdc1nAomRSR/x9HwS0/yc0agMURiSN0u8nquJsda+WWNfvrbGLjrvEzNo1iGkui8AVFvfR8u3CqtZEneIOVy8eb/lsamwA+5wpIPvTKjkP2JE5aM2U9pJT2ja8sIlDdKf8qm6ILeld5Zc4iyW/RfujXllx6UCDOsrSnDSx78A6Dul9uSzNwYOSZmyTXf5RHiTRC5vXDtx045yM6oIM/3pUfQGNVTdypy/o7QQcM/ziaAdLEFLOSLUtQqyaWLyTQ1d4u4x2R4WlCV1LPTMQA0cAdICXYBIshhNVFef0vEo6JVv9XrUa9jVgGd5CLwNnfxAzmYVVu+h6ppIPLPb7Qt9enXyBjs7u/3t4xkdsDWkw9UaQMFScV12uwXL+BDwU9LE/OFKTL2J85lEyYAQw3SYVtcCx98YU52wfxLFbUlsRz9fj18W+ROMNVF4kku1v8Z8eXqSDI/CDMoiB4KdWsSdpxte606/rP6ZDx6CVJlQEuMo7MkjFzpsgQ3Hsq47G0Mgsga/oYZXUqVF9siU26WNLBXNMTFzfURhW8XH7F172SjUhUFuLuo2IrjJYEv2aRco5NLLKsR6CL3FM/uKcx456XBzZ6tMfoAbnjT9hUu2fvHYX9rafNEg585nhTR2XZOF4KjwVUxerRsafwQiXWMcPwHRxr9nxXinv2zFYryvUhpjGxnkwYAAAA=" alt="stream image"
-                              class="item-stream__img">
-                        </a>
-                     </li>
-                  </ul>
-               </div>
+        <div class="footer__body body-footer">
+          <div class="body-footer__container body-footer__container--anim" data-delay="300" data-step="150">
+            <div class="body-footer__column anim-child column-touch">
+              <h3 class="column-touch__title title-footer">GET IN TOUCH</h3>
+              <div class="column-touch__text">
+                <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry .</p>
+              </div>
+              <ul class="column-touch__address address-touch">
+                <li class="address-touch__item">
+                  <a href="#" class="address-touch__link address-touch__link--icon-location">1422 1st St. Santa
+                    Rosa,t CA 94559.
+                    USA</a>
+                </li>
+                <li class="address-touch__item">
+                  <a href="mailto:admin@e-mail.com"
+                    class="address-touch__link address-touch__link--icon-mail1">admin@e-mail.com</a>
+                </li>
+                <li class="address-touch__item">
+                  <a href="phone:00201008431112" class="address-touch__link address-touch__link--icon-phone">002-
+                    01008431112</a>
+                </li>
+              </ul>
             </div>
-         </div>
-         <div class="footer__bottom bottom-footer">
-            <div class="bottom-footer__container">
-               <ul class="bottom-footer__list bottom-footer__list--anim">
-                  <li class="bottom-footer__item anim-child">
-                     <a href="#" class="bottom-footer__link">HOME</a>
-                  </li>
-                  <li class="bottom-footer__item anim-child">
-                     <a href="#" class="bottom-footer__link">ABOUT US</a>
-                  </li>
-                  <li class="bottom-footer__item anim-child">
-                     <a href="#" class="bottom-footer__link">CAREER</a>
-                  </li>
-                  <li class="bottom-footer__item anim-child">
-                     <a href="#" class="bottom-footer__link">PRIVACY POLICY</a>
-                  </li>
-                  <li class="bottom-footer__item anim-child">
-                     <a href="#" class="bottom-footer__link">USE OF TERMS</a>
-                  </li>
-               </ul>
-               <a href="#" class="bottom-footer__copyright bottom-footer__copyright--anim">
-                  <p>&copy; 2016 FEKRA CORPORATION</p>
-               </a>
+            <div class="body-footer__column anim-child column-tags">
+              <h3 class="column-tags__title title-footer">POPULAR TAGS</h3>
+              <ul class="column-tags__list list-tags">
+                <li class="list-tags__item">
+                  <a href="#" class="list-tags__link">BUSINNESS</a>
+                </li>
+                <li class="list-tags__item">
+                  <a href="#" class="list-tags__link">CREATIVE</a>
+                </li>
+                <li class="list-tags__item">
+                  <a href="#" class="list-tags__link">ONE PAGE</a>
+                </li>
+                <li class="list-tags__item">
+                  <a href="#" class="list-tags__link">CREATIVE</a>
+                </li>
+                <li class="list-tags__item">
+                  <a href="#" class="list-tags__link">CLEAN</a>
+                </li>
+                <li class="list-tags__item">
+                  <a href="#" class="list-tags__link">CUSTOMIZATION</a>
+                </li>
+                <li class="list-tags__item">
+                  <a href="#" class="list-tags__link">THEMEFOREST</a>
+                </li>
+                <li class="list-tags__item">
+                  <a href="#" class="list-tags__link">VISUAL</a>
+                </li>
+                <li class="list-tags__item">
+                  <a href="#" class="list-tags__link">ELEGANT</a>
+                </li>
+                <li class="list-tags__item">
+                  <a href="#" class="list-tags__link">DEVELOPMENT</a>
+                </li>
+              </ul>
             </div>
-         </div>
+            <div class="body-footer__column anim-child column-news">
+              <h3 class="column-news__title title-footer">LATEST NEWS</h3>
+              <div class="column-news__items">
+                <figure class="item-news">
+                  <a href="#" class="item-news__inner">
+                    <img src="data:image/webp;base64,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" alt="image news" class="item-news__image">
+                    <figcaption class="item-news__content">
+                      <p class="item-news__text">Lorem Ipsum is simply dummy text of the printing and
+                        typesetting
+                        industry .</p>
+                      <time datetime="2015-02-02" class="item-news__time">2 FEB 2015</time>
+                    </figcaption>
+                  </a>
+                </figure>
+                <figure class="item-news">
+                  <a href="#" class="item-news__inner">
+                    <img src="data:image/webp;base64,UklGRpQEAABXRUJQVlA4WAoAAAAQAAAAUgAATgAAQUxQSBcAAAABD/Dt/4iIYKZtG7cdf/J7IvofAXCfBQBWUDggVgQAAHAYAJ0BKlMATwA+kUKaSaWjoiEmdVz4sBIJQBhPEJrbgR+u4mcjHcN89G5N5Y0z+b0vKeGdxUmsQ5nQqA5H/+XHeuvp0GuZRhjWk+tfD4Hv4G8bcyBBoeHZcpk18m0xHsTbq4yJB/G5IEdYfs5kUeqMPJj//86dr/FVWMJG78oGX9n+mFKKoyOccSgdUM//8lgc+eQOCJtA//9LDSr8NMcqvQB9VfP1DMNz7+ynjZflpOmfhOl/9oWCHWKzhQEp82MDsizzUl6idOGYYAD9IXtrEQ3TTXkE7WJydI676P2xDBbFl/+GWgybXrDf+WdPSA1pXAlMw+wdhXbuvQfsF0glg4YhkjHCnWsUcu3Se9+5APl5GTRDlHxKxpfEKXEcgihMu71a4ZryZmVo1/ohY+R3XgvFi9z3qUk4FWrIrRQWez0nCZVAVLMjZaYHXDxCvuq0Tc2SJiJsGpO9xb0Za2k45PEdBpqvYavp/2QOYY5d4J2D3JPMK1NXFwU6paM9uxBbJZQzGP9mzA0aw/RZAZFthH/rGausIY0h+cikQfOsdIEEo33/jpyYIPtSp0Hctxp7DZ3KfMVHhyyaoVfKDemElu3KhO/Z6F1TVPqnLxARGidpmlXm16XHpzLsc5XSM2r9BaIUFbzL+/fgufUR5JeGnTQQKIm6rd47vsq0kCqOR+aDHEI6feQdUifdRL5kC8OKJ+ow7UxWwdYLSdXb5NUafnZWwgscTMA0v7ScX89YyMKSIxlxDmC+ubdnToW3AvsmZBSGTHTcERf+keNX4hXIYxnqbIHVqdrkj0j8WM0YVkk/bMHK8+YDS5NNRAex4tvThJutGYwOTcgGgZ44Lnt7XuIx7KEVeD9eC4aKc+N9a7nv334h2M/z7G9lGlJFzX1+11eaIgahvDdfaPqzU7PkZ2dHdnejykz76dG9BxNobcGRrvCOWqyTVcYe0CSPO4sPVoP3FXjce739CygUFJI8PmQFI6BVO+sUPd7yDNN7cnUH1MlVZUGqx+gaIhUTneQSmxobHf3yOtJPkIX0wL+eRa1orIrHT6oVZ0zaUu/hOUoPrA1hyLDry1CcgjpdZsI9oDAQ4yOsHcUvNiL4nyHRFZChynfxXG/CjiOf20zPhCGw9pfjEvtZ3SYFt0dE4tZLC0l9ehmTCzqqB/1Ya47ouOkZIFCetvnUlJ7D9xH5lYuTZ1pvlm9HXElBQsv2Gb449kE6lweYzU36D8LTTXsxuzixJlM4evSzOipSsVQptAI5y0sNXtC/Cbf8czMlTKiE3bhMPJrf1tvE/cuiGM0PPKeFyMD7nSLQdk8kI3NN1xA2JAQQpmRhqxCv7M3l4T94F6FL22km++UxNNE2ZnAYIAQ5tkbsQasyBgwJZ7PDq9+vzLn6iLKwaFzOC57B+lnxVZALl3dkAChTtLB/o3kXi6dKoOYNUfakELkdkDXBJdNhGstzNOs3M/GDTzV10IrGagAAAA==" alt="image news" class="item-news__image">
+                    <figcaption class="item-news__content">
+                      <p class="item-news__text">Lorem Ipsum is simply dummy text of the printing and
+                        typesetting
+                        industry .</p>
+                      <time datetime="2016-08-24" class="item-news__time">24 AUG 2016</time>
+                    </figcaption>
+                  </a>
+                </figure>
+              </div>
+            </div>
+            <div class="body-footer__column anim-child column-stream">
+              <h3 class="column-stream__title title-footer">FLICKR STREAM</h3>
+              <ul class="column-stream__items item-stream">
+                <li class="item-stream__item">
+                  <a href="#" class="item-stream__link">
+                    <img src="data:image/webp;base64,UklGRs4DAABXRUJQVlA4WAoAAAAQAAAAOwAAOwAAQUxQSCUAAAABF0AgQPH/ZuGGGxERZzAUwAzNVoJmKl+BfSL6PwENn8XvrTR8AFZQOCCCAwAAEBEAnQEqPAA8AD6NNpdHpSKiIS4ZLVCgEYliALEficpoasxh4M+T0IscPebLz08bTw/qHBMhHNdkBab8iKO+SfuhNUwN5vcCsRts+AMdb/XnvuxPMa4dCvM8nIWKfu2TngSJevEq8x9IlzhDuVLBUuK2Pxe248WNfsUVtyXJzTTjpU154Npaj72qB/43Qs78AAD8h1O6Bt8NRR2l8n6bJ8qQizhquWqqwSp4LBBbyu0JmHpwnGx4qjOhiH0kYqhHWjoUHWWJB5ULCusJHuMim3mQi1X6s03KCHMgEYnbAWCFE4HFEFfE3AmlzsqClP8/CtnXBOTgievAVBZhbUhvNwy3q17OgViEdwFJGGASdm0UIs4mzvIgm3TLL3scMdsB0ra4bxnntYuNAbSfc2JLdEI/eIXWw1m+gRDC4xvuRGAYgMMVoxQnVB3t/9sGlORRPJgjZeekzGf70efmQXZE6KurT+9lx4hVx5PeazGJRNZs+9kW0ARHmP+aLtnim+R9IKkrZ2N8dNBUgssUVtHIQyOQb903mQY1IloP4Klgcht+2bUE6/80ghsDSdB0HuIRua5Vn5G8XIVpSI8XP84EMZ7kdv9f3+s2VCqxHCfjfkYmbB6qQ18534ZSF4GVX0zFfoZZV4KXgVk7e0yNUYbBaU2rVfYXckVaRqnvytKtVvxeEMdjqh5ICJ4WZwtdShpduOQQsue30uHY5E87V423//DZO9+fAwfw5nLAbiFF4Tjr7W61oxz3cE5sxg+z0RDbStdYWXFr2KAo0qEV8/3kzyCuQsqAHlwvpp/wB+GWArzktoADYr87KlDUYSrVx/ZCI++n7+dcSq37PohN0nxMN9TLvLQmh4LcNzOC/JxvjYtG9nVrwZh674EenaE1tLL/yTZje75ZmycRuGxeHMmFlZTtSxE/8mdcbrCbjy7y5uV7daOIoFsvGLmcfFgnhc3anHaceG6zTpHSzSQioIjPHHNdg7NRcphfkMvUreQWzLOSuevb06imYTm5rPTdJB6KuBtSklMfRZy0mF2QTxjVRXb9DXcf7Bb5kIrdkNsGU7RaV4sfFNg4VR7+PiVcbqim9XijnPBZhDTINQU7fVFP+LEL/CBKa5QO/FzsjlCG87YjUL3x9wUgrv0KTEMQ6rcQfzHJzaQMlpOxf2hU5LWPwZsFiFtFn6TKddJv30oTUIAAAA==" alt="stream image" class="item-stream__img">
+                  </a>
+                </li>
+                <li class="item-stream__item">
+                  <a href="#" class="item-stream__link">
+                    <img src="data:image/webp;base64,UklGRnIFAABXRUJQVlA4WAoAAAAQAAAAOwAAOwAAQUxQSCUAAAABF0AgQPH/ZuGGGxERZzAUwAzNVoJmKl+BfSL6PwENn8XvrTR8AFZQOCAmBQAA8BUAnQEqPAA8AD6ROpVIpaMhoTAWDACwEglsALszOQG0mK8KPNCk28XmA3MDqTN6Gs0rfTiU5Z/gccy4f6+B5nLOeowO0yU1Xy5ahS3QpLa0taY/HtVe7RipP8m7VqDC+7tXd3BDANuyWv9DfDBOiu4iuzWmRPL0lW4ARN+ITwZ9XJbQMjWKaOb3Rkqr9hBja9oGTfNAeYCbfpMMuJFQ+DrMgxZQ95ojd16RbjL+FzUIqXRIBN7wAAD+em5g3klzXdgdycVUjh5C1buoI7gWiFoPGQN7FfT1lMqcgMckQpv2b/RZnXcRWPB9PPFugFuB16/jsJENjrc//yBPz38HJU3iA+ripi1WJQdRYKssdnyZgDlt1u791czrNWQHgGxo9UUxvoi2wyqrUIA1RpWKcPXedP0jJl9foSntEFI5dzhQ6V+RdSwafYwTq6nlxqqvECj9GDvg/S9cseOfwajJ6tbAiLD+wEh26Ew1c9Wk8bIZ2w4Sjf/3BjkthhRKJoJ3vO81a9owK9kUAndLwJo5l70LS4YXmTzwov9nfPs7qncJQKQDDVEOX9atNBW5wBmDDKFnAyGwMkkpUS4QWBNfOLEs8e+Fo/Il8zo0R6VFnCj2bQFEEQuW3MV8zbZwFgS67xa2YqRJ3YWR+AaG5T338A3r3hWU5sGMvbz+htF+DnnlX/3TTDq1JeAYWo3+P/X/wd/CSJB01+B1O17DwDnHbW9BumNEAy6rkVsg8X4aXE8HTb6t/P6viscN6v5W8t5IaUGX4u0rQJl+VjdyvZI56e1lbUkHTIGDoFzBrGfHaBuhD//qXYlEdosWDVI2sS6F1BM8mvVDP7F9hbHB8GgW1TFzMxfX377pdTLdmkMWkOVpbl8uDLYUn9D+kwik/Vwu3M6t8L3nOc4SICN3JqwWGZBHjBgGC2v4NeUqYkv+ciAhWHQx0K8iDM+ZljsoUFtbKLAWaDC2W6KGVQkAAfhNw+FCecjNQIx/BFmv8SPz6iDrOC88GQmd7SI6eRJc9w167KwcE7juo3h90LBQ+mXvPkId0NMwrAozTqrEuGCvs3Tp2oU+Hn0HpAL2himGcXXeEIUlzZC6NnlYqPD8Vl+hSUszJgIggu7lmVAI5sFXqm+/+ZTgy2pa+V5gLWB+BHFuu3w8PoT10m5IC6IL800RBCnoMFBmepJR6CDWu64le6f7pfDH2yOkBMSFdSx35YTo7b1sz2slW3PWTiafqehrhTeT22BUyxiYsUrLuekcB6lNjfYeMKbPHOYLpfneYoPtvasDGNfwIuHUM5+Uam92RgB/ZWtHDNRnSxmxlm2mcaajZFP7Ob05XBgEqvxoMkUGfYwHc72CcKD5T1bb64CXy7aDfnN/OcMlnOYu0M2rg1eprUNpzKfSvvmfHl63BughpXa2/X0cCiTvqZiZfRrfOYSH8KBIxNTBwDH/NwjX9VL+gNmbbWlrTznvcpeUYG8SDaIJ9ustr+QBrM8PFAKzFz63px/vP8efltcfEPsn/+fsUa/mpvOW8CiGtOZGWe6VpXyJs96FmSJSAv7VCvRtuvrKQ+YT1t1sEeTxnrynMYcYXpMEMwITSc7BtwsyKwa9iIHu6b7+8XGsIX/UgZ6I/c1O/UJSWG/LM+NsSPdK1G+MFKsWuWsEwOAA8675JrAr6OkISNoLXQeKKeCIZ11SPkzgaMOCcZ0erBEYjcXfCAnFwhgxw7x/bsblQBz/QA2Wan0DvLkBfFU/RRtQQIrsHpB1+4gAAA==" alt="stream image" class="item-stream__img">
+                  </a>
+                </li>
+                <li class="item-stream__item">
+                  <a href="#" class="item-stream__link">
+                    <img src="data:image/webp;base64,UklGRloEAABXRUJQVlA4WAoAAAAQAAAAOwAAOwAAQUxQSCUAAAABF0AgQPH/ZuGGGxERZzAUwAzNVoJmKl+BfSL6PwENn8XvrTR8AFZQOCAOBAAAcBQAnQEqPAA8AD6NNpVHpSKiITAZ/PigEYlmALfrcgn35LyZ9z0a7bXnjPSRvPPoAdMXaDnDT834c+W4Kfhu2jzyrl88N9O60sgZl6nB7GslLcqXQsEPAEq+lBcQEgexRUc9t4MrWFwTIdRtnAEeqb7yJaaOGbApfvsnYElei8WKxnvFl1jYLK0dTvZr3+sJ6sucsikwfwRKHMTzlX1B/iPaww6Ae6cmVKqwAAD++p8PeE3R8M5ZuS9+O5XY5xboFMWFHHd+g3drFjdKHbdtsFSpTcMkejSstSnkcAzRAO6aiCDXVEEBXeSpMeEH2W3LuzXHd98sCfTUfUqZFtZPZShaDc9seNfU72k+63SYh9oMKFGsGuBbBb5SESXe3QpJq03LkpV5wwk9qdrtChWoD0Y+AvzuZmh3fRS/1btLw38IFyqSfMig35LMsbRVXeu+DTl1f34NaUmY1wKJgfMqjJN4W8+8PKQQ1GbRxm0QLPBdqc5tAaQa7x2cbwUPNYl3tg0+XumtHZJClhxGrq39VdVNCwPX6hmLcLngLpnsxZ3eSJPDyW6+I+ZYzNLXJwBgjnlwHBKBWgV0ZCF9xFMHfCaf/wFZqKk2Eru8KgFTVc54PZ+kWefmitZSfbltQJkYPwCtsLAgoVs+vc5CDBTlgg5tk3hN8OsD+bqbHx6aZjADK0Y1FBO6LJzmNaFyxIg69Xg+OnMH+HeRT+AhmTv3TU59q1VnGuIAnhs/XlHI2qzuWajIQ8D7DlSA/XoAxlAbJqijzzYA3afzGgYE3qIxkr3F+bKh1o71ZJwd2BSvqZVWN0lyK8/TlPQEut3MI08cM+DmJtxU3IkkG7RvTIHnXiyhwQ/N0sNvRHIu0Dc1d+507jUpLaAdsd/pCqpmhbZaR5bZna0U5Z3sb7A4VWrEJTR9aPc9UjwSGpSu3vN2aLV4UtTsr/ImQj7wA2VsfUyY8AGjaXWIftQRUxiU/mkI7G6vEo3+UrI/ms+eAlJq9cP10Ckoy5LIvd9e1NQGRSnwodu0lh387CLUJ3G+3zbC0SKGG2XiDNpeBDbiJ3QIuVVM1xKpDrePEpmzU3Ph+2ObRcx7AQV709HT78clToX9vOTW+cHiRfdtitSdjZZ6Fy80VaZh1GVpimydFJTyffjPe0uNGy84n7tlXd5dSZEWb5OOh6T/c46L1YNz0KsZFxG2v6xXXuh2VSEdSnTrlUGlj35jJCzkGe8ijQjCO6Z4dwHYT27sThwWNqxarlInGglFK+5Ucd+PjsSwcbGESUjbClBUiGtn0BYRJU41PXGhsIOrhL6NBJBW/PVI0H5cmEaD/n6p6Og8j37sTSilbI0Y62VFN7zbHU6xN9Gcxy+WmEVSCaHQrjapnj3xgQAA" alt="stream image" class="item-stream__img">
+                  </a>
+                </li>
+                <li class="item-stream__item">
+                  <a href="#" class="item-stream__link">
+                    <img src="data:image/webp;base64,UklGRsIFAABXRUJQVlA4WAoAAAAQAAAAOwAAOwAAQUxQSCUAAAABF0AgQPH/ZuGGGxERZzAUwAzNVoJmKl+BfSL6PwENn8XvrTR8AFZQOCB2BQAA0BYAnQEqPAA8AD6JNpRHpSMiITH6rbCgEQlsAKktQVLeJeZPeD9TPFXPj8XpQ25vOwelD/mb6zvPdnXNItDny/BW538x/rkGT8753HA7THzVvLVeek6A3SXzcVajYHCKCrqpovf5fOYLklnCC/WQGam2Ci9X6wxxXAFeX9ZJrPbZduy17LYEw/K/8+UykmlAdK1cjcLKdLlTK6E40klJv2Ubrok6zGrowXAJD1qEMBHjnYiYePkj5CEniv2EUNAA/vllWUVQ6d35LU9SJG9H/jYdmkWOhO5RFNRlp23kQsOLCal1cTfiVvm+0oH+FyARxpzaBwPy5Nw1yr7u5dNcFbXVYeBhd9PBudFecERxEFE65wmTu2Kl2EAdMbSypFsbps3C3Ouiqc6dJMjJNNf1G+Sb4XfkisJw//WWqXMyLfC0bNsk7RSg+k7+CWgkL3mSYGTGqj0zf/P/Xar/tn5e6i7wULaIK70uY9VjisGsGXwBVBb+M52vz4eqMUvIvwWDGUrRTKxEVcF/fTSIUbDhncdn8pggVrT85bJ996OCf00ZH/MhelLXGKGdNfFzljsAiz/Z+p/vMtkPM8RfXDlAlOJXGe1tXwgzdRpbJtkANUnvTjko/juSZIz22kBx9HWshoLhxWCZNRgWuXlcUBKiTDDZ789Aex0sh1JlOPF7EyTfj7gOhPzKzRzkPGy04Fg6orSd30Ckv6pVOknFRtO/3fSOMMRysMp8uEk+FhKs+e/s7RVOOCQ/QL7TSChWfNdk0TOYKM3jlrDueYZ0pL4Y2kKvQrVscReNEpoxvd9TW6ic00R+420OmLdfOcButXrITTWkc1xQKBhRT5vgojRMGiMs83gypfFJ6CPf/T2/kD9OrF+O7Wsja4mcJUrdJbu2G7j3ZqXFbloQyt/18irM6cMKnHzvtnH+d4j/+j930t5o6Qjj7FnYksAtHTrwj9Vh31VJRRso2yMGEqTR/M/z18IMRVqmILz6jCmwU6Acy4BD4lglFOdrohOwTtb/cpOVBM9RfTxok1Tx3bt3q6VDcSprM9e3htfaZ2QYYQMuD2cFNZ3kvZtE5VHaCB8as0i3XmmccXHshyYqdowZAborMt94AZdPkHWVeoA4nynFfXQuvUIXaNHzxzjfcUVlBzDTQYCIJLNSTVP5oL1aT0OLDixpp0CuC14CR71YoFgcIwPmubasuGQwqNpMz03zNNRl+A9oBTLrxD+FGTisNa7Rqf+xarddvPYdvLJJTemhZyLajZg5vnA/7WE/nyMfh4bRZhLx5zKIPSE68plR+tqXLB28R1THIfZzaPLXJHu3ZZwEFmxB1jQHKa6qZAHGZOsSzkDxnMz59jmTfavFLEPQzmAHJ5OulWLyL/LUaW01Q/2jMP83wJOJXdc70T5x4Uoj30qRvfNPbJbfWG//dfPu2EFuN1f/y27Er7lcMe5aAvrsthAb4hN/Z0xBNgr+UIKMKCOpdKs1Ev9ls8buGzzclJXH3Y3P6lgdD1snQZq/iugmN1obUOmAL5RjLZ9mLhGWMBiamH1UjOQlXasuMVmyDlz1mtkn6Xf0uhGDL62nTiZOv+t4BQErJwk3sRFH0ov4Jk4GAVm2AXAupIwQNJrn4xQe/ngyNJ+82KvSKkV5cqA/UTFM9QncZwfwy5FWuM7y9gL/4/yelda116C2aH9IiYKVXevH+M+n1xI13pnceN8qWk8pgDIHUD3tIDQZ6S82ozDLQjfiyHi4s62jzMY4SsYGuNMq/EpMf9eodO0FMlbPzKAqhRVClCAE6iU/58DBiMsCEZNpL+O733mV/YZ/5E/grFsRKSJH5BpTeAO6VX/SLMXSFQXukP79j+jNhZhed2BjgAAA" alt="stream image" class="item-stream__img">
+                  </a>
+                </li>
+                <li class="item-stream__item">
+                  <a href="#" class="item-stream__link">
+                    <img src="data:image/webp;base64,UklGRi4EAABXRUJQVlA4ICIEAACQEwCdASo8ADwAPpE8nEqloyKhqBv4qLASCWQArk85D+l5xLQubgBjv/47wh8iSYOBOZwDvzTfJ5qDdKNLG/JbAqVRqX9C1b782agvW1njHMTnYOFYxoJKLyVScIKY8NrShltBBauKHcqerS29KsrGERC8AFpkXWhut/mDB1R/CUu0Zi0zQvLmH7+jN1cwr1MtlZi68+BA9GA2jV3Y19Hc3jjUZOgA/v8a3TmT9b8Bbd8goe5Y0ZoUw/vFwPOmp/J6drJhNseiX8AAZkfHTMp79k+HCZcLQocXOjL+seivkV4vHD6G0OzBqclRe8SQ0DRsyddDkF0/QkXsVLsPJZK2r9uB2j93beVS4nobxET6Tisk0EhK6GPaO/Nk+sm1GkDtehFTj//A2j6F/7xhA8SPyMOP9wG1CMf4tfNnP6XgYWbPATsJJjcN5S6fGZZBJ0k2jLtUhfLIA3Kxq2esiOXgxLCzJ7DQqjRr7wwmvj8nPM8TF2o7+mNNyeqmYDroHdL04Y0jRzYbUSuerbyQVyzFT6tHXKm9dx69oyWuenOL469df+oS6F6yzgXZEq8QdckwDNjrHG1Du3/hVbCTSJmQ21YMxcSopv8FJwoI57tvWNIK9xJRE+Rm7RMOvFieidOl2EMhsBQCQiXOjA5cO+ERt0IAyPb+EISBY19wWAgbJETFpc01Gz7/Zc53vh8ZJww+c1rRNnoJslgdmYHXnJN+5g3VwF5XenWLM5OpkqOTeAixVaOl883hKdPl+k861ra2Nch64v4PCTSutThYdxlaQ0tyYM1+i1NrAxwFO/t7KxHa1xRQmpNp6CKiHkSFHSEw4UQXBVvBseixK5fX3bSiZCNrvUbhKcDKCsCj/gnngcQuc/lVEfdxdLCObIXPh0c+fgvWiWQX2BPWrHKHK5oSw2BLBRcuyphga3MnywCQ+9RBTxPE1x4tM2UOwiItSUyEUiwf50ZqpFTzZRynwmNKJ5lAu1pf9TPQfIv7uUk2wqpEv9zYBj1/qnvaDEO5Pm2EshyhmWV8H6a/6Y/L7ng9i0Hl4n2yCH6g5S6SDoChPOpUKYDU8xh77VjYanW14eodCdQGTXRhcz7kVC5qbQPCY8LAZH8YFTXRGU9S2eYK4DtwhzdKdeWDkvjFCZ6tDW1TXs9wsPqzPllm4XJZSIhKYqIH42eYVLFeV9Ipk0hYMiQnsydBi7pR02OhT77nUKXpZMQtnsDo6Tzowe5gzJR9rM41iqGry3tAiUDznGN+KspLBdfPK7KOQQHnbtXm8LBVcsIU6fomv6Zexe6gW3075+egbmABMAl1VncCGKOTSCIeUHNeboMWxlhR2P6xuiOlq7Z7eDPyEOjUXS4PhSUfeQkJfcTkVdBbt0L5jaAijF6Sx0rhDAaWkFCNf3xdsXgAAA==" alt="stream image" class="item-stream__img">
+                  </a>
+                </li>
+                <li class="item-stream__item">
+                  <a href="#" class="item-stream__link">
+                    <img src="data:image/webp;base64,UklGRj4FAABXRUJQVlA4IDIFAABwFgCdASo8ADwAPo00lUelIqIhMBn9+KARiWYAnTKhCZFeQ2wI4JG3y52bTlZRTpV8eHwDNzxf2lfXSOKs0LHb+Pqod8tb0M06C9Q/pfF2JFLEeIJsxJpbB/796iXxIWhbcQJTwsBKkb22Q1MYLsWNWk/X8WWDFicjzqcE1ciR6T+M6Lmz/RLRmfCJn5av+aRYvJrlB3NiVuavECFKDdBjIjYTlgEbnHQ8H3mCIf+0L5VGU/rkNbBV1riAAAD7g76XhWJEArYgmUQfxgOZW3VL7Dw7jDi8qPVbgLsR35wGZ/7hS94F2vg/qbuQ45+yzdD5u6vVgSqbX6FZmD2GCNNJqG2ckklkPJygwIvtp657+t/q1WiikWPmxMTRpjfeC29WdaxzSsPqimk8nexRDdGo5ORqFCHxrhLiMUkI58FW49EbhGxzu675TsjokgHfcs+YbV/OXTxMXbg1BT/a5WNd8HgecVgs5mJ9LQViQAaU3KzYQMuRK6EUrGqOk5HUQZJwRg35t61BbweEP6DZqdJCvrnUG2UTdoe/v8HzexnncZjtViIyEazlM86K4S4SlN1+cn0dN0zAysfJwiEtnJMdDylfc1cFuRitvCX6GYc+enWYp3PtXGLP/lDSZJg36YRqi8hWRnRVlO760Yo2ckG7YBUPT/H/5T94VJqTPnFYb7Xt3vbmUbD6KRfMvGmSBAPXMEoTdT1ttHnrzRq34RiDydxiNHx6urOtCkwVJD0gm659cj0/p387VVAcIB+vFHJytCdJNhHE2lLZQJaASg/w3JtlXdB78vD6aQtz7Q6oVj864NT0oXWc261lqr2m0H0/iJf2rTYSW9AP2lWvnjr23Omlvp6i7qmy7VmEtE76jGqIJuT2tT6Xqc4sRcOvnmN9pz/VMT1lm1a2pIjFwggNP4OU7B/DV5DNw/mxkwo7ZgGrkBj0399j4FiWbrqAwtXO+hFdUhShcOHeGdjGllMrPa9yYIAXnbKw7nRvGh0bUUij7dOz+XdVmOBJh+pTk/JizbKjb7uxsZUD2ZwElLmdlA3mPlLuQf8bQv7c/beSoku+tPVEhyP1saqfM6e6TheFQyGusuiXcOKNFHPa8KOmQlpVtUXKydkEz54U76BwKOQZB8yZajV9XuGrW3DtheEnvu8KIvVOYmldio02L34Jokzmjk0OxNumfOQ0Xkydh5Jh+5sAatPg6UM3m512VVj1s7bO55IKNasTZmTOdTMPVgqfee5lERfsD8NgAgmuo6mtoEMep8y2KfosBFedrWlMqA+UWeq4Wp7mK8zVX5/XIB6zuZEjHahCI3Qqqdmr0i+PWlJvI013gAa+Y+lyMax/gWinmHXQGeiNRXEVXnnsTBLLn+I8LN5Kf8uJegv9JIz+JYZeoJ6l9nm9ilacki5ZDVJofCXd9vR+AG90DSG/MJdNVSYNik5aNbhkdsz6eY6WOQj/kIbSfk+784N7a/OShzMMMudktPOrYLX3L30vFZCSK0qzPx8Ih+Est8RjGHBUCRXiW6Lqok5wY04logIsx9fmiKQkAH7BiBWQUJI2Cz0ldHQdpTd8QZhyyldYDzqAS1OX3GpcWDbTH0T7MpObg7iuP3Htod6gvbXgVOZz/5I5m+SLjsKAK0qbLOt/3gjYxhWAW7FONsxPRp7Zq62Q8PyGff86vbToKaG1CDdn2axymbD85xVjuX64tshcGxw4GGkHdS3IoB63PPCmHkLIEXRGb5xaGLy4dBrs/6KWCVJIcoMglXfLFdJtflXaxmAA" alt="stream image" class="item-stream__img">
+                  </a>
+                </li>
+                <li class="item-stream__item">
+                  <a href="#" class="item-stream__link">
+                    <img src="data:image/webp;base64,UklGRtQEAABXRUJQVlA4IMgEAADQFQCdASo8ADwAPpE0lUgloqGhMBn6ALASCWwAnTLoQJ/GeZjZuxXFw29vPi6abKTfcv+W8K/Gp7k3cy+eCGmAmleQnUI6WnoqhtVm09J29vShfX1+YDDxvDR3DYEFXk2gHtx+Ujcxzomj1U8b6fskgMP8L1nY+nst/NMVF9M/eQgq7NdZCzvmpIlD5mfupO1SiJP7cm1UVV5N1Dy8mm1cPgmyd0538jrK8fS3rjl0Ux0lCiDMVmAA/vm5A6khMMYTmnTkSg6aMZm9sASpzFgJ3ViAINMrXs+m/g4hPT9Z1jbM602MLD4OeXsbp/QPpJ1c6MBuSE/BcxwEu3b78ItH7fj9qzx32XroGEQPgOXqq+h9004PKLcXe2e6EPgxoGu7lOQD/7ZtM5in6/fnd/FY6tdBVzZ4q7oiTmfL8ZwtDpkt5by4Fp9VVqC8EJo33+poTtOFyWHIxHxl94O0A4zwe9j0d5MsMcT9vQK8DQv467pf3yfxVkjGTMWtVsxo2jPjVjWQIESVm0X7b9ReGuZnS+UyaJ9MG9N+Eb1LY6sutuxD0aCIjqv+YU4enf3Fb0hBESalxBdomuNZZ+fxDCl+vmExRZaeU6VvEX0o1K8XZTZ71Fcbjy2/6boZck4OA2jHXjwP72pM/0Edobx/st9FQOrOM2MxUz5DQeFpTRrOHQfi61DfpQtIY+DsEUeVNU3oWW+3YGJxZPak9+LLCGLkRnwNQZktR7uAqNOt2Vq4c+jPy19YV/jy45W50NuLn4KIvJ4WQnaJH/lys9Lpbl89lV+5X3oi9QD7LnzX+CxpIj8GmrsO3NgTfuJ7AFnJ8/UOLIu7iR1fKwrUtZkmSMhFi+VJqk3NMk932P4xz6lI7GSSZcBVld9TgAhDi91rzilxVwUTNQymLv0QSo6EFAX+TKJpFf49gnM6VJgJAdjsucrHIROPRQTPvtnlehMzesHAj3+F1/jz9YuNs8xdqHPHYvTcb9wI8pH7ID90Dk45QGP4Oi5fxs4MTSksr/MAn0GZpsWtek+cyDSUkAl9Y+wRgNDFI0vdel+vtZTRyDHTFLY/lXV0f2TJjJ1tVha0LFB1LMlWI9fu/SBohQTghUgVM8G36SWk6Sfla+oIgJzxobohP1agUY6laD5ld8b2uoCM4sjTzwP48oto5lv4fEoWysqujqc0nj+jo0cmOq07cbOV156ulGY9+qYy9wvENuhJRZH4ooP1xH/D5vEzgCvnPzy7fY0w5+w+aeVzNe3b6owOd0AtaDhwflX+CiSl6nnP40XQqgO8FxcBwPivB02k4lIqYfkotSJ2YY+AKKUqVIW0Iw+qkPiYwYwJPw46P0g8GVWWb32A3N7Dam1hU+H7f5Xgv+JbKTlpGR0d/05aZyYmp4KGP3dlH6FdncwluzfuI0yttdA1sivIFgWxGi0VP8UaCMaW5NJYu9woRuE43QvLp1NpJtBk5VnWkRvNoy09Rn0sf27gre47jcgrJ/KxpPbXP+9d5NhBx5XvNezY0b8GMByX8GZMLGTx81rQB1292F0yMZ910hoqSk8aVDk2eEEMPTN3wbJWSkzNgAFNz00aNgZ6406ITiqhfHJLpLvyfhnMxbop937bRYZVoy5OpWkw4DGAAAA=" alt="stream image" class="item-stream__img">
+                  </a>
+                </li>
+                <li class="item-stream__item">
+                  <a href="#" class="item-stream__link">
+                    <img src="data:image/webp;base64,UklGRiYEAABXRUJQVlA4IBoEAABQEgCdASo8ADwAPpE8l0gloyIhMBYLALASCWIAnTNaTNA4b1xTdAlmqMly8Xt/9pswZhppfWkP78QWGVLrTXSk09cNiukwl20pfj8Y6hY0qPUBy03779VW5AYBYsQJ25XC+POUYFrJrEUEbU+3PRUOBStHtl7yvXwjcusVDGHIJA11UxAHYZh/jRiWKwT6UhOUfenYJ9z5LAVoAAD+4pf3QLUP2MNOqHrBXHqjhWvsgs+XJzunTU9N/WG5t+OowX53kJaY0d1Y9OdM4IOEdsmwWk9uB+oJ2VEf0LPcd32C08M65sdQfrA8k5JYRLxoNGDDUF+KO4JqpR3n0upZ/Hljk0HlS0MYpAQeINhwT2z35Rrxc1fkh3VMo5g5oxKmVavJEOys+gruqRQbw50e+abrkzgLQyYDE2mIB2uvm154Xz9tNZaoGofC7zvTkH+onVGpGMu0LQF85PBFBRvD2uYSn9tbs1sH/r7U4mCZTH/icI/GGQKX71TZWGaDj61cKTu4zWdUTzutR32Y4osExSpqK5+BCu1UtQKiiJnNkXdQeElShEVn4ccNvDHyvcKA5BUMwzwMEvQbcCHa59n62QGX4xcRTPVm2yIUg1jJsmUJdq3MTcOMisGDieGIBUkH2HKW7dOKA0prGXstovz7tUivqFo2xkd5JrGmnKvEM7sJJZ27rNoKPSIAnwQ+NAmOOwDgSdc1nAomRSR/x9HwS0/yc0agMURiSN0u8nquJsda+WWNfvrbGLjrvEzNo1iGkui8AVFvfR8u3CqtZEneIOVy8eb/lsamwA+5wpIPvTKjkP2JE5aM2U9pJT2ja8sIlDdKf8qm6ILeld5Zc4iyW/RfujXllx6UCDOsrSnDSx78A6Dul9uSzNwYOSZmyTXf5RHiTRC5vXDtx045yM6oIM/3pUfQGNVTdypy/o7QQcM/ziaAdLEFLOSLUtQqyaWLyTQ1d4u4x2R4WlCV1LPTMQA0cAdICXYBIshhNVFef0vEo6JVv9XrUa9jVgGd5CLwNnfxAzmYVVu+h6ppIPLPb7Qt9enXyBjs7u/3t4xkdsDWkw9UaQMFScV12uwXL+BDwU9LE/OFKTL2J85lEyYAQw3SYVtcCx98YU52wfxLFbUlsRz9fj18W+ROMNVF4kku1v8Z8eXqSDI/CDMoiB4KdWsSdpxte606/rP6ZDx6CVJlQEuMo7MkjFzpsgQ3Hsq47G0Mgsga/oYZXUqVF9siU26WNLBXNMTFzfURhW8XH7F172SjUhUFuLuo2IrjJYEv2aRco5NLLKsR6CL3FM/uKcx456XBzZ6tMfoAbnjT9hUu2fvHYX9rafNEg585nhTR2XZOF4KjwVUxerRsafwQiXWMcPwHRxr9nxXinv2zFYryvUhpjGxnkwYAAAA=" alt="stream image" class="item-stream__img">
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="footer__bottom bottom-footer">
+          <div class="bottom-footer__container">
+            <ul class="bottom-footer__list bottom-footer__list--anim">
+              <li class="bottom-footer__item anim-child">
+                <a href="#" class="bottom-footer__link">HOME</a>
+              </li>
+              <li class="bottom-footer__item anim-child">
+                <a href="#" class="bottom-footer__link">ABOUT US</a>
+              </li>
+              <li class="bottom-footer__item anim-child">
+                <a href="#" class="bottom-footer__link">CAREER</a>
+              </li>
+              <li class="bottom-footer__item anim-child">
+                <a href="#" class="bottom-footer__link">PRIVACY POLICY</a>
+              </li>
+              <li class="bottom-footer__item anim-child">
+                <a href="#" class="bottom-footer__link">USE OF TERMS</a>
+              </li>
+            </ul>
+            <a href="#" class="bottom-footer__copyright bottom-footer__copyright--anim">
+              <p>&copy; 2016 FEKRA CORPORATION</p>
+            </a>
+          </div>
+        </div>
       </footer>
-   </div>
+    </div>
 
 
-   <div id="app"></div>
-   <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
-   
-</body>
+    <div id="app"></div>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@12/swiper-bundle.min.js"></script>
+    
+  </body>
 
 </html>
